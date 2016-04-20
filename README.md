@@ -1,7 +1,7 @@
 # Android About Page
 Create an awesome About Page for your Android App in 2 minutes
 
-![Android About Page](/resources/android-about-page-1.png)![Android About Page 2](/resources/android-about-page-1.png)
+<img src="/resources/android-about-page-1.png" alt="Android About Page 1" width="30%"/><img src="/resources/android-about-page-2.png" alt="Android About Page 2" width="30%"/>
               
 ~~~
 View aboutPage = new AboutPage(this)
