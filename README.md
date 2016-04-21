@@ -20,8 +20,8 @@ View aboutPage = new AboutPage(this)
   .create();
 ~~~
 
-## Setup
-Available on Jcenter, Maven and JitPack
+## Setup ( Not yet available, under syncing ...)
+It'll be Available on Jcenter, Maven and JitPack
 
 ~~~
 compile 'com.github.medyo:android-about-page:1.0'
