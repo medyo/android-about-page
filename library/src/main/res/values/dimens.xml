@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="about_icon_size">34dp</dimen>
+    <dimen name="about_icon_padding">8dp</dimen>
+    <dimen name="about_text_padding">8dp</dimen>
+    <dimen name="about_group_text_padding">16dp</dimen>
+    <dimen name="about_separator_height">0.5dp</dimen>
+
+    <dimen name="about_description_text_size">16sp</dimen>
+    <dimen name="about_item_text_size">12sp</dimen>
+    <dimen name="about_group_item_text_size">18sp</dimen>
+</resources>
