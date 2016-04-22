@@ -79,7 +79,7 @@ addItem(versionElement)
 
 
 ## Sample Project
-[medyo/android-about-page/app/](https://github.com/medyo/android-about-page/app/)
+[medyo/android-about-page/app/](https://github.com/medyo/android-about-page/tree/master/app)
 
 
 ## ProGuard
