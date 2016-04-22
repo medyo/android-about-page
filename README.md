@@ -5,7 +5,7 @@ Create an awesome About Page for your Android App in 2 minutes
 
 This library allows to generate beautiful About Pages with less effort, it's fully customizable and supports opening specific intent
               
-~~~
+```java
 View aboutPage = new AboutPage(this)
   .isRTL(false)
   .setImage(R.drawable.dummy_image)
@@ -18,27 +18,27 @@ View aboutPage = new AboutPage(this)
   .addYoutube("UCdPQtdWIsg7_pi4mrRu46vA")
   .addPlayStore("com.ideashower.readitlater.pro")
   .create();
-~~~
+```
 
 ## Setup
 Available on Jcenter, Maven and JitPack
 
-~~~
+```groovy
 compile 'com.github.medyo:android-about-page:1.0'
-~~~
+```
 
 
 ## Usage
 ### 1. Add Description
 
-~~~
+```java
 setDescription(String)
-~~~
+```
 
 ### 2. Add Image
-~~~
+```java
 setImage(Int)
-~~~
+```
 
 ### 3. Add predefined Social network
 The library has already some predefined social networks like :  
@@ -49,22 +49,22 @@ The library has already some predefined social networks like :
 * Youtube
 * PlayStore
 
-~~~
+```java
 addFacebook(String PageID)
 addTwitter(String AccountID)
 addYoutube(String AccountID)
 addPlayStore(String PackageName)
 addInstagram(String AccountID)
-~~~
+```
 
 ### 4. Add Custom Element
 For example `app version` :
 
-~~~
+```java
 Element versionElement = new Element();
 versionElement.setTitle("Version 6.2");
 addItem(versionElement)
-~~~
+```
 
 ### 5. Available attributes for Element Class
 
