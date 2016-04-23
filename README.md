@@ -17,6 +17,7 @@ View aboutPage = new AboutPage(this)
   .addTwitter("medyo80")
   .addYoutube("UCdPQtdWIsg7_pi4mrRu46vA")
   .addPlayStore("com.ideashower.readitlater.pro")
+  .addGitHub("medyo")
   .create();
 ```
 

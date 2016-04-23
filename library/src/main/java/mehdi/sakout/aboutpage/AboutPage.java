@@ -166,6 +166,25 @@ public class AboutPage {
         return this;
     }
 
+    /*
+    Add GitHub Element
+    */
+    public AboutPage addGitHub(String id){
+        Element gitHubElement = new Element();
+        gitHubElement.setTitle(mContext.getString(R.string.about_github));
+        gitHubElement.setIcon(R.drawable.about_icon_github);
+        gitHubElement.setValue(id);
+
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+        intent.setData(Uri.parse(String.format("https://github.com/%s", id)));
+
+        gitHubElement.setIntent(intent);
+        addItem(gitHubElement);
+
+        return this;
+    }
 
     public AboutPage addItem(Element element){
         LinearLayout wrapper = (LinearLayout) mView.findViewById(R.id.about_providers);

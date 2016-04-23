@@ -1,6 +1,5 @@
 package mehdi.sakout.aboutpage.sample;
 
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 .addTwitter("medyo80")
                 .addYoutube("UCdPQtdWIsg7_pi4mrRu46vA")
                 .addPlayStore("com.ideashower.readitlater.pro")
+                .addGitHub("medyo")
                 .create();
 
         setContentView(aboutPage);
