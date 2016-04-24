@@ -56,6 +56,7 @@ addTwitter(String AccountID)
 addYoutube(String AccountID)
 addPlayStore(String PackageName)
 addInstagram(String AccountID)
+addGitHub(String AccountID)
 ```
 
 ### 4. Add Custom Element
