@@ -173,6 +173,7 @@ public class AboutPage {
         Element gitHubElement = new Element();
         gitHubElement.setTitle(mContext.getString(R.string.about_github));
         gitHubElement.setIcon(R.drawable.about_icon_github);
+        gitHubElement.setColor(ContextCompat.getColor(mContext, R.color.github_color));
         gitHubElement.setValue(id);
 
         Intent intent = new Intent();
