@@ -168,7 +168,31 @@ public class AboutPage {
     }
 
     /*
-    Add GitHub Element
+        Add Instagram Element
+     */
+    public AboutPage addInstagram(String id){
+        Element instagramElement = new Element();
+        instagramElement.setTitle(mContext.getString(R.string.about_instagram));
+        instagramElement.setIcon(R.drawable.about_icon_instagram);
+        instagramElement.setColor(ContextCompat.getColor(mContext, R.color.instagram_color));
+        instagramElement.setValue(id);
+
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("http://instagram.com/_u/"+id));
+
+        if (AboutPageUtils.isAppInstalled(mContext, "com.instagram.android")){
+            intent.setPackage("com.instagram.android");
+        }
+
+        instagramElement.setIntent(intent);
+        addItem(instagramElement);
+
+        return this;
+    }
+
+    /*
+        Add GitHub Element
     */
     public AboutPage addGitHub(String id){
         Element gitHubElement = new Element();
