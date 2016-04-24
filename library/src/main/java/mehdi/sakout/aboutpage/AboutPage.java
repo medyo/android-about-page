@@ -187,6 +187,28 @@ public class AboutPage {
         return this;
     }
 
+    /*
+    Add Website Element
+    */
+    public AboutPage addWebsite(String url){
+        if (!url.startsWith("http://") && !url.startsWith("https://")) {
+            url = "http://" + url;
+        }
+        Element websiteElement = new Element();
+        websiteElement.setTitle(mContext.getString(R.string.about_website));
+        websiteElement.setIcon(R.drawable.about_icon_link);
+        websiteElement.setColor(ContextCompat.getColor(mContext, R.color.about_item_icon_color));
+        websiteElement.setValue(url);
+
+        Uri uri = Uri.parse(url);
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, uri);
+
+        websiteElement.setIntent(browserIntent);
+        addItem(websiteElement);
+
+        return this;
+    }
+
     public AboutPage addItem(Element element){
         LinearLayout wrapper = (LinearLayout) mView.findViewById(R.id.about_providers);
         wrapper.addView(createItem(element));

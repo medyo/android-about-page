@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 .addYoutube("UCdPQtdWIsg7_pi4mrRu46vA")
                 .addPlayStore("com.ideashower.readitlater.pro")
                 .addGitHub("medyo")
+                .addWebsite("https://github.com/medyo/android-about-page")
                 .create();
 
         setContentView(aboutPage);

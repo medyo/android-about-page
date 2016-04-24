@@ -4,7 +4,7 @@ Create an awesome About Page for your Android App in 2 minutes
 <img src="/resources/cover.png" width="80%" alt="Android About Page Cover"/>
 
 This library allows to generate beautiful About Pages with less effort, it's fully customizable and supports opening specific intent
-              
+
 ```java
 View aboutPage = new AboutPage(this)
   .isRTL(false)
@@ -18,6 +18,7 @@ View aboutPage = new AboutPage(this)
   .addYoutube("UCdPQtdWIsg7_pi4mrRu46vA")
   .addPlayStore("com.ideashower.readitlater.pro")
   .addGitHub("medyo")
+  .addWebsite("https://github.com/medyo/android-about-page")
   .create();
 ```
 
@@ -44,7 +45,7 @@ setImage(Int)
 ### 3. Add predefined Social network
 The library has already some predefined social networks like :  
 
-* Facebook 
+* Facebook
 * Twitter
 * Instagram
 * Youtube
