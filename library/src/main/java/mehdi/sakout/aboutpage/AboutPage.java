@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
@@ -308,10 +309,14 @@ public class AboutPage {
             int iconPadding = mContext.getResources().getDimensionPixelSize(R.dimen.about_icon_padding);
             iconView.setPadding(iconPadding,0,iconPadding,0);
             iconView.setImageResource(element.getIcon());
+
+            Drawable wrappedDrawable = DrawableCompat.wrap(iconView.getDrawable());
+            wrappedDrawable = wrappedDrawable.mutate();
+
             if (element.getColor() != null){
-                DrawableCompat.setTint(iconView.getDrawable(),element.getColor());
+                DrawableCompat.setTint(wrappedDrawable,element.getColor());
             }else{
-                DrawableCompat.setTint(iconView.getDrawable(), ContextCompat.getColor(mContext, R.color.about_item_icon_color));
+                DrawableCompat.setTint(wrappedDrawable, ContextCompat.getColor(mContext, R.color.about_item_icon_color));
             }
         }else{
             int iconPadding = mContext.getResources().getDimensionPixelSize(R.dimen.about_icon_padding);
