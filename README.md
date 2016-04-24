@@ -18,6 +18,7 @@ View aboutPage = new AboutPage(this)
   .addYoutube("UCdPQtdWIsg7_pi4mrRu46vA")
   .addPlayStore("com.ideashower.readitlater.pro")
   .addGitHub("medyo")
+  .addInstagram("medyo80")
   .create();
 ```
 
@@ -25,7 +26,7 @@ View aboutPage = new AboutPage(this)
 Available on Jcenter, Maven and JitPack
 
 ```groovy
-compile 'com.github.medyo:android-about-page:1.0.1'
+compile 'com.github.medyo:android-about-page:1.0.2'
 ```
 
 
