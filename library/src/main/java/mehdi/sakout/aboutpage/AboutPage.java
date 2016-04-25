@@ -316,7 +316,7 @@ public class AboutPage {
         TextView textView = new TextView(mContext);
         textView.setTextColor(ContextCompat.getColor(mContext, R.color.about_item_text_color));
         textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mContext.getResources().getDimension(R.dimen.about_item_text_size));
-        textView.setTextAppearance(mContext, android.R.style.TextAppearance);
+        textView.setTextAppearance(mContext, R.style.About_TextAppearance);
         LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         textView.setLayoutParams(textParams);
         if (mCustomFont != null){

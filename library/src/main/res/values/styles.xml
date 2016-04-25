@@ -41,5 +41,9 @@
         <item name="android:layout_marginBottom">0dp</item>
     </style>
 
+    <style name="About.TextAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/about_text_color</item>
+    </style>
+
 
 </resources>
