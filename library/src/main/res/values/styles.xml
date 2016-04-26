@@ -41,5 +41,13 @@
         <item name="android:layout_marginBottom">0dp</item>
     </style>
 
+    <style name="About.elementTextAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/about_text_color</item>
+        <item name="android:textSize">@dimen/about_item_text_size</item>
+    </style>
 
+    <style name="About.GroupTextAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/about_item_text_color</item>
+        <item name="android:textSize">@dimen/about_group_item_text_size</item>
+    </style>
 </resources>
