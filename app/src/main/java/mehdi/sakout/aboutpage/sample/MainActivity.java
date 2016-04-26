@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 .addPlayStore("com.ideashower.readitlater.pro")
                 .addInstagram("medyo80")
                 .addGitHub("medyo")
+                .addWebsite("https://github.com/medyo/android-about-page")
                 .create();
 
         setContentView(aboutPage);
