@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.text.TextUtils;
@@ -228,8 +229,12 @@ public class AboutPage {
 
         TextView textView = new TextView(mContext);
         textView.setText(name);
-        textView.setTextColor(ContextCompat.getColor(mContext, R.color.about_item_text_color));
-        textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mContext.getResources().getDimension(R.dimen.about_group_item_text_size));
+        if (Build.VERSION.SDK_INT < 23) {
+            textView.setTextAppearance(mContext, R.style.About_GroupTextAppearance);
+        } else {
+            textView.setTextAppearance(R.style.About_GroupTextAppearance);
+        }
+
         LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
         if (mCustomFont != null){
@@ -314,9 +319,12 @@ public class AboutPage {
 
 
         TextView textView = new TextView(mContext);
-        textView.setTextColor(ContextCompat.getColor(mContext, R.color.about_item_text_color));
-        textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mContext.getResources().getDimension(R.dimen.about_item_text_size));
-        textView.setTextAppearance(mContext, R.style.About_TextAppearance);
+        if (Build.VERSION.SDK_INT < 23) {
+            textView.setTextAppearance(mContext, R.style.About_elementTextAppearance);
+        } else {
+            textView.setTextAppearance(R.style.About_elementTextAppearance);
+        }
+
         LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         textView.setLayoutParams(textParams);
         if (mCustomFont != null){
