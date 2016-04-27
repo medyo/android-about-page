@@ -362,8 +362,15 @@ public class AboutPage {
             iconView.setLayoutParams(iconParams);
             int iconPadding = mContext.getResources().getDimensionPixelSize(R.dimen.about_icon_padding);
             iconView.setPadding(iconPadding,0,iconPadding,0);
-            iconView.setImageResource(element.getIcon());
-
+            //iconView.setImageResource(element.getIcon());
+            
+            if (Build.VERSION.SDK_INT < 21) {
+                Drawable drawable = VectorDrawableCompat.create(iconView.getResources(), element.getIcon(), iconView.getContext().getTheme());
+                iconView.setImageDrawable(drawable);
+            } else {
+                iconView.setImageResource(element.getIcon());
+            }
+            
             Drawable wrappedDrawable = DrawableCompat.wrap(iconView.getDrawable());
             wrappedDrawable = wrappedDrawable.mutate();
 
