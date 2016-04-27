@@ -90,6 +90,7 @@ The library does supports the following languages :
 
 * English (default)
 * German (by @vanniktech )
+* Italian (by [greenaddress](https://github.com/greenaddress))
 
 Please make a Pull request to add a new language.
 
