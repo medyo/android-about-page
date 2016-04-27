@@ -85,6 +85,13 @@ addItem(versionElement)
 ## Sample Project
 [medyo/android-about-page/app/](https://github.com/medyo/android-about-page/tree/master/app)
 
+## Translations
+The library does supports the following languages :
+
+* English (default)
+* German (by @vanniktech )
+
+Please make a Pull request to add a new language.
 
 ## ProGuard
 Nothing to include
