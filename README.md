@@ -89,7 +89,7 @@ addItem(versionElement)
 The library does supports the following languages :
 
 * English (default)
-* German (by @vanniktech )
+* German (by [vanniktech](https://github.com/vanniktech) )
 
 Please make a Pull request to add a new language.
 
