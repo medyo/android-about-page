@@ -7,6 +7,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
+import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.text.TextUtils;
@@ -362,8 +363,7 @@ public class AboutPage {
             iconView.setLayoutParams(iconParams);
             int iconPadding = mContext.getResources().getDimensionPixelSize(R.dimen.about_icon_padding);
             iconView.setPadding(iconPadding,0,iconPadding,0);
-            //iconView.setImageResource(element.getIcon());
-            
+
             if (Build.VERSION.SDK_INT < 21) {
                 Drawable drawable = VectorDrawableCompat.create(iconView.getResources(), element.getIcon(), iconView.getContext().getTheme());
                 iconView.setImageDrawable(drawable);
