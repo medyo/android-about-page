@@ -1,8 +1,5 @@
 <resources>
-    <string name="app_name">A proposito di PageLibrary</string>
-
     <string name="about_contact_us">Contattaci</string>
-    <string name="about_terms_conditions">Termini e condizioni</string>
     <string name="about_instagram">Seguici su Instagram</string>
     <string name="about_facebook">Fai mi piace su Facebook</string>
     <string name="about_play_store">Valutaci sul Play Store</string>
@@ -10,6 +7,5 @@
     <string name="about_twitter">Seguici su Twitter</string>
     <string name="about_github">Fai una copia GitHub</string>
     <string name="about_website">Visita il nostro sito</string>
-
 </resources>
 
