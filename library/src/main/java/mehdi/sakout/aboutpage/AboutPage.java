@@ -301,11 +301,7 @@ public class AboutPage {
             description.setText(mDescription);
         }
 
-        if (mIsRTL){
-            description.setGravity(Gravity.RIGHT);
-        }else{
-            description.setGravity(Gravity.LEFT);
-        }
+        description.setGravity(Gravity.CENTER);
 
         if (mCustomFont != null){
             description.setTypeface(mCustomFont);
