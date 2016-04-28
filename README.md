@@ -94,6 +94,8 @@ The library does supports the following languages :
 * Croatian (by [skmlcd](https://github.com/skmlcd))
 * Arabic (by [ZakariaBoualaid](https://github.com/ZakariaBoualaid))
 * Slovenian (by [skmlcd](https://github.com/skmlcd))
+* Ukrainian (by [NumezmaT](https://github.com/NumezmaT))
+* Russian (by [NumezmaT](https://github.com/NumezmaT))
 
 Please make a Pull request to add a new language.
 
