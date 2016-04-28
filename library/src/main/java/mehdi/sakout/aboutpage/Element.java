@@ -29,47 +29,53 @@ public class Element {
         return tag;
     }
 
-    public void setTag(String tag) {
+    public Element setTag(String tag) {
         this.tag = tag;
+        return this;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
+    public Element setTitle(String title) {
         this.title = title;
+        return this;
     }
 
     public Integer getIcon() {
         return icon;
     }
 
-    public void setIcon(Integer icon) {
+    public Element setIcon(Integer icon) {
         this.icon = icon;
+        return this;
     }
 
     public Integer getColor() {
         return color;
     }
 
-    public void setColor(Integer color) {
+    public Element setColor(Integer color) {
         this.color = color;
+        return this;
     }
 
     public String getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public Element setValue(String value) {
         this.value = value;
+        return this;
     }
 
     public Intent getIntent() {
         return intent;
     }
 
-    public void setIntent(Intent intent) {
+    public Element setIntent(Intent intent) {
         this.intent = intent;
+        return this;
     }
 }

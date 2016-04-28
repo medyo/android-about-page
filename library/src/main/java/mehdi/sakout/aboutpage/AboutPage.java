@@ -6,6 +6,8 @@ import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
+import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.text.TextUtils;
@@ -212,6 +214,28 @@ public class AboutPage {
         return this;
     }
 
+    /*
+        Add Website Element
+    */
+    public AboutPage addWebsite(String url){
+        if (!url.startsWith("http://") && !url.startsWith("https://")) {
+            url = "http://" + url;
+        }
+        Element websiteElement = new Element();
+        websiteElement.setTitle(mContext.getString(R.string.about_website));
+        websiteElement.setIcon(R.drawable.about_icon_link);
+        websiteElement.setColor(ContextCompat.getColor(mContext, R.color.about_item_icon_color));
+        websiteElement.setValue(url);
+
+        Uri uri = Uri.parse(url);
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, uri);
+
+        websiteElement.setIntent(browserIntent);
+        addItem(websiteElement);
+
+        return this;
+    }
+
     public AboutPage addItem(Element element){
         LinearLayout wrapper = (LinearLayout) mView.findViewById(R.id.about_providers);
         wrapper.addView(createItem(element));
@@ -228,8 +252,12 @@ public class AboutPage {
 
         TextView textView = new TextView(mContext);
         textView.setText(name);
-        textView.setTextColor(ContextCompat.getColor(mContext, R.color.about_item_text_color));
-        textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mContext.getResources().getDimension(R.dimen.about_group_item_text_size));
+        if (Build.VERSION.SDK_INT < 23) {
+            textView.setTextAppearance(mContext, R.style.About_GroupTextAppearance);
+        } else {
+            textView.setTextAppearance(R.style.About_GroupTextAppearance);
+        }
+
         LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
         if (mCustomFont != null){
@@ -314,9 +342,12 @@ public class AboutPage {
 
 
         TextView textView = new TextView(mContext);
-        textView.setTextColor(ContextCompat.getColor(mContext, R.color.about_item_text_color));
-        textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mContext.getResources().getDimension(R.dimen.about_item_text_size));
-        textView.setTextAppearance(mContext, R.style.About_TextAppearance);
+        if (Build.VERSION.SDK_INT < 23) {
+            textView.setTextAppearance(mContext, R.style.About_elementTextAppearance);
+        } else {
+            textView.setTextAppearance(R.style.About_elementTextAppearance);
+        }
+
         LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         textView.setLayoutParams(textParams);
         if (mCustomFont != null){
@@ -332,8 +363,14 @@ public class AboutPage {
             iconView.setLayoutParams(iconParams);
             int iconPadding = mContext.getResources().getDimensionPixelSize(R.dimen.about_icon_padding);
             iconView.setPadding(iconPadding,0,iconPadding,0);
-            iconView.setImageResource(element.getIcon());
 
+            if (Build.VERSION.SDK_INT < 21) {
+                Drawable drawable = VectorDrawableCompat.create(iconView.getResources(), element.getIcon(), iconView.getContext().getTheme());
+                iconView.setImageDrawable(drawable);
+            } else {
+                iconView.setImageResource(element.getIcon());
+            }
+            
             Drawable wrappedDrawable = DrawableCompat.wrap(iconView.getDrawable());
             wrappedDrawable = wrappedDrawable.mutate();
 

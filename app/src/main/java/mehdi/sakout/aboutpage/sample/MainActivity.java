@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
                 .addItem(adsElement)
                 .addGroup("Connect with us")
                 .addEmail("elmehdi.sakout@gmail.com")
+                .addWebsite("http://medyo.github.io/")
                 .addFacebook("the.medy")
                 .addTwitter("medyo80")
                 .addYoutube("UCdPQtdWIsg7_pi4mrRu46vA")
