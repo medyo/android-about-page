@@ -91,6 +91,7 @@ The library does supports the following languages :
 * English (default)
 * German (by [vanniktech](https://github.com/vanniktech))
 * Italian (by [greenaddress](https://github.com/greenaddress))
+* Croatian (by [skmlcd](https://github.com/skmlcd))
 
 Please make a Pull request to add a new language.
 
