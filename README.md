@@ -91,6 +91,8 @@ The library does supports the following languages :
 * English (default)
 * German (by [vanniktech](https://github.com/vanniktech))
 * Italian (by [greenaddress](https://github.com/greenaddress))
+* Ukrainian (by [NumezmaT](https://github.com/NumezmaT))
+* Russian (by [NumezmaT](https://github.com/NumezmaT))
 
 Please make a Pull request to add a new language.
 
