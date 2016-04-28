@@ -1,0 +1,10 @@
+<resources>
+    <string name="about_contact_us">ﺎﻨﺑ ﻞﺼﺗﺇ</string>
+    <string name="about_instagram">ﻡاﺮﻐﺘﺴﻧﻹا ﻰﻠﻋ ﺎﻨﻌﺑﺎﺗ</string>
+    <string name="about_facebook">ﻙﻮﺑ ﺲﻴﻔﻟا ﻰﻠﻋ ﺎﻨﻌﺑﺎﺗ</string>
+    <string name="about_play_store">ﺭﻮﺘﺳ ﻱﻼﺒﻟا ﻰﻠﻋ ﻉﻭﺮﺸﻤﻟا ﻢِّﻴﻗ</string>
+    <string name="about_youtube">ﺏﻮﺗﻮﻴﻟا ﻰﻠﻋ ﺎﻨﻌﺑﺎﺗ</string>
+    <string name="about_twitter">ﺮﺘﻳﻮﺘﻟا ﻰﻠﻋ ﺎﻨﻌﺑﺎﺗ</string>
+    <string name="about_github">ﻉﻭﺮﺸﻤﻟا ﺦﺴﻨﺘﺳﺇ</string>
+    <string name="about_website">ﺎﻨﻌﻗﻮﻣ ﺭﺯ</string>
+</resources>
