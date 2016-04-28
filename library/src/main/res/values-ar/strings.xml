@@ -1,0 +1,10 @@
+<resources>
+    <string name="about_contact_us">ﺇﺗﺼﻞ ﺑﻨﺎ</string>
+    <string name="about_instagram">ﺗﺎﺑﻌﻨﺎ ﻋﻠﻰ اﻹﻧﺴﺘﻐﺮاﻡ</string>
+    <string name="about_facebook">ﺗﺎﺑﻌﻨﺎ ﻋﻠﻰ اﻟﻔﻴﺲ ﺑﻮﻙ</string>
+    <string name="about_play_store">ﻗﻴِّﻢ اﻟتطبيق ﻋﻠﻰ اﻟﺒﻼﻱ ﺳﺘﻮﺭ</string>
+    <string name="about_youtube">ﺗﺎﺑﻌﻨﺎ ﻋﻠﻰ اﻟﻴﻮﺗﻮﺏ</string>
+    <string name="about_twitter">ﺗﺎﺑﻌﻨﺎ ﻋﻠﻰ اﻟﺘﻮﻳﺘﺮ</string>
+    <string name="about_github">ﺇﺳﺘﻨﺴﺦ اﻟﻤﺸﺮﻭﻉ</string>
+    <string name="about_website">ﺯﺭ ﻣﻮﻗﻌﻨﺎ</string>
+</resources>
