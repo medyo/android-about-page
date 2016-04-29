@@ -236,30 +236,6 @@ public class AboutPage {
         return this;
     }
     
-    /*
-         Add VK Element
-     */
-    public AboutPage addVk(String id){
-        Element vkElement = new Element();
-        vkElement.setTitle(mContext.getString(R.string.about_vk));
-        vkElement.setIcon(R.drawable.about_icon_vk);
-        vkElement.setColor(ContextCompat.getColor(mContext, R.color.vk_color));
-        vkElement.setValue(id);
-
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("https://vk.com/"+id));
-
-        if (AboutPageUtils.isAppInstalled(mContext, "com.vkontakte.android")){
-            intent.setPackage("com.vkontakte.android");
-        }
-
-        vkElement.setIntent(intent);
-        addItem(vkElement);
-
-        return this;
-    }
-
     public AboutPage addItem(Element element){
         LinearLayout wrapper = (LinearLayout) mView.findViewById(R.id.about_providers);
         wrapper.addView(createItem(element));
