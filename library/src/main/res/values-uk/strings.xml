@@ -1,0 +1,10 @@
+<resources>
+    <string name="about_contact_us">Зв\'язатися з нами</string>
+    <string name="about_instagram">Слідуйте за нами на Instagram</string>
+    <string name="about_facebook">Уподобати сторінку на Facebook</string>
+    <string name="about_play_store">Оцініть нас на Play Store</string>
+    <string name="about_youtube">Дивіться нас на Youtube</string>
+    <string name="about_twitter">Підпишіться на нас у Twitter</string>
+    <string name="about_github">Відгалуження на GitHub</string>
+    <string name="about_website">Відвідайте наш веб-сайт</string>
+</resources>
