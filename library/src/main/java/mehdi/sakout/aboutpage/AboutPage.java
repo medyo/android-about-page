@@ -117,9 +117,9 @@ public class AboutPage {
 
         if (AboutPageUtils.isAppInstalled(mContext, "com.twitter.android")){
             intent.setPackage("com.twitter.android");
-            intent.setData(Uri.parse(String.format("twitter://user?user_id=%s",id)));
+            intent.setData(Uri.parse(String.format("twitter://user?screen_name=%s",id)));
         }else{
-            intent.setData(Uri.parse(String.format("http://twitter.com/intent/user?user_id=%s",id)));
+            intent.setData(Uri.parse(String.format("http://twitter.com/intent/user?screen_name=%s",id)));
         }
 
         twitterElement.setIntent(intent);
