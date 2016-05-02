@@ -98,6 +98,7 @@ The library does supports the following languages :
 * Russian (by [NumezmaT](https://github.com/NumezmaT))
 * Romanian (by [Vally79](https://github.com/Vally79))
 * Portuguese Brazil (by [rbaprado](https://github.com/rbaprado))
+* French (by [medyo](https://github.com/medyo))
 
 Please make a Pull request to add a new language.
 
