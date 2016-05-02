@@ -1,0 +1,10 @@
+<resources>
+    <string name="about_contact_us">Fale Conosco</string>
+    <string name="about_instagram">Siga-nos no Instagram</string>
+    <string name="about_facebook">Curta no Facebook</string>
+    <string name="about_play_store">Avalie-nos na Play Store</string>
+    <string name="about_youtube">Assista-nos no Youtube</string>
+    <string name="about_twitter">Siga-nos no Twitter</string>
+    <string name="about_github">Crie um Fork no GitHub</string>
+    <string name="about_website">Visite o nosso website</string>
+</resources>
