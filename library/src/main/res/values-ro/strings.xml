@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="about_contact_us">Contactați-ne</string>
+    <string name="about_instagram">Urmăriți-ne pe Instagram</string>
+    <string name="about_facebook">Dați-ne like pe Facebook</string>
+    <string name="about_play_store">Dați-ne o notă pe Play Store</string>
+    <string name="about_youtube">Urmăriți-ne pe Youtube</string>
+    <string name="about_twitter">Urmăriți-ne pe Twitter</string>
+    <string name="about_github">Faceți fork pe GitHub</string>
+    <string name="about_website">Vizitați site-ul nostru</string>
+
+</resources>
