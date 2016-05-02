@@ -253,9 +253,9 @@ public class AboutPage {
         TextView textView = new TextView(mContext);
         textView.setText(name);
         if (Build.VERSION.SDK_INT < 23) {
-            textView.setTextAppearance(mContext, R.style.about_About_GroupTextAppearance);
+            textView.setTextAppearance(mContext, R.style.about_groupTextAppearance);
         } else {
-            textView.setTextAppearance(R.style.about_About_GroupTextAppearance);
+            textView.setTextAppearance(R.style.about_groupTextAppearance);
         }
 
         LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -339,9 +339,9 @@ public class AboutPage {
 
         TextView textView = new TextView(mContext);
         if (Build.VERSION.SDK_INT < 23) {
-            textView.setTextAppearance(mContext, R.style.about_About_elementTextAppearance);
+            textView.setTextAppearance(mContext, R.style.about_elementTextAppearance);
         } else {
-            textView.setTextAppearance(R.style.about_About_elementTextAppearance);
+            textView.setTextAppearance(R.style.about_elementTextAppearance);
         }
 
         LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
