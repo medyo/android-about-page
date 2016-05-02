@@ -84,14 +84,14 @@ public class AboutPage {
             }
 
             if (versionCode >= 3002850) {
-                Uri uri = Uri.parse("fb://facewebmodal/f?href=" + "http://facebook.com/" + id);
+                Uri uri = Uri.parse("fb://facewebmodal/f?href=" + "http://m.facebook.com/" + id);
                 intent.setData(uri);
             } else {
                 Uri uri = Uri.parse("fb://page/"+id);
                 intent.setData(uri);
             }
         }else{
-            intent.setData( Uri.parse("http://facebook.com/" + id));
+            intent.setData( Uri.parse("http://m.facebook.com/" + id));
         }
 
         facebookElement.setIntent(intent);
@@ -117,9 +117,9 @@ public class AboutPage {
 
         if (AboutPageUtils.isAppInstalled(mContext, "com.twitter.android")){
             intent.setPackage("com.twitter.android");
-            intent.setData(Uri.parse(String.format("twitter://user?user_id=%s",id)));
+            intent.setData(Uri.parse(String.format("twitter://user?screen_name=%s",id)));
         }else{
-            intent.setData(Uri.parse(String.format("http://twitter.com/%s",id)));
+            intent.setData(Uri.parse(String.format("http://twitter.com/intent/user?screen_name=%s",id)));
         }
 
         twitterElement.setIntent(intent);
@@ -235,7 +235,7 @@ public class AboutPage {
 
         return this;
     }
-
+    
     public AboutPage addItem(Element element){
         LinearLayout wrapper = (LinearLayout) mView.findViewById(R.id.about_providers);
         wrapper.addView(createItem(element));
