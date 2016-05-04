@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/About.wrapper">
+    style="@style/about_About.wrapper">
 
-    <LinearLayout style="@style/About.wrapper">
-        <LinearLayout style="@style/About.sub_wrapper">
-            <ImageView android:id="@+id/image" style="@style/About.image"/>
-            <TextView android:id="@+id/description" style="@style/About.description"/>
+    <LinearLayout style="@style/about_About.wrapper">
+        <LinearLayout style="@style/about_sub_wrapper">
+            <ImageView android:id="@+id/image" style="@style/about_image"/>
+            <TextView android:id="@+id/description" style="@style/about_description"/>
         </LinearLayout>
 
-        <View style="@style/About.separator"/>
+        <View style="@style/about_separator"/>
 
         <LinearLayout
             android:id="@+id/about_providers"
-            style="@style/About.sub_wrapper"
+            style="@style/about_sub_wrapper"
             android:padding="0dp">
 
         </LinearLayout>

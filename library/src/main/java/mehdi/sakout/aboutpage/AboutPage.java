@@ -67,7 +67,7 @@ public class AboutPage {
         Element facebookElement = new Element();
         facebookElement.setTitle(mContext.getString(R.string.about_facebook));
         facebookElement.setIcon(R.drawable.about_icon_facebook);
-        facebookElement.setColor(ContextCompat.getColor(mContext, R.color.facebook_color));
+        facebookElement.setColor(ContextCompat.getColor(mContext, R.color.about_facebook_color));
         facebookElement.setValue(id);
 
         Intent intent = new Intent();
@@ -84,14 +84,14 @@ public class AboutPage {
             }
 
             if (versionCode >= 3002850) {
-                Uri uri = Uri.parse("fb://facewebmodal/f?href=" + "http://facebook.com/" + id);
+                Uri uri = Uri.parse("fb://facewebmodal/f?href=" + "http://m.facebook.com/" + id);
                 intent.setData(uri);
             } else {
                 Uri uri = Uri.parse("fb://page/"+id);
                 intent.setData(uri);
             }
         }else{
-            intent.setData( Uri.parse("http://facebook.com/" + id));
+            intent.setData( Uri.parse("http://m.facebook.com/" + id));
         }
 
         facebookElement.setIntent(intent);
@@ -108,7 +108,7 @@ public class AboutPage {
         Element twitterElement = new Element();
         twitterElement.setTitle(mContext.getString(R.string.about_twitter));
         twitterElement.setIcon(R.drawable.about_icon_twitter);
-        twitterElement.setColor(ContextCompat.getColor(mContext, R.color.twitter_color));
+        twitterElement.setColor(ContextCompat.getColor(mContext, R.color.about_twitter_color));
         twitterElement.setValue(id);
 
         Intent intent = new Intent();
@@ -117,9 +117,9 @@ public class AboutPage {
 
         if (AboutPageUtils.isAppInstalled(mContext, "com.twitter.android")){
             intent.setPackage("com.twitter.android");
-            intent.setData(Uri.parse(String.format("twitter://user?user_id=%s",id)));
+            intent.setData(Uri.parse(String.format("twitter://user?screen_name=%s",id)));
         }else{
-            intent.setData(Uri.parse(String.format("http://twitter.com/%s",id)));
+            intent.setData(Uri.parse(String.format("http://twitter.com/intent/user?screen_name=%s",id)));
         }
 
         twitterElement.setIntent(intent);
@@ -134,7 +134,7 @@ public class AboutPage {
         Element playStoreElement = new Element();
         playStoreElement.setTitle(mContext.getString(R.string.about_play_store));
         playStoreElement.setIcon(R.drawable.about_icon_google_play);
-        playStoreElement.setColor(ContextCompat.getColor(mContext, R.color.play_store_color));
+        playStoreElement.setColor(ContextCompat.getColor(mContext, R.color.about_play_store_color));
         playStoreElement.setValue(id);
 
         Uri uri = Uri.parse("market://details?id=" + id);
@@ -152,7 +152,7 @@ public class AboutPage {
         Element youtubeElement = new Element();
         youtubeElement.setTitle(mContext.getString(R.string.about_youtube));
         youtubeElement.setIcon(R.drawable.about_icon_youtube);
-        youtubeElement.setColor(ContextCompat.getColor(mContext, R.color.youtube_color));
+        youtubeElement.setColor(ContextCompat.getColor(mContext, R.color.about_youtube_color));
         youtubeElement.setValue(id);
 
         Intent intent = new Intent();
@@ -176,7 +176,7 @@ public class AboutPage {
         Element instagramElement = new Element();
         instagramElement.setTitle(mContext.getString(R.string.about_instagram));
         instagramElement.setIcon(R.drawable.about_icon_instagram);
-        instagramElement.setColor(ContextCompat.getColor(mContext, R.color.instagram_color));
+        instagramElement.setColor(ContextCompat.getColor(mContext, R.color.about_instagram_color));
         instagramElement.setValue(id);
 
         Intent intent = new Intent();
@@ -200,7 +200,7 @@ public class AboutPage {
         Element gitHubElement = new Element();
         gitHubElement.setTitle(mContext.getString(R.string.about_github));
         gitHubElement.setIcon(R.drawable.about_icon_github);
-        gitHubElement.setColor(ContextCompat.getColor(mContext, R.color.github_color));
+        gitHubElement.setColor(ContextCompat.getColor(mContext, R.color.about_github_color));
         gitHubElement.setValue(id);
 
         Intent intent = new Intent();
@@ -235,7 +235,7 @@ public class AboutPage {
 
         return this;
     }
-
+    
     public AboutPage addItem(Element element){
         LinearLayout wrapper = (LinearLayout) mView.findViewById(R.id.about_providers);
         wrapper.addView(createItem(element));
@@ -253,9 +253,9 @@ public class AboutPage {
         TextView textView = new TextView(mContext);
         textView.setText(name);
         if (Build.VERSION.SDK_INT < 23) {
-            textView.setTextAppearance(mContext, R.style.About_GroupTextAppearance);
+            textView.setTextAppearance(mContext, R.style.about_groupTextAppearance);
         } else {
-            textView.setTextAppearance(R.style.About_GroupTextAppearance);
+            textView.setTextAppearance(R.style.about_groupTextAppearance);
         }
 
         LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -339,9 +339,9 @@ public class AboutPage {
 
         TextView textView = new TextView(mContext);
         if (Build.VERSION.SDK_INT < 23) {
-            textView.setTextAppearance(mContext, R.style.About_elementTextAppearance);
+            textView.setTextAppearance(mContext, R.style.about_elementTextAppearance);
         } else {
-            textView.setTextAppearance(R.style.About_elementTextAppearance);
+            textView.setTextAppearance(R.style.about_elementTextAppearance);
         }
 
         LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
