@@ -99,6 +99,8 @@ The library does supports the following languages :
 * Romanian (by [Vally79](https://github.com/Vally79))
 * Portuguese Brazil (by [rbaprado](https://github.com/rbaprado))
 * French (by [medyo](https://github.com/medyo))
+* Simplified Chinese (by [whiskeyfei](https://github.com/whiskeyfei))
+* Spanish (by [danramirez](https://github.com/danramirez))
 
 Please make a Pull request to add a new language.
 
