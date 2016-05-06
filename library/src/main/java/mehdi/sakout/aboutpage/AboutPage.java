@@ -25,13 +25,13 @@ import android.widget.TextView;
  * Created by medyo on 3/25/16.
  */
 public class AboutPage {
-    Context mContext;
-    LayoutInflater mInflater;
-    String mDescription;
-    int mImage = 0;
-    boolean mIsRTL = false;
-    Typeface mCustomFont;
-    private View mView;
+    private final Context mContext;
+    private final LayoutInflater mInflater;
+    private String mDescription;
+    private int mImage = 0;
+    private boolean mIsRTL = false;
+    private Typeface mCustomFont;
+    private final View mView;
 
     public AboutPage(Context context) {
         this.mContext = context;
