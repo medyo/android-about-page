@@ -80,6 +80,7 @@ addItem(versionElement)
 | setValue(String) | Set Element value like Facebook ID|
 | setTag(String) | Set a unique tag value to the element|
 | setIntent(Intent) | Set an intent to be called on `onClickListener` |
+| setGravity(Gravity) | Set a Gravity for the element  |
 
 
 ## Sample Project
