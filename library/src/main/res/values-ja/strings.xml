@@ -1,0 +1,10 @@
+<resources>
+    <string name="about_contact_us">お問い合わせ</string>
+    <string name="about_instagram">Instagramでフォローする</string>
+    <string name="about_facebook">Facebookでいいねを付ける</string>
+    <string name="about_play_store">Play Storeで評価する</string>
+    <string name="about_youtube">Youtubeで視聴する</string>
+    <string name="about_twitter">Twitterでフォローする</string>
+    <string name="about_github">GitHubでフォークする</string>
+    <string name="about_website">ウェブサイトを訪問する</string>
+</resources>
