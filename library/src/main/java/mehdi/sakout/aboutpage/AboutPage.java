@@ -10,6 +10,7 @@ import android.os.Build;
 import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
+import android.support.v4.widget.TextViewCompat;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -32,20 +33,21 @@ public class AboutPage {
     Typeface mCustomFont;
     private View mView;
 
-    public AboutPage(Context context){
+    public AboutPage(Context context) {
         this.mContext = context;
         this.mInflater = LayoutInflater.from(context);
         this.mView = mInflater.inflate(R.layout.about_page, null);
     }
 
-    public AboutPage setCustomFont(String fontName){
+    public AboutPage setCustomFont(String fontName) {
         mCustomFont = Typeface.createFromAsset(mContext.getAssets(), fontName);
         return this;
     }
+
     /*
         Add Email Element
      */
-    public AboutPage addEmail(String email){
+    public AboutPage addEmail(String email) {
         Element emailElement = new Element();
         emailElement.setTitle(mContext.getString(R.string.about_contact_us));
         emailElement.setIcon(R.drawable.about_icon_email);
@@ -63,7 +65,7 @@ public class AboutPage {
     /*
         Add Facebook Element
      */
-    public AboutPage addFacebook(String id){
+    public AboutPage addFacebook(String id) {
         Element facebookElement = new Element();
         facebookElement.setTitle(mContext.getString(R.string.about_facebook));
         facebookElement.setIcon(R.drawable.about_icon_facebook);
@@ -74,7 +76,7 @@ public class AboutPage {
         intent.setAction(Intent.ACTION_VIEW);
         intent.addCategory(Intent.CATEGORY_BROWSABLE);
 
-        if (AboutPageUtils.isAppInstalled(mContext, "com.facebook.katana")){
+        if (AboutPageUtils.isAppInstalled(mContext, "com.facebook.katana")) {
             intent.setPackage("com.facebook.katana");
             int versionCode = 0;
             try {
@@ -87,11 +89,11 @@ public class AboutPage {
                 Uri uri = Uri.parse("fb://facewebmodal/f?href=" + "http://m.facebook.com/" + id);
                 intent.setData(uri);
             } else {
-                Uri uri = Uri.parse("fb://page/"+id);
+                Uri uri = Uri.parse("fb://page/" + id);
                 intent.setData(uri);
             }
-        }else{
-            intent.setData( Uri.parse("http://m.facebook.com/" + id));
+        } else {
+            intent.setData(Uri.parse("http://m.facebook.com/" + id));
         }
 
         facebookElement.setIntent(intent);
@@ -104,7 +106,7 @@ public class AboutPage {
     /*
         Add Twitter Element
      */
-    public AboutPage addTwitter(String id){
+    public AboutPage addTwitter(String id) {
         Element twitterElement = new Element();
         twitterElement.setTitle(mContext.getString(R.string.about_twitter));
         twitterElement.setIcon(R.drawable.about_icon_twitter);
@@ -115,11 +117,11 @@ public class AboutPage {
         intent.setAction(Intent.ACTION_VIEW);
         intent.addCategory(Intent.CATEGORY_BROWSABLE);
 
-        if (AboutPageUtils.isAppInstalled(mContext, "com.twitter.android")){
+        if (AboutPageUtils.isAppInstalled(mContext, "com.twitter.android")) {
             intent.setPackage("com.twitter.android");
-            intent.setData(Uri.parse(String.format("twitter://user?screen_name=%s",id)));
-        }else{
-            intent.setData(Uri.parse(String.format("http://twitter.com/intent/user?screen_name=%s",id)));
+            intent.setData(Uri.parse(String.format("twitter://user?screen_name=%s", id)));
+        } else {
+            intent.setData(Uri.parse(String.format("http://twitter.com/intent/user?screen_name=%s", id)));
         }
 
         twitterElement.setIntent(intent);
@@ -130,7 +132,7 @@ public class AboutPage {
     /*
         Add Play store Element
      */
-    public AboutPage addPlayStore(String id){
+    public AboutPage addPlayStore(String id) {
         Element playStoreElement = new Element();
         playStoreElement.setTitle(mContext.getString(R.string.about_play_store));
         playStoreElement.setIcon(R.drawable.about_icon_google_play);
@@ -148,7 +150,7 @@ public class AboutPage {
     /*
         Add Youtube Element
      */
-    public AboutPage addYoutube(String id){
+    public AboutPage addYoutube(String id) {
         Element youtubeElement = new Element();
         youtubeElement.setTitle(mContext.getString(R.string.about_youtube));
         youtubeElement.setIcon(R.drawable.about_icon_youtube);
@@ -159,7 +161,7 @@ public class AboutPage {
         intent.setAction(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(String.format("http://youtube.com/channel/%s", id)));
 
-        if (AboutPageUtils.isAppInstalled(mContext, "com.google.android.youtube")){
+        if (AboutPageUtils.isAppInstalled(mContext, "com.google.android.youtube")) {
             intent.setPackage("com.google.android.youtube");
         }
 
@@ -172,7 +174,7 @@ public class AboutPage {
     /*
         Add Instagram Element
      */
-    public AboutPage addInstagram(String id){
+    public AboutPage addInstagram(String id) {
         Element instagramElement = new Element();
         instagramElement.setTitle(mContext.getString(R.string.about_instagram));
         instagramElement.setIcon(R.drawable.about_icon_instagram);
@@ -181,9 +183,9 @@ public class AboutPage {
 
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("http://instagram.com/_u/"+id));
+        intent.setData(Uri.parse("http://instagram.com/_u/" + id));
 
-        if (AboutPageUtils.isAppInstalled(mContext, "com.instagram.android")){
+        if (AboutPageUtils.isAppInstalled(mContext, "com.instagram.android")) {
             intent.setPackage("com.instagram.android");
         }
 
@@ -196,7 +198,7 @@ public class AboutPage {
     /*
         Add GitHub Element
     */
-    public AboutPage addGitHub(String id){
+    public AboutPage addGitHub(String id) {
         Element gitHubElement = new Element();
         gitHubElement.setTitle(mContext.getString(R.string.about_github));
         gitHubElement.setIcon(R.drawable.about_icon_github);
@@ -217,7 +219,7 @@ public class AboutPage {
     /*
         Add Website Element
     */
-    public AboutPage addWebsite(String url){
+    public AboutPage addWebsite(String url) {
         if (!url.startsWith("http://") && !url.startsWith("https://")) {
             url = "http://" + url;
         }
@@ -235,93 +237,89 @@ public class AboutPage {
 
         return this;
     }
-    
-    public AboutPage addItem(Element element){
+
+    public AboutPage addItem(Element element) {
         LinearLayout wrapper = (LinearLayout) mView.findViewById(R.id.about_providers);
         wrapper.addView(createItem(element));
         wrapper.addView(getSeparator(), new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, mContext.getResources().getDimensionPixelSize(R.dimen.about_separator_height)));
         return this;
     }
 
-    public AboutPage setImage(int resource){
+    public AboutPage setImage(int resource) {
         this.mImage = resource;
         return this;
     }
 
-    public AboutPage addGroup(String name){
+    public AboutPage addGroup(String name) {
 
         TextView textView = new TextView(mContext);
         textView.setText(name);
-        if (Build.VERSION.SDK_INT < 23) {
-            textView.setTextAppearance(mContext, R.style.about_groupTextAppearance);
-        } else {
-            textView.setTextAppearance(R.style.about_groupTextAppearance);
-        }
-
+        TextViewCompat.setTextAppearance(textView, R.style.about_groupTextAppearance);
         LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
-        if (mCustomFont != null){
+        if (mCustomFont != null) {
             textView.setTypeface(mCustomFont);
         }
 
         int padding = mContext.getResources().getDimensionPixelSize(R.dimen.about_group_text_padding);
-        textView.setPadding(padding,padding,padding,padding);
+        textView.setPadding(padding, padding, padding, padding);
 
-        if (mIsRTL){
-            textView.setGravity(Gravity.RIGHT|Gravity.CENTER_VERTICAL);
-            textParams.gravity = Gravity.RIGHT|Gravity.CENTER_VERTICAL;
-        }else{
-            textView.setGravity(Gravity.LEFT|Gravity.CENTER_VERTICAL);
-            textParams.gravity = Gravity.LEFT|Gravity.CENTER_VERTICAL;
+        if (mIsRTL) {
+            textView.setGravity(Gravity.RIGHT | Gravity.CENTER_VERTICAL);
+            textParams.gravity = Gravity.RIGHT | Gravity.CENTER_VERTICAL;
+        } else {
+            textView.setGravity(Gravity.LEFT | Gravity.CENTER_VERTICAL);
+            textParams.gravity = Gravity.LEFT | Gravity.CENTER_VERTICAL;
         }
         textView.setLayoutParams(textParams);
 
-        ((LinearLayout)mView.findViewById(R.id.about_providers)).addView(textView);
+        ((LinearLayout) mView.findViewById(R.id.about_providers)).addView(textView);
         return this;
     }
 
-    public AboutPage isRTL(boolean value){
+    public AboutPage isRTL(boolean value) {
         this.mIsRTL = value;
         return this;
     }
 
-    public AboutPage setDescription(String description){
+    public AboutPage setDescription(String description) {
         this.mDescription = description;
         return this;
     }
 
-    public View create(){
+    public View create() {
         TextView description = (TextView) mView.findViewById(R.id.description);
         ImageView image = (ImageView) mView.findViewById(R.id.image);
-        if (mImage > 0){
+        if (mImage > 0) {
             image.setImageResource(mImage);
         }
 
-        if (!TextUtils.isEmpty(mDescription)){
+        if (!TextUtils.isEmpty(mDescription)) {
             description.setText(mDescription);
         }
 
         description.setGravity(Gravity.CENTER);
 
-        if (mCustomFont != null){
+        if (mCustomFont != null) {
             description.setTypeface(mCustomFont);
         }
 
         return mView;
     }
 
-    private View createItem(final Element element){
+    private View createItem(final Element element) {
         LinearLayout wrapper = new LinearLayout(mContext);
         wrapper.setOrientation(LinearLayout.HORIZONTAL);
         wrapper.setClickable(true);
 
-        if (element.getIntent() != null){
+        if (element.getIntent() != null) {
             wrapper.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    try{
+                    try {
                         mContext.startActivity(element.getIntent());
-                    } catch (Exception e){}
+                    } catch (Exception e) {
+                    }
                 }
             });
 
@@ -332,33 +330,28 @@ public class AboutPage {
         wrapper.setBackgroundResource(outValue.resourceId);
 
         int padding = mContext.getResources().getDimensionPixelSize(R.dimen.about_text_padding);
-        wrapper.setPadding(padding,padding,padding,padding);
+        wrapper.setPadding(padding, padding, padding, padding);
         LinearLayout.LayoutParams wrapperParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         wrapper.setLayoutParams(wrapperParams);
 
 
         TextView textView = new TextView(mContext);
-        if (Build.VERSION.SDK_INT < 23) {
-            textView.setTextAppearance(mContext, R.style.about_elementTextAppearance);
-        } else {
-            textView.setTextAppearance(R.style.about_elementTextAppearance);
-        }
-
+        TextViewCompat.setTextAppearance(textView, R.style.about_elementTextAppearance);
         LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         textView.setLayoutParams(textParams);
-        if (mCustomFont != null){
+        if (mCustomFont != null) {
             textView.setTypeface(mCustomFont);
         }
 
         ImageView iconView = null;
 
-        if (element.getIcon() != null){
+        if (element.getIcon() != null) {
             iconView = new ImageView(mContext);
             int size = mContext.getResources().getDimensionPixelSize(R.dimen.about_icon_size);
             LinearLayout.LayoutParams iconParams = new LinearLayout.LayoutParams(size, size);
             iconView.setLayoutParams(iconParams);
             int iconPadding = mContext.getResources().getDimensionPixelSize(R.dimen.about_icon_padding);
-            iconView.setPadding(iconPadding,0,iconPadding,0);
+            iconView.setPadding(iconPadding, 0, iconPadding, 0);
 
             if (Build.VERSION.SDK_INT < 21) {
                 Drawable drawable = VectorDrawableCompat.create(iconView.getResources(), element.getIcon(), iconView.getContext().getTheme());
@@ -366,16 +359,16 @@ public class AboutPage {
             } else {
                 iconView.setImageResource(element.getIcon());
             }
-            
+
             Drawable wrappedDrawable = DrawableCompat.wrap(iconView.getDrawable());
             wrappedDrawable = wrappedDrawable.mutate();
 
-            if (element.getColor() != null){
-                DrawableCompat.setTint(wrappedDrawable,element.getColor());
-            }else{
+            if (element.getColor() != null) {
+                DrawableCompat.setTint(wrappedDrawable, element.getColor());
+            } else {
                 DrawableCompat.setTint(wrappedDrawable, ContextCompat.getColor(mContext, R.color.about_item_icon_color));
             }
-        }else{
+        } else {
             int iconPadding = mContext.getResources().getDimensionPixelSize(R.dimen.about_icon_padding);
             textView.setPadding(iconPadding, iconPadding, iconPadding, iconPadding);
         }
@@ -384,18 +377,18 @@ public class AboutPage {
         textView.setText(element.getTitle());
 
 
-        if (mIsRTL){
-            wrapper.setGravity(Gravity.RIGHT|Gravity.CENTER_VERTICAL);
-            textParams.gravity = Gravity.RIGHT|Gravity.CENTER_VERTICAL;
+        if (mIsRTL) {
+            wrapper.setGravity(Gravity.RIGHT | Gravity.CENTER_VERTICAL);
+            textParams.gravity = Gravity.RIGHT | Gravity.CENTER_VERTICAL;
             wrapper.addView(textView);
-            if (element.getIcon() != null){
+            if (element.getIcon() != null) {
                 wrapper.addView(iconView);
             }
 
-        }else{
-            wrapper.setGravity(Gravity.LEFT|Gravity.CENTER_VERTICAL);
-            textParams.gravity = Gravity.LEFT|Gravity.CENTER_VERTICAL;
-            if (element.getIcon() != null){
+        } else {
+            wrapper.setGravity(Gravity.LEFT | Gravity.CENTER_VERTICAL);
+            textParams.gravity = Gravity.LEFT | Gravity.CENTER_VERTICAL;
+            if (element.getIcon() != null) {
                 wrapper.addView(iconView);
             }
             wrapper.addView(textView);
@@ -404,7 +397,7 @@ public class AboutPage {
         return wrapper;
     }
 
-    private View getSeparator(){
+    private View getSeparator() {
         return mInflater.inflate(R.layout.about_page_separator, null);
     }
 }
