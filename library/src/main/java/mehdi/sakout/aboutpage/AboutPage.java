@@ -27,11 +27,11 @@ import android.widget.TextView;
 public class AboutPage {
     private final Context mContext;
     private final LayoutInflater mInflater;
+    private final View mView;
     private String mDescription;
     private int mImage = 0;
     private boolean mIsRTL = false;
     private Typeface mCustomFont;
-    private final View mView;
 
     public AboutPage(Context context) {
         this.mContext = context;
@@ -265,11 +265,11 @@ public class AboutPage {
         textView.setPadding(padding, padding, padding, padding);
 
         if (mIsRTL) {
-            textView.setGravity(Gravity.RIGHT | Gravity.CENTER_VERTICAL);
-            textParams.gravity = Gravity.RIGHT | Gravity.CENTER_VERTICAL;
+            textView.setGravity(Gravity.END | Gravity.CENTER_VERTICAL);
+            textParams.gravity = Gravity.END | Gravity.CENTER_VERTICAL;
         } else {
-            textView.setGravity(Gravity.LEFT | Gravity.CENTER_VERTICAL);
-            textParams.gravity = Gravity.LEFT | Gravity.CENTER_VERTICAL;
+            textView.setGravity(Gravity.START | Gravity.CENTER_VERTICAL);
+            textParams.gravity = Gravity.START | Gravity.CENTER_VERTICAL;
         }
         textView.setLayoutParams(textParams);
 
@@ -378,16 +378,16 @@ public class AboutPage {
 
 
         if (mIsRTL) {
-            wrapper.setGravity(Gravity.RIGHT | Gravity.CENTER_VERTICAL);
-            textParams.gravity = Gravity.RIGHT | Gravity.CENTER_VERTICAL;
+            wrapper.setGravity(Gravity.END | Gravity.CENTER_VERTICAL);
+            textParams.gravity = Gravity.END | Gravity.CENTER_VERTICAL;
             wrapper.addView(textView);
             if (element.getIcon() != null) {
                 wrapper.addView(iconView);
             }
 
         } else {
-            wrapper.setGravity(Gravity.LEFT | Gravity.CENTER_VERTICAL);
-            textParams.gravity = Gravity.LEFT | Gravity.CENTER_VERTICAL;
+            wrapper.setGravity(Gravity.START | Gravity.CENTER_VERTICAL);
+            textParams.gravity = Gravity.START | Gravity.CENTER_VERTICAL;
             if (element.getIcon() != null) {
                 wrapper.addView(iconView);
             }
