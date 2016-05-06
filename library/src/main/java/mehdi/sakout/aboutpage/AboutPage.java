@@ -264,6 +264,7 @@ public class AboutPage {
         int padding = mContext.getResources().getDimensionPixelSize(R.dimen.about_group_text_padding);
         textView.setPadding(padding, padding, padding, padding);
 
+
         if (mIsRTL) {
             textView.setGravity(Gravity.END | Gravity.CENTER_VERTICAL);
             textParams.gravity = Gravity.END | Gravity.CENTER_VERTICAL;
@@ -378,16 +379,22 @@ public class AboutPage {
 
 
         if (mIsRTL) {
-            wrapper.setGravity(Gravity.END | Gravity.CENTER_VERTICAL);
-            textParams.gravity = Gravity.END | Gravity.CENTER_VERTICAL;
+
+            final int gravity = element.getGravity() != null ? element.getGravity() : Gravity.END;
+
+            wrapper.setGravity(gravity | Gravity.CENTER_VERTICAL);
+            //noinspection ResourceType
+            textParams.gravity = gravity | Gravity.CENTER_VERTICAL;
             wrapper.addView(textView);
             if (element.getIcon() != null) {
                 wrapper.addView(iconView);
             }
 
         } else {
-            wrapper.setGravity(Gravity.START | Gravity.CENTER_VERTICAL);
-            textParams.gravity = Gravity.START | Gravity.CENTER_VERTICAL;
+            final int gravity = element.getGravity() != null ? element.getGravity() : Gravity.START;
+            wrapper.setGravity(gravity | Gravity.CENTER_VERTICAL);
+            //noinspection ResourceType
+            textParams.gravity = gravity | Gravity.CENTER_VERTICAL;
             if (element.getIcon() != null) {
                 wrapper.addView(iconView);
             }
