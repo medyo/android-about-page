@@ -39,8 +39,8 @@ public class AboutPage {
         this.mView = mInflater.inflate(R.layout.about_page, null);
     }
 
-    public AboutPage setCustomFont(String fontName) {
-        mCustomFont = Typeface.createFromAsset(mContext.getAssets(), fontName);
+    public AboutPage setCustomFont(String path) {
+        mCustomFont = Typeface.createFromAsset(mContext.getAssets(), path);
         return this;
     }
 
