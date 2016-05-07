@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_youtube">Youtube\'da izle</string>
+    <string name="about_contact_us">İletişime geç</string>
+    <string name="about_facebook">Facebook\'ta beğen</string>
+    <string name="about_github">Github\'da beğen</string>
+    <string name="about_instagram">Instagram\'da takip et</string>
+    <string name="about_play_store">Play Store\'da puan ver</string>
+    <string name="about_twitter">Twitter\'da takip et</string>
+    <string name="about_website">Sitemizi ziyaret et</string>
+</resources>
