@@ -101,6 +101,7 @@ The library does supports the following languages :
 * French (by [medyo](https://github.com/medyo))
 * Simplified Chinese (by [whiskeyfei](https://github.com/whiskeyfei))
 * Spanish (by [danramirez](https://github.com/danramirez))
+* Japanese (by [chibatching](https://github.com/chibatching))
 
 Please make a Pull request to add a new language.
 
