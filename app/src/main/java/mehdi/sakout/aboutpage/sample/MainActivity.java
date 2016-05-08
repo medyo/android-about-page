@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
         adsElement.setTitle("Advertise with us");
 
         View aboutPage = new AboutPage(this)
-                .setCustomFont("Chantelli_Antiqua.ttf")
                 .isRTL(false)
                 .setImage(R.drawable.dummy_image)
                 .addItem(versionElement)
