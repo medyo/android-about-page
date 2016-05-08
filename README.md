@@ -81,6 +81,7 @@ addItem(versionElement)
 | setTag(String) | Set a unique tag value to the element|
 | setIntent(Intent) | Set an intent to be called on `onClickListener` |
 | setGravity(Gravity) | Set a Gravity for the element  |
+| setOnClickListener(View.OnClickListener) | Set a Click listener for the element  |
 
 
 ## Sample Project
