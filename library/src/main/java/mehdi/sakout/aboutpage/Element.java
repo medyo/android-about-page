@@ -1,6 +1,7 @@
 package mehdi.sakout.aboutpage;
 
 import android.content.Intent;
+import android.view.View;
 
 /**
  * Created by medyo on 3/25/16.
@@ -15,6 +16,9 @@ public class Element {
     private Intent intent;
     private Integer gravity;
 
+    private View.OnClickListener onClickListener;
+
+
     public Element() {
 
     }
@@ -23,6 +27,14 @@ public class Element {
         this.tag = tag;
         this.title = title;
         this.icon = icon;
+    }
+
+    public View.OnClickListener getOnClickListener() {
+        return onClickListener;
+    }
+
+    public void setOnClickListener(View.OnClickListener onClickListener) {
+        this.onClickListener = onClickListener;
     }
 
     public Integer getGravity() {

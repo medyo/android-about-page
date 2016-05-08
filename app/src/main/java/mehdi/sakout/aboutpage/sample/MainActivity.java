@@ -5,6 +5,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -48,11 +49,17 @@ public class MainActivity extends AppCompatActivity {
 
     Element getCopyRightsElement() {
         Element copyRightsElement = new Element();
-        final String copyrights = String.format(getString(R.string.copy_right), Calendar.getInstance().get(Calendar.YEAR)   );
+        final String copyrights = String.format(getString(R.string.copy_right), Calendar.getInstance().get(Calendar.YEAR));
         copyRightsElement.setTitle(copyrights);
         copyRightsElement.setIcon(R.drawable.about_icon_copy_right);
         copyRightsElement.setColor(ContextCompat.getColor(this, mehdi.sakout.aboutpage.R.color.about_item_icon_color));
         copyRightsElement.setGravity(Gravity.CENTER);
+        copyRightsElement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, copyrights, Toast.LENGTH_SHORT).show();
+            }
+        });
         return copyRightsElement;
     }
 }

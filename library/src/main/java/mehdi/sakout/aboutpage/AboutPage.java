@@ -313,7 +313,9 @@ public class AboutPage {
         wrapper.setOrientation(LinearLayout.HORIZONTAL);
         wrapper.setClickable(true);
 
-        if (element.getIntent() != null) {
+        if (element.getOnClickListener() != null) {
+            wrapper.setOnClickListener(element.getOnClickListener());
+        } else if (element.getIntent() != null) {
             wrapper.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
