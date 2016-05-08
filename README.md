@@ -102,6 +102,7 @@ The library does supports the following languages :
 * Simplified Chinese (by [whiskeyfei](https://github.com/whiskeyfei))
 * Spanish (by [danramirez](https://github.com/danramirez))
 * Japanese (by [chibatching](https://github.com/chibatching))
+* Turkish (by [tekseker](https://github.com/tekseker))
 
 Please make a Pull request to add a new language.
 
