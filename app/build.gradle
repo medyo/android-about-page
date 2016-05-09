@@ -8,8 +8,8 @@ android {
         applicationId "mehdi.sakout.aboutpage.sample"
         minSdkVersion 10
         targetSdkVersion 23
-        versionCode 8
-        versionName "1.0.7"
+        versionCode 9
+        versionName "1.0.8"
     }
     buildTypes {
         release {
