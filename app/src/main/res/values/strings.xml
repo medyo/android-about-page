@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Android About Page</string>
+    <string name="copy_right">Copyrights © %1$d</string>
 </resources>

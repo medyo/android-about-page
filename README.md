@@ -80,6 +80,8 @@ addItem(versionElement)
 | setValue(String) | Set Element value like Facebook ID|
 | setTag(String) | Set a unique tag value to the element|
 | setIntent(Intent) | Set an intent to be called on `onClickListener` |
+| setGravity(Gravity) | Set a Gravity for the element  |
+| setOnClickListener(View.OnClickListener) | If `intent` isn't suitable for you need, implement your custom behaviour by overriding the click listener|
 
 
 ## Sample Project

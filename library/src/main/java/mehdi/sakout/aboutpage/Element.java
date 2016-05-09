@@ -1,7 +1,7 @@
 package mehdi.sakout.aboutpage;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
+import android.view.View;
 
 /**
  * Created by medyo on 3/25/16.
@@ -14,8 +14,12 @@ public class Element {
     private Integer color;
     private String value;
     private Intent intent;
+    private Integer gravity;
 
-    public Element(){
+    private View.OnClickListener onClickListener;
+
+
+    public Element() {
 
     }
 
@@ -23,6 +27,22 @@ public class Element {
         this.tag = tag;
         this.title = title;
         this.icon = icon;
+    }
+
+    public View.OnClickListener getOnClickListener() {
+        return onClickListener;
+    }
+
+    public void setOnClickListener(View.OnClickListener onClickListener) {
+        this.onClickListener = onClickListener;
+    }
+
+    public Integer getGravity() {
+        return gravity;
+    }
+
+    public void setGravity(Integer gravity) {
+        this.gravity = gravity;
     }
 
     public String getTag() {
