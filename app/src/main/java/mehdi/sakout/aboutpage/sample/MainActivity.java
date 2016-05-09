@@ -18,9 +18,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Element versionElement = new Element();
-        versionElement.setTitle("Version 6.2");
-        versionElement.setGravity(Gravity.CENTER);
 
         Element adsElement = new Element();
         adsElement.setTitle("Advertise with us");
@@ -28,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         View aboutPage = new AboutPage(this)
                 .isRTL(false)
                 .setImage(R.drawable.dummy_image)
-                .addItem(versionElement)
+                .addItem(new Element().setTitle("Version 6.2"))
                 .addItem(adsElement)
                 .addGroup("Connect with us")
                 .addEmail("elmehdi.sakout@gmail.com")
