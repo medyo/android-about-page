@@ -365,12 +365,14 @@ public class AboutPage {
 
             Drawable wrappedDrawable = DrawableCompat.wrap(iconView.getDrawable());
             wrappedDrawable = wrappedDrawable.mutate();
-
-            if (element.getColor() != null) {
-                DrawableCompat.setTint(wrappedDrawable, element.getColor());
-            } else {
-                DrawableCompat.setTint(wrappedDrawable, ContextCompat.getColor(mContext, R.color.about_item_icon_color));
+            if (element.getAutoIconColor()){
+                if (element.getColor() != null) {
+                    DrawableCompat.setTint(wrappedDrawable, element.getColor());
+                } else {
+                    DrawableCompat.setTint(wrappedDrawable, ContextCompat.getColor(mContext, R.color.about_item_icon_color));
+                }
             }
+
         } else {
             int iconPadding = mContext.getResources().getDimensionPixelSize(R.dimen.about_icon_padding);
             textView.setPadding(iconPadding, iconPadding, iconPadding, iconPadding);

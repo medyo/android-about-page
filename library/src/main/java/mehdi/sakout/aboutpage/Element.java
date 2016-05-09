@@ -15,6 +15,7 @@ public class Element {
     private String value;
     private Intent intent;
     private Integer gravity;
+    private Boolean autoIconColor = true;
 
     private View.OnClickListener onClickListener;
 
@@ -96,6 +97,15 @@ public class Element {
 
     public Element setIntent(Intent intent) {
         this.intent = intent;
+        return this;
+    }
+
+    public Boolean getAutoIconColor() {
+        return autoIconColor;
+    }
+
+    public Element setAutoIconColor(Boolean autoIconColor) {
+        this.autoIconColor = autoIconColor;
         return this;
     }
 }
