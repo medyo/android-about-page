@@ -34,8 +34,9 @@ public class Element {
         return onClickListener;
     }
 
-    public void setOnClickListener(View.OnClickListener onClickListener) {
+    public Element setOnClickListener(View.OnClickListener onClickListener) {
         this.onClickListener = onClickListener;
+        return this;
     }
 
     public Integer getGravity() {
