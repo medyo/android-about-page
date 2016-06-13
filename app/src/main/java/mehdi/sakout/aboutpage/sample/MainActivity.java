@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 .addWebsite("http://medyo.github.io/")
                 .addFacebook("the.medy")
                 .addTwitter("medyo80")
+                .addWeibo("zhaocq")
                 .addYoutube("UCdPQtdWIsg7_pi4mrRu46vA")
                 .addPlayStore("com.ideashower.readitlater.pro")
                 .addInstagram("medyo80")
