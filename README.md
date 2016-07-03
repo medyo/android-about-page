@@ -105,6 +105,8 @@ The library does supports the following languages :
 * Spanish (by [danramirez](https://github.com/danramirez))
 * Japanese (by [chibatching](https://github.com/chibatching))
 * Turkish (by [tekseker](https://github.com/tekseker))
+* Catalan (by [unxavi](https://github.com/unxavi))
+* Czech (by [semanticer](https://github.com/semanticer))
 
 Please make a Pull request to add a new language.
 
