@@ -1,0 +1,10 @@
+<resources>
+    <string name="about_contact_us">Napište nám</string>
+    <string name="about_instagram">Sledujte nás na Instagramu</string>
+    <string name="about_facebook">Lajkněte nás na Facebooku</string>
+    <string name="about_play_store">Ohodnoťte nás v Obchodě Play</string>
+    <string name="about_youtube">Sledujte nás na Youtube</string>
+    <string name="about_twitter">Sledujte nás na Twitteru</string>
+    <string name="about_github">Forkni nás na GitHubu</string>
+    <string name="about_website">Navštivte naše webové stránky</string>
+</resources>
