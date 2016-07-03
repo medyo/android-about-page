@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_contact_us">Contacte</string>
+    <string name="about_instagram">Segueix-nos a Instagram</string>
+    <string name="about_facebook">Segueix-nos a Facebook</string>
+    <string name="about_play_store">Puntua\'ns a Play Store</string>
+    <string name="about_youtube">Mira els nostres vídeos a Youtube</string>
+    <string name="about_twitter">Segueix-nos a Twitter</string>
+    <string name="about_github">Fes una còpia a GitHub</string>
+    <string name="about_website">Visita la nostra pàgina web</string>
+</resources>
