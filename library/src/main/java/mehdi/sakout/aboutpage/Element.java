@@ -43,8 +43,9 @@ public class Element {
         return gravity;
     }
 
-    public void setGravity(Integer gravity) {
+    public Element setGravity(Integer gravity) {
         this.gravity = gravity;
+        return this;
     }
 
     public String getTag() {
