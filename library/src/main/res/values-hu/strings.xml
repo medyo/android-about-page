@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_github">Fork-olj minket GitHub-on</string>
+    <string name="about_contact_us">Írj nekünk</string>
+    <string name="about_instagram">Kövess minket Instagram-on</string>
+    <string name="about_facebook">Lájkolj minket Facebook-on</string>
+    <string name="about_play_store">Értékelj minket a Play Store-ban</string>
+    <string name="about_twitter">Kövess minket Twitter-en</string>
+    <string name="about_website">Látogasd meg weboldalunkat</string>
+    <string name="about_youtube">Nézz minket Youtube-on</string>
+</resources>
