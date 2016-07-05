@@ -94,7 +94,7 @@ The library does supports the following languages :
 * German (by [vanniktech](https://github.com/vanniktech))
 * Italian (by [greenaddress](https://github.com/greenaddress))
 * Croatian (by [skmlcd](https://github.com/skmlcd))
-* Arabic (by [ZakariaBoualaid](https://github.com/ZakariaBoualaid))
+* Arabic (by [Skyish](https://github.com/Skyish-me))
 * Slovenian (by [skmlcd](https://github.com/skmlcd))
 * Ukrainian (by [NumezmaT](https://github.com/NumezmaT))
 * Russian (by [NumezmaT](https://github.com/NumezmaT))
