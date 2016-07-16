@@ -107,6 +107,7 @@ The library does supports the following languages :
 * Turkish (by [tekseker](https://github.com/tekseker))
 * Catalan (by [unxavi](https://github.com/unxavi))
 * Czech (by [semanticer](https://github.com/semanticer))
+* Hungarian (by [jbarat](https://github.com/jbarat))
 
 Please make a Pull request to add a new language.
 
