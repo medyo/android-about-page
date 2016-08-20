@@ -1,0 +1,13 @@
+<resources>
+    <string name="about_page_description" translatable="false" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vehicula ligula tortor, in pellentesque dui congue ac. Vestibulum lacinia urna magna, quis cursus ante iaculis nec. Nunc ut ligula sit amet odio ultrices euismod vel vel purus. Sed lacus mauris, aliquam et placerat id</string>
+
+    <string name="about_contact_us">Kontakt</string>
+    <string name="about_instagram">Śledź nas na Instagramie</string>
+    <string name="about_facebook">Polub nas na Facebooku</string>
+    <string name="about_play_store">Oceń nas w Sklepie Play</string>
+    <string name="about_youtube">Zobacz nas na Youtube</string>
+    <string name="about_twitter">Śledź nas na Twitterze</string>
+    <string name="about_github">Sprawdź nas na GitHubie</string>
+    <string name="about_website">Odwiedź naszą stronę</string>
+
+</resources>
