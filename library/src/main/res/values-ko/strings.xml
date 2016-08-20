@@ -1,0 +1,10 @@
+<resources>
+    <string name="about_contact_us">개발자에게 연락하기</string>
+    <string name="about_instagram">인스타그램 팔로우하기</string>
+    <string name="about_facebook">페이스북 좋아요하기</string>
+    <string name="about_play_store">플레이 스토어 평점주기</string>
+    <string name="about_youtube">Youtube 동영상 보기</string>
+    <string name="about_twitter">트위터 팔로우하기</string>
+    <string name="about_github">GitHub 소스보기</string>
+    <string name="about_website">홈페이지 방문하기</string>
+</resources>
