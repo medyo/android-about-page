@@ -1,13 +1,16 @@
 # Android About Page Support for China APP
 一键创建关于页面，支持了国内主流应用的应用内跳转。
 
+## apk demo
+- [查看apkdemo](https://github.com/sunxu3074/android-about-page/blob/master/resources/demo.apk)
+
 ## 效果图
 <img src="/resources/m1l_preview.png" width="80%" alt="Android About Page Cover"/>
 
 ## 效果图gif (由于时间很长，gif很大，建议观看视频)
 - ![video.gif](https://github.com/sunxu3074/android-about-page/blob/master/resources/preview_video.gif)
-- [优酷观看]()
-- [Youtube观看]()
+- [优酷观看](http://v.youku.com/v_show/id_XMTgzOTkyMDQ2MA)
+- [Youtube观看](https://www.youtube.com/watch?v=vab9m76BfYY)
 
 ## 代码示例
 ```java
@@ -38,20 +41,25 @@ View aboutPage = new AboutPage(this)
 | 简书 | 1.11.5 |
 | 豆瓣 | 4.7.0 (85) |
 
+## 导入姿势
+
+下载工程，把library做module导入，再add module dependency即可。
+
 ## 感谢
 
 - [在线反编译](http://www.javadecompilers.com/)
 - [AlipayZeroSdk](https://github.com/fython/AlipayZeroSdk)
 - [TopActivity](https://github.com/109021017/android-TopActivity)
+- 反编译不易，望大家支持，欢迎支付宝赞赏我...
 
 
 
 
 
-
-
-
-# Android About Page
+- - - - - - - - - - 
+#### 原工程Readne
+- - - - - - - - - - 
+## Android About Page
 Create an awesome About Page for your Android App in 2 minutes
 
 <img src="/resources/cover.png" width="80%" alt="Android About Page Cover"/>
