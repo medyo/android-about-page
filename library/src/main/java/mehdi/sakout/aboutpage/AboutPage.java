@@ -1,8 +1,11 @@
 package mehdi.sakout.aboutpage;
 
+import android.content.ComponentName;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -12,6 +15,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v4.widget.TextViewCompat;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -20,6 +24,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import java.net.URISyntaxException;
+import java.util.logging.Logger;
 
 /**
  * Created by medyo on 3/25/16.
@@ -33,16 +39,19 @@ public class AboutPage {
     private boolean mIsRTL = false;
     private Typeface mCustomFont;
 
+
     public AboutPage(Context context) {
         this.mContext = context;
         this.mInflater = LayoutInflater.from(context);
         this.mView = mInflater.inflate(R.layout.about_page, null);
     }
 
+
     public AboutPage setCustomFont(String path) {
         mCustomFont = Typeface.createFromAsset(mContext.getAssets(), path);
         return this;
     }
+
 
     /*
         Add Email Element
@@ -55,12 +64,13 @@ public class AboutPage {
 
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("message/rfc822");
-        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[] { email });
         emailElement.setIntent(intent);
 
         addItem(emailElement);
         return this;
     }
+
 
     /*
         Add Facebook Element
@@ -88,11 +98,13 @@ public class AboutPage {
             if (versionCode >= 3002850) {
                 Uri uri = Uri.parse("fb://facewebmodal/f?href=" + "http://m.facebook.com/" + id);
                 intent.setData(uri);
-            } else {
+            }
+            else {
                 Uri uri = Uri.parse("fb://page/" + id);
                 intent.setData(uri);
             }
-        } else {
+        }
+        else {
             intent.setData(Uri.parse("http://m.facebook.com/" + id));
         }
 
@@ -120,7 +132,8 @@ public class AboutPage {
         if (AboutPageUtils.isAppInstalled(mContext, "com.twitter.android")) {
             intent.setPackage("com.twitter.android");
             intent.setData(Uri.parse(String.format("twitter://user?screen_name=%s", id)));
-        } else {
+        }
+        else {
             intent.setData(Uri.parse(String.format("http://twitter.com/intent/user?screen_name=%s", id)));
         }
 
@@ -128,6 +141,7 @@ public class AboutPage {
         addItem(twitterElement);
         return this;
     }
+
 
     /*
         Add Play store Element
@@ -146,6 +160,7 @@ public class AboutPage {
         addItem(playStoreElement);
         return this;
     }
+
 
     /*
         Add Youtube Element
@@ -171,6 +186,7 @@ public class AboutPage {
         return this;
     }
 
+
     /*
         Add Instagram Element
      */
@@ -195,6 +211,7 @@ public class AboutPage {
         return this;
     }
 
+
     /*
         Add GitHub Element
     */
@@ -215,6 +232,7 @@ public class AboutPage {
 
         return this;
     }
+
 
     /*
         Add Website Element
@@ -238,17 +256,25 @@ public class AboutPage {
         return this;
     }
 
+
     public AboutPage addItem(Element element) {
+        return this.addItem(element, true);
+    }
+
+
+    public AboutPage addItem(Element element, boolean isVertor) {
         LinearLayout wrapper = (LinearLayout) mView.findViewById(R.id.about_providers);
-        wrapper.addView(createItem(element));
+        wrapper.addView(createItem(element, isVertor));
         wrapper.addView(getSeparator(), new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, mContext.getResources().getDimensionPixelSize(R.dimen.about_separator_height)));
         return this;
     }
+
 
     public AboutPage setImage(int resource) {
         this.mImage = resource;
         return this;
     }
+
 
     public AboutPage addGroup(String name) {
 
@@ -264,11 +290,11 @@ public class AboutPage {
         int padding = mContext.getResources().getDimensionPixelSize(R.dimen.about_group_text_padding);
         textView.setPadding(padding, padding, padding, padding);
 
-
         if (mIsRTL) {
             textView.setGravity(Gravity.END | Gravity.CENTER_VERTICAL);
             textParams.gravity = Gravity.END | Gravity.CENTER_VERTICAL;
-        } else {
+        }
+        else {
             textView.setGravity(Gravity.START | Gravity.CENTER_VERTICAL);
             textParams.gravity = Gravity.START | Gravity.CENTER_VERTICAL;
         }
@@ -278,15 +304,18 @@ public class AboutPage {
         return this;
     }
 
+
     public AboutPage isRTL(boolean value) {
         this.mIsRTL = value;
         return this;
     }
 
+
     public AboutPage setDescription(String description) {
         this.mDescription = description;
         return this;
     }
+
 
     public View create() {
         TextView description = (TextView) mView.findViewById(R.id.description);
@@ -308,24 +337,29 @@ public class AboutPage {
         return mView;
     }
 
+
     private View createItem(final Element element) {
+        return this.createItem(element, true);
+    }
+
+
+    private View createItem(final Element element, boolean isVector) {
         LinearLayout wrapper = new LinearLayout(mContext);
         wrapper.setOrientation(LinearLayout.HORIZONTAL);
         wrapper.setClickable(true);
 
         if (element.getOnClickListener() != null) {
             wrapper.setOnClickListener(element.getOnClickListener());
-        } else if (element.getIntent() != null) {
+        }
+        else if (element.getIntent() != null) {
             wrapper.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+                @Override public void onClick(View view) {
                     try {
                         mContext.startActivity(element.getIntent());
                     } catch (Exception e) {
                     }
                 }
             });
-
         }
 
         TypedValue outValue = new TypedValue();
@@ -336,7 +370,6 @@ public class AboutPage {
         wrapper.setPadding(padding, padding, padding, padding);
         LinearLayout.LayoutParams wrapperParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         wrapper.setLayoutParams(wrapperParams);
-
 
         TextView textView = new TextView(mContext);
         TextViewCompat.setTextAppearance(textView, R.style.about_elementTextAppearance);
@@ -357,30 +390,36 @@ public class AboutPage {
             iconView.setPadding(iconPadding, 0, iconPadding, 0);
 
             if (Build.VERSION.SDK_INT < 21) {
-                Drawable drawable = VectorDrawableCompat.create(iconView.getResources(), element.getIcon(), iconView.getContext().getTheme());
-                iconView.setImageDrawable(drawable);
-            } else {
-                iconView.setImageResource(element.getIcon());
-            }
-
-            Drawable wrappedDrawable = DrawableCompat.wrap(iconView.getDrawable());
-            wrappedDrawable = wrappedDrawable.mutate();
-            if (element.getAutoIconColor()){
-                if (element.getColor() != null) {
-                    DrawableCompat.setTint(wrappedDrawable, element.getColor());
-                } else {
-                    DrawableCompat.setTint(wrappedDrawable, ContextCompat.getColor(mContext, R.color.about_item_icon_color));
+                if (isVector) {
+                    Drawable drawable = VectorDrawableCompat.create(iconView.getResources(), element.getIcon(), iconView.getContext().getTheme());
+                    iconView.setImageDrawable(drawable);
+                }
+                else {
+                    iconView.setImageResource(element.getIcon());
                 }
             }
-
-        } else {
+            else {
+                iconView.setImageResource(element.getIcon());
+            }
+            if (isVector) {
+                Drawable wrappedDrawable = DrawableCompat.wrap(iconView.getDrawable());
+                wrappedDrawable = wrappedDrawable.mutate();
+                if (element.getAutoIconColor()) {
+                    if (element.getColor() != null) {
+                        DrawableCompat.setTint(wrappedDrawable, element.getColor());
+                    }
+                    else {
+                        DrawableCompat.setTint(wrappedDrawable, ContextCompat.getColor(mContext, R.color.about_item_icon_color));
+                    }
+                }
+            }
+        }
+        else {
             int iconPadding = mContext.getResources().getDimensionPixelSize(R.dimen.about_icon_padding);
             textView.setPadding(iconPadding, iconPadding, iconPadding, iconPadding);
         }
 
-
         textView.setText(element.getTitle());
-
 
         if (mIsRTL) {
 
@@ -393,8 +432,8 @@ public class AboutPage {
             if (element.getIcon() != null) {
                 wrapper.addView(iconView);
             }
-
-        } else {
+        }
+        else {
             final int gravity = element.getGravity() != null ? element.getGravity() : Gravity.START;
             wrapper.setGravity(gravity | Gravity.CENTER_VERTICAL);
             //noinspection ResourceType
@@ -408,7 +447,233 @@ public class AboutPage {
         return wrapper;
     }
 
+
     private View getSeparator() {
         return mInflater.inflate(R.layout.about_page_separator, null);
+    }
+
+    /**
+     * for China App
+     */
+
+    /**
+     * Des : 关注我的知乎
+     *
+     * @param id 知乎的username
+     */
+    public AboutPage addZhihu(String id) {
+        Element zhihuElement = new Element();
+        zhihuElement.setTitle(mContext.getString(R.string.about_zhihu));
+        zhihuElement.setIcon(R.drawable.ic_zhihu);
+        zhihuElement.setValue(id);
+
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+        intent.setData(Uri.parse(String.format("https://www.zhihu.com/people/%s", id)));
+
+        if (AboutPageUtils.isAppInstalled(mContext, "com.zhihu.android")) {
+            intent.setPackage("com.zhihu.android");
+        }
+
+        zhihuElement.setIntent(intent);
+        addItem(zhihuElement, false);
+
+        return this;
+    }
+
+
+    /**
+     * 在qq上与我交谈
+     *
+     * @param id qq号码
+     */
+    public AboutPage addQQ(String id) {
+        Element qqElement = new Element();
+        qqElement.setTitle(mContext.getString(R.string.about_qq));
+        qqElement.setIcon(R.drawable.ic_qq);
+        qqElement.setValue(id);
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+        intent.setData(Uri.parse(String.format("mqqwpa://im/chat?chat_type=wpa&uin=%s", id)));
+
+        if (AboutPageUtils.isAppInstalled(mContext, "com.tencent.mobileqq")) {
+            intent.setPackage("com.tencent.mobileqq");
+        }
+
+        qqElement.setIntent(intent);
+        addItem(qqElement, false);
+
+        return this;
+    }
+
+
+    /**
+     * 关注我的sina微博
+     *
+     * @param id sina号
+     */
+    public AboutPage addSinaWeibo(String id) {
+        Element qqElement = new Element();
+        qqElement.setTitle(mContext.getString(R.string.about_sina));
+        qqElement.setIcon(R.drawable.ic_sina_weibo);
+        qqElement.setValue(id);
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+        intent.setData(Uri.parse(String.format("http://weibo.cn/qr/userinfo?uid=%s", id)));
+
+        if (AboutPageUtils.isAppInstalled(mContext, "com.sina.weibo")) {
+            intent.setComponent(new ComponentName("com.sina.weibo", "com.sina.weibo.page.ProfileInfoActivity"));
+            intent.setPackage("com.sina.weibo");
+        }
+
+        qqElement.setIntent(intent);
+        addItem(qqElement, false);
+
+        return this;
+    }
+
+
+    /**
+     * 在稀土掘金上关注我
+     *
+     * 由于UserHomePageActivity的"android:exported"属性为false,也没有对应的scheme,所以暂不支持跳转.. (当前版本3.7.5)
+     *
+     * @param id userId
+     */
+    public AboutPage addGoldXitu(String id) {
+        Element qqElement = new Element();
+        qqElement.setTitle(mContext.getString(R.string.about_gold_xitu));
+        qqElement.setIcon(R.drawable.ic_gold_xitu);
+        qqElement.setValue(id);
+        Intent intent = new Intent();
+        //intent.setAction(Intent.ACTION_VIEW);
+        //intent.addCategory(Intent.CATEGORY_BROWSABLE);
+        intent.putExtra("user_id", "57c92a3c67f3560057b03348");
+        intent.setData(Uri.parse(String.format("http://gold.xitu.io/user/%s", id)));
+
+        if (AboutPageUtils.isAppInstalled(mContext, "com.daimajia.gold")) {
+            intent.setComponent(new ComponentName("com.daimajia.gold", "com.daimajia.gold.ui.user.UserHomePageActivity"));
+            intent.setPackage("com.daimajia.gold");
+        }
+
+        qqElement.setIntent(intent);
+        addItem(qqElement, false);
+
+        return this;
+    }
+
+
+    /**
+     * Des : 关注我的简书
+     *
+     * @param id 简书ID
+     */
+    public AboutPage addJianshu(String id) {
+        Element zhihuElement = new Element();
+        zhihuElement.setTitle(mContext.getString(R.string.about_jianshu));
+        zhihuElement.setIcon(R.drawable.ic_jianshu);
+        zhihuElement.setValue(id);
+
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+        intent.putExtra("_id", id);
+
+        if (AboutPageUtils.isAppInstalled(mContext, "com.jianshu.haruki")) {
+            intent.setComponent(new ComponentName("com.jianshu.haruki", "com.baiji.jianshu.activity.UserCenterActivity"));
+            intent.setPackage("com.jianshu.haruki");
+        }
+
+        zhihuElement.setIntent(intent);
+        addItem(zhihuElement, false);
+
+        return this;
+    }
+
+
+    /**
+     * Des : 关注我的豆瓣
+     *
+     * @param id douban people ID
+     */
+    public AboutPage addDouban(String id) {
+        Element doubanElement = new Element();
+        doubanElement.setTitle(mContext.getString(R.string.about_douban));
+        doubanElement.setIcon(R.drawable.ic_douban);
+        doubanElement.setValue(id);
+
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+        intent.setData(Uri.parse(String.format("https://www.douban.com/people/%s", id)));
+
+        if (AboutPageUtils.isAppInstalled(mContext, "com.douban.frodo")) {
+            intent.setPackage("com.douban.frodo");
+        }
+
+        doubanElement.setIntent(intent);
+        addItem(doubanElement, false);
+
+        return this;
+    }
+
+
+    /**
+     * Des : 关注我的饭否
+     *
+     * @param id fanfou ID
+     */
+    public AboutPage addFanfou(String id) {
+        Element fanfouElement = new Element();
+        fanfouElement.setTitle(mContext.getString(R.string.about_fanfou));
+        fanfouElement.setIcon(R.drawable.ic_minicat);
+        fanfouElement.setValue(id);
+
+        Intent intent = new Intent();
+        intent.putExtra("id", id);
+
+        if (AboutPageUtils.isAppInstalled(mContext, "com.mcxiaoke.minicat2")) {
+            intent.setComponent(new ComponentName("com.mcxiaoke.minicat2", "com.mcxiaoke.minicat.app.UIProfile"));
+            intent.setPackage("com.mcxiaoke.minicat2");
+        }
+
+        fanfouElement.setIntent(intent);
+        addItem(fanfouElement, false);
+
+        return this;
+    }
+
+
+    /**
+     * Des : 在支付宝上赞助我
+     *
+     * @param id alipay qrcode
+     */
+    public AboutPage addAlipay(final String id) {
+        Element fanfouElement = new Element();
+        fanfouElement.setTitle(mContext.getString(R.string.about_alipay));
+        fanfouElement.setIcon(R.drawable.ic_alipay);
+        fanfouElement.setValue(id);
+
+        try {
+            String alipayIntentUri =
+                    "intent://platformapi/startapp?saId=10000007&clientVersion=3.7.0.0718&qrcode=https%3A%2F%2Fqr.alipay.com%2F{urlCode}%3F_s%3Dweb-other&_t=1472443966571#Intent;scheme=alipayqr;" +
+                            "package=com.eg.android.AlipayGphone;end";
+            Intent intent = Intent.parseUri((alipayIntentUri.replace("{urlCode}", id)), Intent.URI_INTENT_SCHEME);
+            intent.putExtra("id", id);
+
+            if (AboutPageUtils.isAppInstalled(mContext, "com.eg.android.AlipayGphone")) {
+                intent.setPackage("com.eg.android.AlipayGphone");
+            }
+
+            fanfouElement.setIntent(intent);
+            addItem(fanfouElement, false);
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+        return this;
     }
 }

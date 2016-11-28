@@ -24,18 +24,33 @@ public class MainActivity extends AppCompatActivity {
 
         View aboutPage = new AboutPage(this)
                 .isRTL(false)
-                .setImage(R.drawable.dummy_image)
+                .setImage(R.drawable.ic_cn_preview)
+                .setDescription("在原有aboutpage基础上支持了中国主流应用，包括：支付宝、知乎、新浪微博、qq、饭否、简书、豆瓣。由于应用内部限制暂时不支持：微信、Acfun、Bilibili、掘金。")
+
+                .addGroup("Support for China APP")
+                .addAlipay("aex06786lptrb4cy1g54w15")
+                .addQQ("393353762")
+                .addZhihu("taken2016")
+                .addSinaWeibo("1291760303")
+                .addDouban("39114237")
+                .addJianshu("d86f33ff1f72")
+                .addFanfou("wangxing")
+                .addGoldXitu("56eac9bdb0146000293a233b")
+
                 .addItem(new Element().setTitle("Version 6.2"))
                 .addItem(adsElement)
                 .addGroup("Connect with us")
-                .addEmail("elmehdi.sakout@gmail.com")
-                .addWebsite("http://medyo.github.io/")
+                .addEmail("sunxu3074@gmail.com")
+                .addWebsite("http://isunxu.xyz/")
                 .addFacebook("the.medy")
                 .addTwitter("medyo80")
                 .addYoutube("UCdPQtdWIsg7_pi4mrRu46vA")
                 .addPlayStore("com.ideashower.readitlater.pro")
                 .addInstagram("medyo80")
-                .addGitHub("medyo")
+                .addGitHub("sunxu3074")
+
+
+
                 .addItem(getCopyRightsElement())
                 .create();
 

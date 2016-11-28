@@ -10,4 +10,15 @@
     <string name="about_github">Fork us on GitHub</string>
     <string name="about_website">Visit our website</string>
 
+    <!--China App-->
+    <string name="about_zhihu">Follow me on ZhiHu</string>
+    <string name="about_jianshu">Follow me on Jianshu</string>
+    <string name="about_douban">Follow me on Douban</string>
+    <string name="about_fanfou">Follow me on Fanfou</string>
+    <string name="about_alipay">Sponsor me on Alipay</string>
+    <string name="about_qq">Talking on QQ</string>
+    <string name="about_sina">Follow me on Sina</string>
+    <string name="about_wechat_friend">Talking on Wechat</string>
+    <string name="about_gold_xitu">Follow me on GoldXitu (Now Enabled)</string>
+
 </resources>

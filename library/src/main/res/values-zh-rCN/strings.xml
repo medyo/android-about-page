@@ -7,4 +7,15 @@
     <string name="about_twitter">关注 Twitter</string>
     <string name="about_github">关注 GitHub</string>
     <string name="about_website">欢迎访问我们的网站</string>
+
+
+    <!--China App-->
+    <string name="about_zhihu">关注 知乎</string>
+    <string name="about_jianshu">关注 简书</string>
+    <string name="about_douban">关注 豆瓣</string>
+    <string name="about_fanfou">关注 饭否</string>
+    <string name="about_alipay">在 支付宝 上赞助我</string>
+    <string name="about_qq">在 QQ 上与我聊天</string>
+    <string name="about_sina">关注 新浪微博</string>
+    <string name="about_gold_xitu">关注 掘金 (暂不支持跳转)</string>
 </resources>
