@@ -57,7 +57,7 @@ View aboutPage = new AboutPage(this)
 
 
 - - - - - - - - - - 
-#### 原工程Readne
+#### 原工程Readme
 - - - - - - - - - - 
 ## Android About Page
 Create an awesome About Page for your Android App in 2 minutes
