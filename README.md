@@ -1,3 +1,56 @@
+# Android About Page Support for China APP
+一键创建关于页面，支持了国内主流应用的应用内跳转。
+
+## 效果图
+<img src="/resources/m1l_preview.png" width="80%" alt="Android About Page Cover"/>
+
+## 效果图gif (由于时间很长，gif很大，建议观看视频)
+- ![video.gif](https://github.com/sunxu3074/android-about-page/blob/master/resources/preview_video.gif)
+- [优酷观看]()
+- [Youtube观看]()
+
+## 代码示例
+```java
+View aboutPage = new AboutPage(this)
+                .isRTL(false)
+                .setImage(R.drawable.ic_cn_preview)
+                .setDescription("在原有aboutpage基础上支持了中国主流应用，包括：支付宝、知乎、新浪微博、qq、饭否、简书、豆瓣。由于应用内部限制暂时不支持：微信、Acfun、Bilibili、掘金。")
+                .addGroup("Support for China APP")
+                .addAlipay("aex06786lptrb4cy1g54w15")
+                .addQQ("393353762")
+                .addZhihu("taken2016")
+                .addSinaWeibo("1291760303")
+                .addDouban("39114237")
+                .addJianshu("d86f33ff1f72")
+                .addFanfou("wangxing")
+                .addGoldXitu("56eac9bdb0146000293a233b")
+```
+
+## 说明 (饭否是用了蘑菇饭作为默认应用)
+
+| 应用名称        | 版本名称  |
+| ------------- |:-------------:| -----:|
+| 支付宝 | 9.9.5|
+| 知乎 | 4.10.1 (443)|
+| 新浪微博 | 6.3.1|
+| QQ | 6.5.8.2910|
+| 饭否 | 1.5.5|
+| 简书 | 1.11.5 |
+| 豆瓣 | 4.7.0 (85) |
+
+## 感谢
+
+- [在线反编译](http://www.javadecompilers.com/)
+- [AlipayZeroSdk](https://github.com/fython/AlipayZeroSdk)
+- [TopActivity](https://github.com/109021017/android-TopActivity)
+
+
+
+
+
+
+
+
 # Android About Page
 Create an awesome About Page for your Android App in 2 minutes
 
