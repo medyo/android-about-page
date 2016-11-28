@@ -43,7 +43,7 @@ View aboutPage = new AboutPage(this)
 
 ## 导入姿势
 
-下载工程，把library做module导入，再add module dependency即可。
+下载工程，把library作module导入，再add module dependency即可。
 
 ## 感谢
 
