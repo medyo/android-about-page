@@ -1,14 +1,19 @@
 # Android About Page Support for China APP
 一键创建关于页面，支持了国内主流应用的应用内跳转。
 
+## 功能介绍
+- 点击跳转支付宝捐赠页面
+- 点击直接与我qq聊天
+- 点击关注知乎、新浪微博、豆瓣、简书、饭否
+
 ## apk demo
 - [查看apkdemo](https://github.com/sunxu3074/android-about-page/blob/master/resources/demo.apk)
 
 ## 效果图
-<img src="/resources/m1l_preview.png" width="80%" alt="Android About Page Cover"/>
+<img src="/resources/m1l_preview.png" width="50%" height="50%" alt="m1l预览图"/>
 
 ## 效果图gif (由于时间很长，gif很大，建议观看视频)
-- ![video.gif](https://github.com/sunxu3074/android-about-page/blob/master/resources/preview_video.gif)
+- <img src="/resources/preview_video.gif" width="50%" height="50%" alt="m1l预览gif"/>
 - [优酷观看](http://v.youku.com/v_show/id_XMTgzOTkyMDQ2MA)
 - [Youtube观看](https://www.youtube.com/watch?v=vab9m76BfYY)
 
