@@ -130,6 +130,32 @@ public class AboutPage {
     }
 
     /*
+       Add Weibo Element
+    */
+    public AboutPage addWeibo(String id) {
+        Element weiboElement = new Element();
+        weiboElement.setTitle(mContext.getString(R.string.about_weibo));
+        weiboElement.setIcon(R.drawable.about_icon_weibo);
+        weiboElement.setColor(ContextCompat.getColor(mContext, R.color.about_weibo_color));
+        weiboElement.setValue(id);
+
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+
+        if (AboutPageUtils.isAppInstalled(mContext, "com.sina.weibo")) {
+            intent.setPackage("com.sina.weibo");
+            intent.setData(Uri.parse(String.format("sinaweibo://userinfo?uid=%s", id)));
+        } else {
+            intent.setData(Uri.parse(String.format("http://weibo.com/u/%s", id)));
+        }
+
+        weiboElement.setIntent(intent);
+        addItem(weiboElement);
+        return this;
+    }
+
+    /*
         Add Play store Element
      */
     public AboutPage addPlayStore(String id) {

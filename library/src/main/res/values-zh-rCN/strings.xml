@@ -5,6 +5,7 @@
     <string name="about_play_store">去 Play Store 上评分</string>
     <string name="about_youtube">在 Youtube 上查看</string>
     <string name="about_twitter">关注 Twitter</string>
+    <string name="about_weibo">关注 Weibo</string>
     <string name="about_github">关注 GitHub</string>
     <string name="about_website">欢迎访问我们的网站</string>
 </resources>

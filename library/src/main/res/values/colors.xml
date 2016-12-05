@@ -3,6 +3,7 @@
     <!-- Social -->
     <color name="about_facebook_color">#3b5998</color>
     <color name="about_twitter_color">#55acee</color>
+    <color name="about_weibo_color">#e6162d</color>
     <color name="about_instagram_color">#3f729b</color>
     <color name="about_play_store_color">#45BBC2</color>
     <color name="about_youtube_color">#cd201f</color>
@@ -12,5 +13,5 @@
     <color name="about_separator_color">#e1e1e1</color>
     <color name="about_item_text_color">#7c7c7c</color>
     <color name="about_text_color">#595959</color>
-    
+
 </resources>
