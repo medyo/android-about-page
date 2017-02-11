@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- General -->
+    <color name="about_background_color">#303030</color>
+    <color name="about_separator_color">#494949</color>
+
+    <!-- Text -->
+    <color name="about_description_text_color">#C1C1C1</color>
+    <color name="about_item_text_color">#FFFFFF</color>
+    <color name="about_text_color">#C1C1C1</color>
+</resources>

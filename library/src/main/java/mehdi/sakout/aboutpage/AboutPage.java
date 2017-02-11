@@ -3,14 +3,19 @@ package mehdi.sakout.aboutpage;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.LayerDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v4.widget.TextViewCompat;
+import android.support.v7.app.AppCompatDelegate;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -366,10 +371,17 @@ public class AboutPage {
             Drawable wrappedDrawable = DrawableCompat.wrap(iconView.getDrawable());
             wrappedDrawable = wrappedDrawable.mutate();
             if (element.getAutoIconColor()){
-                if (element.getColor() != null) {
-                    DrawableCompat.setTint(wrappedDrawable, element.getColor());
-                } else {
-                    DrawableCompat.setTint(wrappedDrawable, ContextCompat.getColor(mContext, R.color.about_item_icon_color));
+                int currentNightMode = mContext.getResources().getConfiguration().uiMode
+                        & Configuration.UI_MODE_NIGHT_MASK;
+                if(currentNightMode != Configuration.UI_MODE_NIGHT_YES){
+                    if (element.getColor() != null) {
+                        DrawableCompat.setTint(wrappedDrawable, element.getColor());
+                    } else {
+                        DrawableCompat.setTint(wrappedDrawable, ContextCompat.getColor(mContext, R.color.about_item_icon_color));
+                    }
+                }
+                else{
+                    DrawableCompat.setTint(wrappedDrawable, AboutPageUtils.getThemeAccentColor(mContext));
                 }
             }
 

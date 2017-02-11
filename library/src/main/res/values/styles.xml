@@ -6,7 +6,7 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:orientation">vertical</item>
         <item name="android:gravity">center</item>
-        <item name="android:background">#ffffff</item>
+        <item name="android:background">@color/about_background_color</item>
     </style>
     <style name="about_sub_wrapper">
         <item name="android:layout_width">match_parent</item>
@@ -28,7 +28,7 @@
         <item name="android:text">@string/about_page_description</item>
         <item name="android:lineSpacingExtra">8dp</item>
         <item name="android:layout_marginBottom">20dp</item>
-        <item name="android:textColor">@color/about_description_color</item>
+        <item name="android:textColor">@color/about_description_text_color</item>
         <item name="android:textSize">@dimen/about_description_text_size</item>
     </style>
     <style name="about_separator">
