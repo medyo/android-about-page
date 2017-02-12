@@ -1,5 +1,6 @@
 package mehdi.sakout.aboutpage;
 
+import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -8,6 +9,8 @@ import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Bundle;
+import android.support.annotation.DrawableRes;
 import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
@@ -22,6 +25,17 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+/**
+ * The main class of this library with many predefined methods to add Elements for common items in
+ * an About page. This class creates a {@link android.view.View} that can be passed as the root view
+ * in {@link Fragment#onCreateView(LayoutInflater, ViewGroup, Bundle)} or passed to the {@link android.app.Activity#setContentView(View)}
+ * in an activity's {@link android.app.Activity#onCreate(Bundle)} method
+ * <p>
+ * To create a custom item in the about page, pass an instance of {@link mehdi.sakout.aboutpage.Element}
+ * to the {@link AboutPage#addItem(Element)} method.
+ *
+ * @see Element
+ */
 public class AboutPage {
     private final Context mContext;
     private final LayoutInflater mInflater;
@@ -31,23 +45,53 @@ public class AboutPage {
     private boolean mIsRTL = false;
     private Typeface mCustomFont;
 
+    /**
+     * The AboutPage requires a context to perform it's functions. Give it a context associated to an
+     * Activity or a Fragment. To avoid memory leaks, don't pass a
+     * {@link android.content.Context#getApplicationContext() Context.getApplicationContext()} here.
+     *
+     * @param context
+     */
     public AboutPage(Context context) {
         this.mContext = context;
         this.mInflater = LayoutInflater.from(context);
         this.mView = mInflater.inflate(R.layout.about_page, null);
     }
 
+    /**
+     * Provide a valid path to a font here to use another font for the text inside this AboutPage
+     *
+     * @param path
+     * @return this AboutPage instance for builder pattern support
+     */
     public AboutPage setCustomFont(String path) {
+        //TODO: check if file exists
         mCustomFont = Typeface.createFromAsset(mContext.getAssets(), path);
         return this;
     }
 
-    /*
-        Add Email Element
+    /**
+     * Convenience method for {@link AboutPage#addEmail(java.lang.String, java.lang.String)} but with
+     * a predefined title string
+     *
+     * @param email the email address to send to
+     * @return this AboutPage instance for builder pattern support
      */
     public AboutPage addEmail(String email) {
+        return addEmail(email, mContext.getString(R.string.about_contact_us));
+    }
+
+    /**
+     * Add a predefined Element that opens the users default email client with a new email to the
+     * email address passed as parameter
+     *
+     * @param email the email address to send to
+     * @param title the title string to display on this item
+     * @return this AboutPage instance for builder pattern support
+     */
+    public AboutPage addEmail(String email, String title) {
         Element emailElement = new Element();
-        emailElement.setTitle(mContext.getString(R.string.about_contact_us));
+        emailElement.setTitle(title);
         emailElement.setIconDrawable(R.drawable.about_icon_email);
         emailElement.setIconTint(R.color.about_item_icon_color);
 
@@ -60,12 +104,28 @@ public class AboutPage {
         return this;
     }
 
-    /*
-        Add Facebook Element
+    /**
+     * Convenience method for {@link AboutPage#addFacebook(java.lang.String, java.lang.String)} but with
+     * a predefined title string
+     *
+     * @param id the facebook id to display
+     * @return this AboutPage instance for builder pattern support
      */
     public AboutPage addFacebook(String id) {
+        return addFacebook(id, mContext.getString(R.string.about_facebook));
+    }
+
+    /**
+     * Add a predefined Element that the opens Facebook app with a deep link to the specified user id
+     * If the Facebook application is not installed this will open a web page instead.
+     *
+     * @param id    the id of the Facebook user to display in the Facebook app
+     * @param title the title to display on this item
+     * @return this AboutPage instance for builder pattern support
+     */
+    public AboutPage addFacebook(String id, String title) {
         Element facebookElement = new Element();
-        facebookElement.setTitle(mContext.getString(R.string.about_facebook));
+        facebookElement.setTitle(title);
         facebookElement.setIconDrawable(R.drawable.about_icon_facebook);
         facebookElement.setIconTint(R.color.about_facebook_color);
         facebookElement.setValue(id);
@@ -100,13 +160,29 @@ public class AboutPage {
         return this;
     }
 
-
-    /*
-        Add Twitter Element
+    /**
+     * Convenience method for {@link AboutPage#addTwitter(String, String)} but with
+     * a predefined title string
+     *
+     * @param id the Twitter id to display
+     * @return this AboutPage instance for builder pattern support
      */
     public AboutPage addTwitter(String id) {
+        return addTwitter(id, mContext.getString(R.string.about_twitter));
+    }
+
+
+    /**
+     * Add a predefined Element that the opens the Twitter app with a deep link to the specified user id
+     * If the Twitter application is not installed this will open a web page instead.
+     *
+     * @param id    the id of the Twitter user to display in the Twitter app
+     * @param title the title to display on this item
+     * @return this AboutPage instance for builder pattern support
+     */
+    public AboutPage addTwitter(String id, String title) {
         Element twitterElement = new Element();
-        twitterElement.setTitle(mContext.getString(R.string.about_twitter));
+        twitterElement.setTitle(title);
         twitterElement.setIconDrawable(R.drawable.about_icon_twitter);
         twitterElement.setIconTint(R.color.about_twitter_color);
         twitterElement.setValue(id);
@@ -127,12 +203,28 @@ public class AboutPage {
         return this;
     }
 
-    /*
-        Add Play store Element
+    /**
+     * Convenience method for {@link AboutPage#addPlayStore(String, String)} but with
+     * a predefined title string
+     *
+     * @param id the package id of the app to display
+     * @return this AboutPage instance for builder pattern support
      */
     public AboutPage addPlayStore(String id) {
+        return addPlayStore(id, mContext.getString(R.string.about_play_store));
+    }
+
+    /**
+     * Add a predefined Element that the opens the PlayStore app with a deep link to the
+     * specified app application id.
+     *
+     * @param id    the package id of the app to display
+     * @param title the title to display on this item
+     * @return this AboutPage instance for builder pattern support
+     */
+    public AboutPage addPlayStore(String id, String title) {
         Element playStoreElement = new Element();
-        playStoreElement.setTitle(mContext.getString(R.string.about_play_store));
+        playStoreElement.setTitle(title);
         playStoreElement.setIconDrawable(R.drawable.about_icon_google_play);
         playStoreElement.setIconTint(R.color.about_play_store_color);
         playStoreElement.setValue(id);
@@ -145,12 +237,30 @@ public class AboutPage {
         return this;
     }
 
-    /*
-        Add Youtube Element
+    /**
+     * Convenience method for {@link AboutPage#addYoutube(String, String)} but with
+     * a predefined title string
+     *
+     * @param id the id of the channel to deep link to
+     * @return this AboutPage instance for builder pattern support
      */
     public AboutPage addYoutube(String id) {
+        return addYoutube(id, mContext.getString(R.string.about_youtube));
+    }
+
+    /**
+     * Add a predefined Element that the opens the Youtube app with a deep link to the
+     * specified channel id.
+     *
+     * If the Youtube app is not installed this will open the Youtube web page instead.
+     *
+     * @param id the id of the channel to deep link to
+     * @param title the title to display on this item
+     * @return this AboutPage instance for builder pattern support
+     */
+    public AboutPage addYoutube(String id, String title) {
         Element youtubeElement = new Element();
-        youtubeElement.setTitle(mContext.getString(R.string.about_youtube));
+        youtubeElement.setTitle(title);
         youtubeElement.setIconDrawable(R.drawable.about_icon_youtube);
         youtubeElement.setIconTint(R.color.about_youtube_color);
         youtubeElement.setValue(id);
@@ -169,12 +279,30 @@ public class AboutPage {
         return this;
     }
 
-    /*
-        Add Instagram Element
+    /**
+     * Convenience method for {@link AboutPage#addInstagram(String, String)} (String, String)} but with
+     * a predefined title string
+     *
+     * @param id the id of the instagram user to deep link to
+     * @return this AboutPage instance for builder pattern support
      */
     public AboutPage addInstagram(String id) {
+        return addInstagram(id, mContext.getString(R.string.about_instagram));
+    }
+
+    /**
+     * Add a predefined Element that the opens the Instagram app with a deep link to the
+     * specified user id.
+     *
+     * If the Instagram app is not installed this will open the Intagram web page instead.
+     *
+     * @param id the user id to deep link to
+     * @param title the title to display on this item
+     * @return this AboutPage instance for builder pattern support
+     */
+    public AboutPage addInstagram(String id, String title) {
         Element instagramElement = new Element();
-        instagramElement.setTitle(mContext.getString(R.string.about_instagram));
+        instagramElement.setTitle(title);
         instagramElement.setIconDrawable(R.drawable.about_icon_instagram);
         instagramElement.setIconTint(R.color.about_instagram_color);
         instagramElement.setValue(id);
@@ -193,12 +321,28 @@ public class AboutPage {
         return this;
     }
 
-    /*
-        Add GitHub Element
-    */
+    /**
+     * Convenience method for {@link AboutPage#addGitHub(String, String)} but with
+     * a predefined title string
+     *
+     * @param id the id of the GitHub user to display
+     * @return this AboutPage instance for builder pattern support
+     */
     public AboutPage addGitHub(String id) {
+        return addGitHub(id, mContext.getString(R.string.about_github));
+    }
+
+    /**
+     * Add a predefined Element that the opens the a browser and displays the specified GitHub
+     * users profile page.
+     *
+     * @param id the GitHub user to link to
+     * @param title the title to display on this item
+     * @return this AboutPage instance for builder pattern support
+     */
+    public AboutPage addGitHub(String id, String title) {
         Element gitHubElement = new Element();
-        gitHubElement.setTitle(mContext.getString(R.string.about_github));
+        gitHubElement.setTitle(title);
         gitHubElement.setIconDrawable(R.drawable.about_icon_github);
         gitHubElement.setIconTint(R.color.about_github_color);
         gitHubElement.setValue(id);
@@ -214,15 +358,30 @@ public class AboutPage {
         return this;
     }
 
-    /*
-        Add Website Element
-    */
+    /**
+     * Convenience method for {@link AboutPage#addWebsite(String, String)} but with
+     * a predefined title string
+     *
+     * @param url the URL to open in a browser
+     * @return this AboutPage instance for builder pattern support
+     */
     public AboutPage addWebsite(String url) {
+        return addWebsite(url, mContext.getString(R.string.about_website));
+    }
+
+    /**
+     * Add a predefined Element that the opens a browser and loads the specified URL
+     *
+     * @param url the URL to open in a browser
+     * @param title the title to display on this item
+     * @return this AboutPage instance for builder pattern support
+     */
+    public AboutPage addWebsite(String url, String title) {
         if (!url.startsWith("http://") && !url.startsWith("https://")) {
             url = "http://" + url;
         }
         Element websiteElement = new Element();
-        websiteElement.setTitle(mContext.getString(R.string.about_website));
+        websiteElement.setTitle(title);
         websiteElement.setIconDrawable(R.drawable.about_icon_link);
         websiteElement.setIconTint(R.color.about_item_icon_color);
         websiteElement.setValue(url);
@@ -236,6 +395,12 @@ public class AboutPage {
         return this;
     }
 
+    /**
+     * Add a custom {@link Element} to this AboutPage
+     * @see Element
+     * @param element
+     * @return this AboutPage instance for builder pattern support
+     */
     public AboutPage addItem(Element element) {
         LinearLayout wrapper = (LinearLayout) mView.findViewById(R.id.about_providers);
         wrapper.addView(createItem(element));
@@ -243,11 +408,37 @@ public class AboutPage {
         return this;
     }
 
-    public AboutPage setImage(int resource) {
+    /**
+     * Set the header image to display in this AboutPage
+     * @param resource the resource id of the image to display
+     * @return this AboutPage instance for builder pattern support
+     */
+    public AboutPage setImage(@DrawableRes int resource) {
         this.mImage = resource;
         return this;
     }
 
+    /**
+     * Add a new group that will display a header in this AboutPage
+     *
+     * A header will be displayed in the order it was added. For e.g:
+     *
+     * <code>
+     *  new AboutPage(this)
+     * .addItem(firstItem)
+     * .addGroup("Header")
+     * .addItem(secondItem)
+     * .create();
+     * </code>
+     *
+     * Will display the following
+     * [First item]
+     * [Header]
+     * [Second item]
+     *
+     * @param name the title for this group
+     * @return this AboutPage instance for builder pattern support
+     */
     public AboutPage addGroup(String name) {
 
         TextView textView = new TextView(mContext);
@@ -276,6 +467,11 @@ public class AboutPage {
         return this;
     }
 
+    /**
+     * Turn on the RTL mode.
+     * @param value
+     * @return this AboutPage instance for builder pattern support
+     */
     public AboutPage isRTL(boolean value) {
         this.mIsRTL = value;
         return this;
@@ -286,6 +482,11 @@ public class AboutPage {
         return this;
     }
 
+    /**
+     * Create and inflate this AboutPage. After this method is called the AboutPage
+     * cannot be customized any more.
+     * @return the inflated {@link View} of this AboutPage
+     */
     public View create() {
         TextView description = (TextView) mView.findViewById(R.id.description);
         ImageView image = (ImageView) mView.findViewById(R.id.image);
@@ -363,20 +564,18 @@ public class AboutPage {
 
             Drawable wrappedDrawable = DrawableCompat.wrap(iconView.getDrawable());
             wrappedDrawable = wrappedDrawable.mutate();
-            if (element.getAutoIconColor()){
+            if (element.getAutoApplyIconTint()) {
                 int currentNightMode = mContext.getResources().getConfiguration().uiMode
                         & Configuration.UI_MODE_NIGHT_MASK;
-                if(currentNightMode != Configuration.UI_MODE_NIGHT_YES){
+                if (currentNightMode != Configuration.UI_MODE_NIGHT_YES) {
                     if (element.getIconTint() != null) {
                         DrawableCompat.setTint(wrappedDrawable, ContextCompat.getColor(mContext, element.getIconTint()));
                     } else {
                         DrawableCompat.setTint(wrappedDrawable, ContextCompat.getColor(mContext, R.color.about_item_icon_color));
                     }
-                }
-                else if(element.getIconNightTint() != null){
+                } else if (element.getIconNightTint() != null) {
                     DrawableCompat.setTint(wrappedDrawable, ContextCompat.getColor(mContext, element.getIconNightTint()));
-                }
-                else{
+                } else {
                     DrawableCompat.setTint(wrappedDrawable, AboutPageUtils.getThemeAccentColor(mContext));
                 }
             }
