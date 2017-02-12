@@ -2,7 +2,6 @@ package mehdi.sakout.aboutpage.sample;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.view.Gravity;
@@ -48,9 +47,9 @@ public class MainActivity extends AppCompatActivity {
         Element copyRightsElement = new Element();
         final String copyrights = String.format(getString(R.string.copy_right), Calendar.getInstance().get(Calendar.YEAR));
         copyRightsElement.setTitle(copyrights);
-        copyRightsElement.setIcon(R.drawable.about_icon_copy_right);
-        copyRightsElement.setColor(ContextCompat.getColor(this, mehdi.sakout.aboutpage.R.color.about_item_icon_color));
-        copyRightsElement.setColorNight(android.R.color.white);
+        copyRightsElement.setIconDrawable(R.drawable.about_icon_copy_right);
+        copyRightsElement.setIconTint(mehdi.sakout.aboutpage.R.color.about_item_icon_color);
+        copyRightsElement.setIconNightTint(android.R.color.white);
         copyRightsElement.setGravity(Gravity.CENTER);
         copyRightsElement.setOnClickListener(new View.OnClickListener() {
             @Override

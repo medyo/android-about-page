@@ -4,18 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.LayerDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v4.widget.TextViewCompat;
-import android.support.v7.app.AppCompatDelegate;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -52,8 +48,8 @@ public class AboutPage {
     public AboutPage addEmail(String email) {
         Element emailElement = new Element();
         emailElement.setTitle(mContext.getString(R.string.about_contact_us));
-        emailElement.setIcon(R.drawable.about_icon_email);
-        emailElement.setColor(ContextCompat.getColor(mContext, R.color.about_item_icon_color));
+        emailElement.setIconDrawable(R.drawable.about_icon_email);
+        emailElement.setIconTint(R.color.about_item_icon_color);
 
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("message/rfc822");
@@ -70,8 +66,8 @@ public class AboutPage {
     public AboutPage addFacebook(String id) {
         Element facebookElement = new Element();
         facebookElement.setTitle(mContext.getString(R.string.about_facebook));
-        facebookElement.setIcon(R.drawable.about_icon_facebook);
-        facebookElement.setColor(ContextCompat.getColor(mContext, R.color.about_facebook_color));
+        facebookElement.setIconDrawable(R.drawable.about_icon_facebook);
+        facebookElement.setIconTint(R.color.about_facebook_color);
         facebookElement.setValue(id);
 
         Intent intent = new Intent();
@@ -111,8 +107,8 @@ public class AboutPage {
     public AboutPage addTwitter(String id) {
         Element twitterElement = new Element();
         twitterElement.setTitle(mContext.getString(R.string.about_twitter));
-        twitterElement.setIcon(R.drawable.about_icon_twitter);
-        twitterElement.setColor(ContextCompat.getColor(mContext, R.color.about_twitter_color));
+        twitterElement.setIconDrawable(R.drawable.about_icon_twitter);
+        twitterElement.setIconTint(R.color.about_twitter_color);
         twitterElement.setValue(id);
 
         Intent intent = new Intent();
@@ -137,8 +133,8 @@ public class AboutPage {
     public AboutPage addPlayStore(String id) {
         Element playStoreElement = new Element();
         playStoreElement.setTitle(mContext.getString(R.string.about_play_store));
-        playStoreElement.setIcon(R.drawable.about_icon_google_play);
-        playStoreElement.setColor(ContextCompat.getColor(mContext, R.color.about_play_store_color));
+        playStoreElement.setIconDrawable(R.drawable.about_icon_google_play);
+        playStoreElement.setIconTint(R.color.about_play_store_color);
         playStoreElement.setValue(id);
 
         Uri uri = Uri.parse("market://details?id=" + id);
@@ -155,8 +151,8 @@ public class AboutPage {
     public AboutPage addYoutube(String id) {
         Element youtubeElement = new Element();
         youtubeElement.setTitle(mContext.getString(R.string.about_youtube));
-        youtubeElement.setIcon(R.drawable.about_icon_youtube);
-        youtubeElement.setColor(ContextCompat.getColor(mContext, R.color.about_youtube_color));
+        youtubeElement.setIconDrawable(R.drawable.about_icon_youtube);
+        youtubeElement.setIconTint(R.color.about_youtube_color);
         youtubeElement.setValue(id);
 
         Intent intent = new Intent();
@@ -179,8 +175,8 @@ public class AboutPage {
     public AboutPage addInstagram(String id) {
         Element instagramElement = new Element();
         instagramElement.setTitle(mContext.getString(R.string.about_instagram));
-        instagramElement.setIcon(R.drawable.about_icon_instagram);
-        instagramElement.setColor(ContextCompat.getColor(mContext, R.color.about_instagram_color));
+        instagramElement.setIconDrawable(R.drawable.about_icon_instagram);
+        instagramElement.setIconTint(R.color.about_instagram_color);
         instagramElement.setValue(id);
 
         Intent intent = new Intent();
@@ -203,8 +199,8 @@ public class AboutPage {
     public AboutPage addGitHub(String id) {
         Element gitHubElement = new Element();
         gitHubElement.setTitle(mContext.getString(R.string.about_github));
-        gitHubElement.setIcon(R.drawable.about_icon_github);
-        gitHubElement.setColor(ContextCompat.getColor(mContext, R.color.about_github_color));
+        gitHubElement.setIconDrawable(R.drawable.about_icon_github);
+        gitHubElement.setIconTint(R.color.about_github_color);
         gitHubElement.setValue(id);
 
         Intent intent = new Intent();
@@ -227,8 +223,8 @@ public class AboutPage {
         }
         Element websiteElement = new Element();
         websiteElement.setTitle(mContext.getString(R.string.about_website));
-        websiteElement.setIcon(R.drawable.about_icon_link);
-        websiteElement.setColor(ContextCompat.getColor(mContext, R.color.about_item_icon_color));
+        websiteElement.setIconDrawable(R.drawable.about_icon_link);
+        websiteElement.setIconTint(R.color.about_item_icon_color);
         websiteElement.setValue(url);
 
         Uri uri = Uri.parse(url);
@@ -350,7 +346,7 @@ public class AboutPage {
 
         ImageView iconView = null;
 
-        if (element.getIcon() != null) {
+        if (element.getIconDrawable() != null) {
             iconView = new ImageView(mContext);
             int size = mContext.getResources().getDimensionPixelSize(R.dimen.about_icon_size);
             LinearLayout.LayoutParams iconParams = new LinearLayout.LayoutParams(size, size);
@@ -359,10 +355,10 @@ public class AboutPage {
             iconView.setPadding(iconPadding, 0, iconPadding, 0);
 
             if (Build.VERSION.SDK_INT < 21) {
-                Drawable drawable = VectorDrawableCompat.create(iconView.getResources(), element.getIcon(), iconView.getContext().getTheme());
+                Drawable drawable = VectorDrawableCompat.create(iconView.getResources(), element.getIconDrawable(), iconView.getContext().getTheme());
                 iconView.setImageDrawable(drawable);
             } else {
-                iconView.setImageResource(element.getIcon());
+                iconView.setImageResource(element.getIconDrawable());
             }
 
             Drawable wrappedDrawable = DrawableCompat.wrap(iconView.getDrawable());
@@ -371,14 +367,14 @@ public class AboutPage {
                 int currentNightMode = mContext.getResources().getConfiguration().uiMode
                         & Configuration.UI_MODE_NIGHT_MASK;
                 if(currentNightMode != Configuration.UI_MODE_NIGHT_YES){
-                    if (element.getColor() != null) {
-                        DrawableCompat.setTint(wrappedDrawable, element.getColor());
+                    if (element.getIconTint() != null) {
+                        DrawableCompat.setTint(wrappedDrawable, ContextCompat.getColor(mContext, element.getIconTint()));
                     } else {
                         DrawableCompat.setTint(wrappedDrawable, ContextCompat.getColor(mContext, R.color.about_item_icon_color));
                     }
                 }
-                else if(element.getColorNight() != null){
-                    DrawableCompat.setTint(wrappedDrawable, element.getColorNight());
+                else if(element.getIconNightTint() != null){
+                    DrawableCompat.setTint(wrappedDrawable, ContextCompat.getColor(mContext, element.getIconNightTint()));
                 }
                 else{
                     DrawableCompat.setTint(wrappedDrawable, AboutPageUtils.getThemeAccentColor(mContext));
@@ -402,7 +398,7 @@ public class AboutPage {
             //noinspection ResourceType
             textParams.gravity = gravity | Gravity.CENTER_VERTICAL;
             wrapper.addView(textView);
-            if (element.getIcon() != null) {
+            if (element.getIconDrawable() != null) {
                 wrapper.addView(iconView);
             }
 
@@ -411,7 +407,7 @@ public class AboutPage {
             wrapper.setGravity(gravity | Gravity.CENTER_VERTICAL);
             //noinspection ResourceType
             textParams.gravity = gravity | Gravity.CENTER_VERTICAL;
-            if (element.getIcon() != null) {
+            if (element.getIconDrawable() != null) {
                 wrapper.addView(iconView);
             }
             wrapper.addView(textView);

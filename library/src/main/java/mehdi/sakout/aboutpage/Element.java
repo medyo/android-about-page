@@ -1,13 +1,15 @@
 package mehdi.sakout.aboutpage;
 
 import android.content.Intent;
+import android.support.annotation.ColorRes;
+import android.support.annotation.DrawableRes;
 import android.view.View;
 
 public class Element {
 
     private String tag;
     private String title;
-    private Integer icon;
+    private Integer iconDrawable;
     private Integer colorDay;
     private Integer colorNight;
     private String value;
@@ -22,10 +24,10 @@ public class Element {
 
     }
 
-    public Element(String tag, String title, Integer icon) {
+    public Element(String tag, String title, Integer iconDrawable) {
         this.tag = tag;
         this.title = title;
-        this.icon = icon;
+        this.iconDrawable = iconDrawable;
     }
 
     public View.OnClickListener getOnClickListener() {
@@ -64,33 +66,32 @@ public class Element {
         return this;
     }
 
-    public Integer getIcon() {
-        return icon;
+    @DrawableRes public Integer getIconDrawable() {
+        return iconDrawable;
     }
 
-    public Element setIcon(Integer icon) {
-        this.icon = icon;
+    public Element setIconDrawable(@DrawableRes Integer iconDrawable) {
+        this.iconDrawable = iconDrawable;
         return this;
     }
 
-    public Integer getColor() {
+    @ColorRes public Integer getIconTint() {
         return colorDay;
     }
 
-    public Element setColor(Integer color) {
+    public Element setIconTint(@ColorRes Integer color) {
         this.colorDay = color;
         return this;
     }
 
-    public Element setColorNight(Integer colorNight) {
-        this.colorNight = colorNight;
-        return this;
-    }
-
-    public Integer getColorNight() {
+    @ColorRes public Integer getIconNightTint() {
         return colorNight;
     }
 
+    public Element setIconNightTint(@ColorRes Integer colorNight) {
+        this.colorNight = colorNight;
+        return this;
+    }
 
     public String getValue() {
         return value;
