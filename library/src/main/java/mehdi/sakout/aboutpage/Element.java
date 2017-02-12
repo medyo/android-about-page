@@ -3,15 +3,13 @@ package mehdi.sakout.aboutpage;
 import android.content.Intent;
 import android.view.View;
 
-/**
- * Created by medyo on 3/25/16.
- */
 public class Element {
 
     private String tag;
     private String title;
     private Integer icon;
-    private Integer color;
+    private Integer colorDay;
+    private Integer colorNight;
     private String value;
     private Intent intent;
     private Integer gravity;
@@ -76,13 +74,23 @@ public class Element {
     }
 
     public Integer getColor() {
-        return color;
+        return colorDay;
     }
 
     public Element setColor(Integer color) {
-        this.color = color;
+        this.colorDay = color;
         return this;
     }
+
+    public Element setColorNight(Integer colorNight) {
+        this.colorNight = colorNight;
+        return this;
+    }
+
+    public Integer getColorNight() {
+        return colorNight;
+    }
+
 
     public String getValue() {
         return value;

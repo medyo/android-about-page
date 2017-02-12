@@ -26,9 +26,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/**
- * Created by medyo on 3/25/16.
- */
 public class AboutPage {
     private final Context mContext;
     private final LayoutInflater mInflater;
@@ -379,6 +376,9 @@ public class AboutPage {
                     } else {
                         DrawableCompat.setTint(wrappedDrawable, ContextCompat.getColor(mContext, R.color.about_item_icon_color));
                     }
+                }
+                else if(element.getColorNight() != null){
+                    DrawableCompat.setTint(wrappedDrawable, element.getColorNight());
                 }
                 else{
                     DrawableCompat.setTint(wrappedDrawable, AboutPageUtils.getThemeAccentColor(mContext));

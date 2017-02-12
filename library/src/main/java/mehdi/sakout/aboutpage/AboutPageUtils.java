@@ -5,9 +5,6 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.util.TypedValue;
 
-/**
- * Created by medyo on 4/19/16.
- */
 public class AboutPageUtils {
 
     public static Boolean isAppInstalled(Context context, String appName){
