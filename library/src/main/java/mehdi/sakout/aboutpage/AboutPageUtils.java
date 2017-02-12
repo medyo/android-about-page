@@ -7,7 +7,7 @@ import android.util.TypedValue;
 
 class AboutPageUtils {
 
-    static Boolean isAppInstalled(Context context, String appName){
+    static Boolean isAppInstalled(Context context, String appName) {
         PackageManager pm = context.getPackageManager();
         boolean installed;
         try {

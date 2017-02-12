@@ -251,10 +251,10 @@ public class AboutPage {
     /**
      * Add a predefined Element that the opens the Youtube app with a deep link to the
      * specified channel id.
-     *
+     * <p>
      * If the Youtube app is not installed this will open the Youtube web page instead.
      *
-     * @param id the id of the channel to deep link to
+     * @param id    the id of the channel to deep link to
      * @param title the title to display on this item
      * @return this AboutPage instance for builder pattern support
      */
@@ -293,10 +293,10 @@ public class AboutPage {
     /**
      * Add a predefined Element that the opens the Instagram app with a deep link to the
      * specified user id.
-     *
+     * <p>
      * If the Instagram app is not installed this will open the Intagram web page instead.
      *
-     * @param id the user id to deep link to
+     * @param id    the user id to deep link to
      * @param title the title to display on this item
      * @return this AboutPage instance for builder pattern support
      */
@@ -336,7 +336,7 @@ public class AboutPage {
      * Add a predefined Element that the opens the a browser and displays the specified GitHub
      * users profile page.
      *
-     * @param id the GitHub user to link to
+     * @param id    the GitHub user to link to
      * @param title the title to display on this item
      * @return this AboutPage instance for builder pattern support
      */
@@ -372,7 +372,7 @@ public class AboutPage {
     /**
      * Add a predefined Element that the opens a browser and loads the specified URL
      *
-     * @param url the URL to open in a browser
+     * @param url   the URL to open in a browser
      * @param title the title to display on this item
      * @return this AboutPage instance for builder pattern support
      */
@@ -397,9 +397,10 @@ public class AboutPage {
 
     /**
      * Add a custom {@link Element} to this AboutPage
-     * @see Element
+     *
      * @param element
      * @return this AboutPage instance for builder pattern support
+     * @see Element
      */
     public AboutPage addItem(Element element) {
         LinearLayout wrapper = (LinearLayout) mView.findViewById(R.id.about_providers);
@@ -410,6 +411,7 @@ public class AboutPage {
 
     /**
      * Set the header image to display in this AboutPage
+     *
      * @param resource the resource id of the image to display
      * @return this AboutPage instance for builder pattern support
      */
@@ -420,17 +422,17 @@ public class AboutPage {
 
     /**
      * Add a new group that will display a header in this AboutPage
-     *
+     * <p>
      * A header will be displayed in the order it was added. For e.g:
-     *
+     * <p>
      * <code>
-     *  new AboutPage(this)
+     * new AboutPage(this)
      * .addItem(firstItem)
      * .addGroup("Header")
      * .addItem(secondItem)
      * .create();
      * </code>
-     *
+     * <p>
      * Will display the following
      * [First item]
      * [Header]
@@ -469,6 +471,7 @@ public class AboutPage {
 
     /**
      * Turn on the RTL mode.
+     *
      * @param value
      * @return this AboutPage instance for builder pattern support
      */
@@ -485,6 +488,7 @@ public class AboutPage {
     /**
      * Create and inflate this AboutPage. After this method is called the AboutPage
      * cannot be customized any more.
+     *
      * @return the inflated {@link View} of this AboutPage
      */
     public View create() {
