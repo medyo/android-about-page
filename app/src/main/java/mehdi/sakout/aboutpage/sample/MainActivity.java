@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        dayNight();
+        initDayNight(/* DAY */ 1);
         Element adsElement = new Element();
         adsElement.setTitle("Advertise with us");
 
@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         copyRightsElement.setTitle(copyrights);
         copyRightsElement.setIcon(R.drawable.about_icon_copy_right);
         copyRightsElement.setColor(ContextCompat.getColor(this, mehdi.sakout.aboutpage.R.color.about_item_icon_color));
+        copyRightsElement.setColorNight(android.R.color.white);
         copyRightsElement.setGravity(Gravity.CENTER);
         copyRightsElement.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,13 +61,11 @@ public class MainActivity extends AppCompatActivity {
         return copyRightsElement;
     }
 
-    public void dayNight() {
+    void initDayNight(int currentSetting) {
         final int DAY = 0;
         final int NIGHT = 1;
         final int FOLLOW_SYSTEM = 3;
 
-        //Change this to NIGHT to turn on night mode
-        final int currentSetting = NIGHT;
         int currentNightMode = getResources().getConfiguration().uiMode
                 & Configuration.UI_MODE_NIGHT_MASK;
         if (currentSetting == DAY && currentNightMode != Configuration.UI_MODE_NIGHT_NO) {
