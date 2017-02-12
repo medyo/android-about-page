@@ -14,7 +14,6 @@ import android.view.View;
  */
 public class Element {
 
-    private String tag;
     private String title;
     private Integer iconDrawable;
     private Integer colorDay;
@@ -30,8 +29,7 @@ public class Element {
 
     }
 
-    public Element(String tag, String title, Integer iconDrawable) {
-        this.tag = tag;
+    public Element(String title, Integer iconDrawable) {
         this.title = title;
         this.iconDrawable = iconDrawable;
     }
