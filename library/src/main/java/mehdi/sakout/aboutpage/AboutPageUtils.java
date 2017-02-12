@@ -5,9 +5,9 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.util.TypedValue;
 
-public class AboutPageUtils {
+class AboutPageUtils {
 
-    public static Boolean isAppInstalled(Context context, String appName){
+    static Boolean isAppInstalled(Context context, String appName){
         PackageManager pm = context.getPackageManager();
         boolean installed;
         try {
@@ -19,7 +19,7 @@ public class AboutPageUtils {
         return installed;
     }
 
-    public static int getThemeAccentColor(Context context) {
+    static int getThemeAccentColor(Context context) {
         int colorAttr;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             colorAttr = android.R.attr.colorAccent;
