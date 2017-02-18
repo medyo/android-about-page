@@ -75,10 +75,9 @@ addItem(versionElement)
 | Function        | Description  |
 | ------------- |:-------------:| -----:|
 | setTitle(String) | Set title of the element|
-| setColor(Int) | Set color of the element|
-| setIcon(Int) | Set icon of the element|
+| setIconTint(Int) | Set color of the element|
+| setIconDrawable(Int) | Set icon of the element|
 | setValue(String) | Set Element value like Facebook ID|
-| setTag(String) | Set a unique tag value to the element|
 | setIntent(Intent) | Set an intent to be called on `onClickListener` |
 | setGravity(Gravity) | Set a Gravity for the element  |
 | setOnClickListener(View.OnClickListener) | If `intent` isn't suitable for you need, implement your custom behaviour by overriding the click listener|
@@ -109,6 +108,7 @@ The library does supports the following languages :
 * Czech (by [semanticer](https://github.com/semanticer))
 * Hungarian (by [jbarat](https://github.com/jbarat))
 * Korean (by [Alfex4936](https://github.com/Alfex4936))
+* Swedish (by [Krillsson](https://github.com/Krillsson))
 
 Please make a Pull request to add a new language.
 
