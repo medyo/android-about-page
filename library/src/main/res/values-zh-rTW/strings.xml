@@ -1,0 +1,10 @@
+<resources>
+    <string name="about_contact_us">與我們聯繫</string>
+    <string name="about_instagram">關注 Instagram</string>
+    <string name="about_facebook">關注 Facebook</string>
+    <string name="about_play_store">上 Play Store 評分</string>
+    <string name="about_youtube">在 Youtube 上查看</string>
+    <string name="about_twitter">關注 Twitter</string>
+    <string name="about_github">關注 GitHub</string>
+    <string name="about_website">歡迎訪問我們的網站</string>
+</resources>
