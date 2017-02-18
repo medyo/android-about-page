@@ -1,0 +1,13 @@
+<resources>
+    <string name="about_page_description" translatable="false" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vehicula ligula tortor, in pellentesque dui congue ac. Vestibulum lacinia urna magna, quis cursus ante iaculis nec. Nunc ut ligula sit amet odio ultrices euismod vel vel purus. Sed lacus mauris, aliquam et placerat id</string>
+
+    <string name="about_contact_us">تماس با ما</string>
+    <string name="about_instagram">ما را دراینستاگرام دنبال کنید</string>
+    <string name="about_facebook">ما را در فیسبوک دنبال کنید</string>
+    <string name="about_play_store">به ما در گوگل پلی امتیاز بدید</string>
+    <string name="about_youtube">آخرین ویدیو های ما در یوتیوب</string>
+    <string name="about_twitter">ما را در توییتر دنبال کنید</string>
+    <string name="about_github">ما را در گیتهاب دنبال کنید</string>
+    <string name="about_website">وبسایت ما</string>
+
+</resources>
