@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initDayNight(/* DAY */ 0);
+        simulateDayNight(/* DAY */ 0);
         Element adsElement = new Element();
         adsElement.setTitle("Advertise with us");
 
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         return copyRightsElement;
     }
 
-    void initDayNight(int currentSetting) {
+    void simulateDayNight(int currentSetting) {
         final int DAY = 0;
         final int NIGHT = 1;
         final int FOLLOW_SYSTEM = 3;
