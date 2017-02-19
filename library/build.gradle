@@ -7,8 +7,8 @@ buildToolsVersion '25.0.2'
     defaultConfig {
     minSdkVersion 10
     targetSdkVersion 25
-        versionCode 12
-        versionName "1.1.1"
+        versionCode 13
+        versionName "1.2"
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
@@ -19,6 +19,12 @@ buildToolsVersion '25.0.2'
     }
 
     resourcePrefix 'about_'
+}
+
+tasks.withType(Javadoc) {
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
 }
 
 dependencies {

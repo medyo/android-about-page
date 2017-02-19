@@ -27,7 +27,7 @@ View aboutPage = new AboutPage(this)
 Available on Jcenter, Maven and JitPack
 
 ```groovy
-compile 'com.github.medyo:android-about-page:1.1.1'
+compile 'com.github.medyo:android-about-page:1.2'
 ```
 
 
