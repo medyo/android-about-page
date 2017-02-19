@@ -109,6 +109,9 @@ The library does supports the following languages :
 * Hungarian (by [jbarat](https://github.com/jbarat))
 * Korean (by [Alfex4936](https://github.com/Alfex4936))
 * Swedish (by [Krillsson](https://github.com/Krillsson))
+* Polish (by [karmil32](https://github.com/karmil32))
+* Persian (by [mortezasun](https://github.com/mortezasun))
+* Traditional Chinese (by [ppcrong](https://github.com/ppcrong))
 
 Please make a Pull request to add a new language.
 
