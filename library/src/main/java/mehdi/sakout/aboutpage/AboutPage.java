@@ -5,7 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
@@ -93,6 +95,7 @@ public class AboutPage {
         Element emailElement = new Element();
         emailElement.setTitle(title);
         emailElement.setIconDrawable(R.drawable.about_icon_email);
+        emailElement.setBackgroundColor(R.color.about_youtube_color);
         emailElement.setIconTint(R.color.about_item_icon_color);
 
         Intent intent = new Intent(Intent.ACTION_SEND);
@@ -225,6 +228,7 @@ public class AboutPage {
     public AboutPage addPlayStore(String id, String title) {
         Element playStoreElement = new Element();
         playStoreElement.setTitle(title);
+        playStoreElement.setBackgroundColor(R.color.about_play_store_color);
         playStoreElement.setIconDrawable(R.drawable.about_icon_google_play);
         playStoreElement.setIconTint(R.color.about_play_store_color);
         playStoreElement.setValue(id);
@@ -589,6 +593,9 @@ public class AboutPage {
             textView.setPadding(iconPadding, iconPadding, iconPadding, iconPadding);
         }
 
+        if (element.getBackgroundColor() != null) {   //setBackgroundColor()
+            wrapper.setBackgroundColor(mContext.getResources().getColor(element.getBackgroundColor()));
+        }
 
         textView.setText(element.getTitle());
 

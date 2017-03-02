@@ -1,1 +1,3 @@
-<manifest package="mehdi.sakout.aboutpage"/>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="mehdi.sakout.aboutpage">
+</manifest>

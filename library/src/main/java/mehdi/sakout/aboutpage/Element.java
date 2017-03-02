@@ -1,11 +1,18 @@
 package mehdi.sakout.aboutpage;
 
 import android.content.Intent;
+import android.graphics.PixelFormat;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatDelegate;
 import android.view.View;
+
+import static android.view.View.SCROLLBARS_INSIDE_OVERLAY;
+import static android.view.View.SCROLLBARS_OUTSIDE_OVERLAY;
 
 /**
  * Element class represents an about item in the about page.
@@ -24,6 +31,7 @@ public class Element {
     private Boolean autoIconColor = true;
 
     private View.OnClickListener onClickListener;
+    private Integer backgroundColor;
 
     public Element() {
 
@@ -198,4 +206,22 @@ public class Element {
         this.autoIconColor = autoIconColor;
         return this;
     }
+
+    /**
+     * @return the color resource identifier for this Elements background
+     */
+    @ColorRes @Nullable public Integer getBackgroundColor() {
+        return backgroundColor;
+    }
+
+    /**
+     * set background color for this element
+     * @param backgroundColor
+     * @return
+     */
+    public Element setBackgroundColor(@ColorRes Integer backgroundColor){
+        this.backgroundColor = backgroundColor;
+        return this;
+    }
+
 }

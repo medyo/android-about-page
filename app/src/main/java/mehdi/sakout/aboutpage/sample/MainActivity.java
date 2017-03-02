@@ -1,6 +1,7 @@
 package mehdi.sakout.aboutpage.sample;
 
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         Element copyRightsElement = new Element();
         final String copyrights = String.format(getString(R.string.copy_right), Calendar.getInstance().get(Calendar.YEAR));
         copyRightsElement.setTitle(copyrights);
+        copyRightsElement.setBackgroundColor(R.color.about_facebook_color);
         copyRightsElement.setIconDrawable(R.drawable.about_icon_copy_right);
         copyRightsElement.setIconTint(mehdi.sakout.aboutpage.R.color.about_item_icon_color);
         copyRightsElement.setIconNightTint(android.R.color.white);
