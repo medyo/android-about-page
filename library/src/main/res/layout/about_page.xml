@@ -3,7 +3,8 @@
     style="@style/about_About.wrapper">
 
     <LinearLayout style="@style/about_About.wrapper">
-        <LinearLayout style="@style/about_sub_wrapper">
+        <LinearLayout style="@style/about_sub_wrapper"
+            android:id="@+id/about_top">
             <ImageView android:id="@+id/image" style="@style/about_image"/>
             <TextView android:id="@+id/description" style="@style/about_description"/>
         </LinearLayout>

@@ -12,6 +12,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v4.content.ContextCompat;
@@ -46,6 +47,7 @@ public class AboutPage {
     private int mImage = 0;
     private boolean mIsRTL = false;
     private Typeface mCustomFont;
+    private final LinearLayout mTopView;
 
     /**
      * The AboutPage requires a context to perform it's functions. Give it a context associated to an
@@ -58,6 +60,7 @@ public class AboutPage {
         this.mContext = context;
         this.mInflater = LayoutInflater.from(context);
         this.mView = mInflater.inflate(R.layout.about_page, null);
+        this.mTopView = (LinearLayout) this.mView.findViewById(R.id.about_top);//top layout of this AboutPage
     }
 
     /**
@@ -490,6 +493,17 @@ public class AboutPage {
     }
 
     /**
+     * Set background color for top layout in this AboutPage
+     *
+     * @param backgroundColor the resource id of the color to display
+     * @return this AboutPage instance for builder pattern support
+     */
+    public AboutPage setBackgroundColor(@ColorRes int backgroundColor) {
+        this.mTopView.setBackgroundColor(mContext.getResources().getColor(backgroundColor));
+        return this;
+    }
+
+    /**
      * Create and inflate this AboutPage. After this method is called the AboutPage
      * cannot be customized any more.
      *
@@ -511,7 +525,6 @@ public class AboutPage {
         if (mCustomFont != null) {
             description.setTypeface(mCustomFont);
         }
-
         return mView;
     }
 
