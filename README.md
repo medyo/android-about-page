@@ -72,6 +72,7 @@ addItem(versionElement)
 
 ### 5. Available attributes for Element Class
 
+```
 | Function        | Description  |
 | ------------- |:-------------:| -----:|
 | setTitle(String) | Set title of the element|
@@ -81,7 +82,7 @@ addItem(versionElement)
 | setIntent(Intent) | Set an intent to be called on `onClickListener` |
 | setGravity(Gravity) | Set a Gravity for the element  |
 | setOnClickListener(View.OnClickListener) | If `intent` isn't suitable for you need, implement your custom behaviour by overriding the click listener|
-
+```
 
 ## Sample Project
 [medyo/android-about-page/app/](https://github.com/medyo/android-about-page/tree/master/app)
