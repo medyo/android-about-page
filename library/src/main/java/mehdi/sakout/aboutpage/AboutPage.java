@@ -103,6 +103,36 @@ public class AboutPage {
         addItem(emailElement);
         return this;
     }
+    public AboutPage addTelegram(String telegram) {
+        return addTelegram(telegram, mContext.getString(R.string.about_contact_us));
+    }
+
+    /**
+     * Add a predefined Element that opens the users default email client with a new email to the
+     * email address passed as parameter
+     *
+     * @param email the email address to send to
+     * @param title the title string to display on this item
+     * @return this AboutPage instance for builder pattern support
+     */
+    public AboutPage addTelegram(String telegram, String title) {
+        Element emailElement = new Element();
+        emailElement.setTitle(title);
+        emailElement.setIconDrawable(R.drawable.about_icon_email);
+        emailElement.setIconTint(R.color.about_item_icon_color);
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("message/rfc822");
+     
+        
+        
+    intent.putExtra(Intent.EXTRA_TEXT, msg);//
+    intent.startActivity(Intent.createChooser(intent, "Share with"));
+        
+        
+        addItem(emailElement);
+        return this;
+    }
 
     /**
      * Convenience method for {@link AboutPage#addFacebook(java.lang.String, java.lang.String)} but with
