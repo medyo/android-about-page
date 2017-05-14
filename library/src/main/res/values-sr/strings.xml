@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_contact_us">Kontaktirajte nas</string>
+    <string name="about_instagram">Pratite nas na Instagram-u</string>
+    <string name="about_facebook">Lajkujte nas na Facebook-u</string>
+    <string name="about_play_store">Ocenite nas na Google Play prodavnici</string>
+    <string name="about_youtube">Gledajte nas na Youtube-u</string>
+    <string name="about_twitter">Pratite nas na Twitter-u</string>
+    <string name="about_github">Forkajte nas na GitHub-u</string>
+    <string name="about_website">Posetite naš web sajt</string>
+</resources>
