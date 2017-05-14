@@ -27,7 +27,7 @@ View aboutPage = new AboutPage(this)
 Available on Jcenter, Maven and JitPack
 
 ```groovy
-compile 'com.github.medyo:android-about-page:1.2'
+compile 'com.github.medyo:android-about-page:1.2.1'
 ```
 
 
@@ -112,6 +112,8 @@ The library does supports the following languages :
 * Polish (by [karmil32](https://github.com/karmil32))
 * Persian (by [mortezasun](https://github.com/mortezasun))
 * Traditional Chinese (by [ppcrong](https://github.com/ppcrong))
+* Serbian (by [ljmocic](https://github.com/ljmocic))
+* Greek (by [jvoyatz](https://github.com/jvoyatz))
 
 Please make a Pull request to add a new language.
 
