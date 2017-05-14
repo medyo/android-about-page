@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_contact_us">Επικοινωνήστε μαζί μας</string>
+    <string name="about_instagram">Ακολουθήστε μας στο Instagram</string>
+    <string name="about_facebook">Κάντε like στην σελίδα μας στο Facebook</string>
+    <string name="about_play_store">Αξιολογήστε μας στο Play Store</string>
+    <string name="about_youtube">Παρακολουθήστε μας στο YouTube</string>
+    <string name="about_twitter">Ακολουθήστε μας στο Twitter</string>
+    <string name="about_github">Καντε μας fork στο Github</string>
+    <string name="about_website">Επισκεφθείτε την ιστοσελίδα μας</string>
+</resources>
