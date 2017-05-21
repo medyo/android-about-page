@@ -15,6 +15,8 @@ import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v4.widget.TextViewCompat;
+import android.text.Html;
+import android.text.Spanned;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -499,7 +501,13 @@ public class AboutPage {
         }
 
         if (!TextUtils.isEmpty(mDescription)) {
-            description.setText(mDescription);
+            Spanned text;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                text = Html.fromHtml(mDescription,Html.FROM_HTML_MODE_LEGACY);
+            } else {
+                text = Html.fromHtml(mDescription);
+            }
+            description.setText(text);
         }
 
         description.setGravity(Gravity.CENTER);
