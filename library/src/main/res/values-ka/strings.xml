@@ -1,0 +1,10 @@
+<resources>
+    <string name="about_contact_us">დაგვიკავშირდით</string>
+    <string name="about_instagram">გამოგვყევით Instagram-ზე</string>
+    <string name="about_facebook">მოგვიწონეთ Facebook-ზე</string>
+    <string name="about_play_store">შეგვაფასეთ Play Store-ზე</string>
+    <string name="about_youtube">გვიყურეთ Youtube-ზე</string>
+    <string name="about_twitter">გამოგვყევით Twitter-ზე</string>
+    <string name="about_github">გვიპოვეთ GitHub-ზე</string>
+    <string name="about_website">ეწვიეთ ვებ-გვერდს</string>
+</resources>
