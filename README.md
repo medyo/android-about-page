@@ -17,6 +17,15 @@
 - [优酷观看](http://v.youku.com/v_show/id_XMTgzOTkyMDQ2MA)
 - [Youtube观看](https://www.youtube.com/watch?v=vab9m76BfYY)
 
+## 导入姿势
+
+```java
+
+compile 'xyz.isunxu:about-page:1.0.0'
+
+```
+
+
 ## 代码示例
 ```java
 View aboutPage = new AboutPage(this)
@@ -31,13 +40,15 @@ View aboutPage = new AboutPage(this)
                 .addDouban("39114237")
                 .addJianshu("d86f33ff1f72")
                 .addFanfou("wangxing")
-                .addGoldXitu("56eac9bdb0146000293a233b")
+                .addGoldXitu("56eac9bdb0146000293a233b");
+                
+setContentView(aboutPage);
 ```
 
 ## 说明 (饭否是用了蘑菇饭作为默认应用)
 
 | 应用名称        | 版本名称  |
-| ------------- |:-------------:| -----:|
+| :------------- |-----:|
 | 支付宝 | 9.9.5|
 | 知乎 | 4.10.1 (443)|
 | 新浪微博 | 6.3.1|
@@ -45,10 +56,6 @@ View aboutPage = new AboutPage(this)
 | 饭否 | 1.5.5|
 | 简书 | 1.11.5 |
 | 豆瓣 | 4.7.0 (85) |
-
-## 导入姿势
-
-下载工程，把library作module导入，再add module dependency即可。
 
 ## 感谢
 
