@@ -6,16 +6,6 @@
 - 点击直接与我qq聊天
 - 点击关注知乎、新浪微博、豆瓣、简书、饭否
 
-## apk demo
-- [查看apkdemo](https://github.com/sunxu3074/android-about-page/blob/master/resources/demo.apk)
-
-## 效果图
-<img src="/resources/m1l_preview.png" width="50%" height="50%" alt="m1l预览图"/>
-
-## 效果图gif (由于时间很长，gif很大，建议观看视频)
-- <img src="/resources/preview_video.gif" width="50%" height="50%" alt="m1l预览gif"/>
-- [优酷观看](http://v.youku.com/v_show/id_XMTgzOTkyMDQ2MA)
-- [Youtube观看](https://www.youtube.com/watch?v=vab9m76BfYY)
 
 ## 导入姿势
 
@@ -45,6 +35,18 @@ View aboutPage = new AboutPage(this)
 setContentView(aboutPage);
 ```
 
+## apk demo
+- [查看apkdemo](https://github.com/sunxu3074/android-about-page/blob/master/resources/demo.apk)
+
+## 效果图
+<img src="/resources/m1l_preview.png" width="50%" height="50%" alt="m1l预览图"/>
+
+## 效果图gif (由于时间很长，gif很大，建议观看视频)
+- <img src="/resources/preview_video.gif" width="50%" height="50%" alt="m1l预览gif"/>
+- [优酷观看](http://v.youku.com/v_show/id_XMTgzOTkyMDQ2MA)
+- [Youtube观看](https://www.youtube.com/watch?v=vab9m76BfYY)
+
+
 ## 说明 (饭否是用了蘑菇饭作为默认应用)
 
 | 应用名称        | 版本名称  |
@@ -63,9 +65,6 @@ setContentView(aboutPage);
 - [AlipayZeroSdk](https://github.com/fython/AlipayZeroSdk)
 - [TopActivity](https://github.com/109021017/android-TopActivity)
 - 反编译不易，望大家支持，欢迎支付宝赞赏我...
-
-
-
 
 
 - - - - - - - - - - 
