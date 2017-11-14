@@ -115,6 +115,7 @@ The library does supports the following languages :
 * Serbian (by [ljmocic](https://github.com/ljmocic))
 * Greek (by [jvoyatz](https://github.com/jvoyatz))
 * Georgian (by [tatocaster](https://github.com/tatocaster))
+* Indian (by [kartikarora](https://github.com/kartikarora))
 
 Please make a Pull request to add a new language.
 
