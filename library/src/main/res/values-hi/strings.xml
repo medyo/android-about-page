@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_contact_us">संपर्क करें</string>
+    <string name="about_instagram">Instagram पर फॉलो करें</string>
+    <string name="about_facebook">Facebook पर लाइक करे</string>
+    <string name="about_play_store">Play Store पर रेटिंग दें</string>
+    <string name="about_youtube">YouTube पर हमें देखें</string>
+    <string name="about_twitter">Twitter पर फॉलो करे</string>
+    <string name="about_github">GitHub पर फोर्क करें</string>
+    <string name="about_website">वेबसाइट देखें</string>
+</resources>
