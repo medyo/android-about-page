@@ -114,6 +114,7 @@ The library does supports the following languages :
 * Traditional Chinese (by [ppcrong](https://github.com/ppcrong))
 * Serbian (by [ljmocic](https://github.com/ljmocic))
 * Greek (by [jvoyatz](https://github.com/jvoyatz))
+* Georgian (by [tatocaster](https://github.com/tatocaster))
 
 Please make a Pull request to add a new language.
 
