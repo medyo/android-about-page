@@ -7,8 +7,8 @@ buildToolsVersion '25.0.2'
     defaultConfig {
     minSdkVersion 10
     targetSdkVersion 25
-        versionCode 13
-        versionName "1.2.1"
+        versionCode 14
+        versionName "1.2.2"
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
