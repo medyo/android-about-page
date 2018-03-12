@@ -116,6 +116,7 @@ The library does supports the following languages :
 * Greek (by [jvoyatz](https://github.com/jvoyatz))
 * Georgian (by [tatocaster](https://github.com/tatocaster))
 * Indian (by [kartikarora](https://github.com/kartikarora))
+* Dutch (by [artaex](https://github.com/artaex))
 
 Please make a Pull request to add a new language.
 
