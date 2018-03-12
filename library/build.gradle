@@ -1,14 +1,13 @@
 apply plugin: 'com.android.library'
 
 android {
-compileSdkVersion 25
-buildToolsVersion '25.0.2'
+compileSdkVersion 27
 
     defaultConfig {
-    minSdkVersion 10
-    targetSdkVersion 25
-        versionCode 14
-        versionName "1.2.2"
+    minSdkVersion 15
+    targetSdkVersion 27
+        versionCode 15
+        versionName "1.2.3"
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
@@ -30,7 +29,7 @@ tasks.withType(Javadoc) {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:appcompat-v7:27.1.0'
 }
 
 archivesBaseName = 'android-about-page'
