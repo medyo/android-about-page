@@ -118,6 +118,7 @@ The library does supports the following languages :
 * Traditional Chinese (by [ppcrong](https://github.com/ppcrong))
 * Turkish (by [tekseker](https://github.com/tekseker))
 * Ukrainian (by [NumezmaT](https://github.com/NumezmaT))
+* Uzbek (by [gladuz](https://github.com/gladuz))
 
 Please make a Pull request to add a new language.
 
