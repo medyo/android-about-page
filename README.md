@@ -101,6 +101,7 @@ The library does supports the following languages :
 * Greek (by [jvoyatz](https://github.com/jvoyatz))
 * Hungarian (by [jbarat](https://github.com/jbarat))
 * Indian (by [kartikarora](https://github.com/kartikarora))
+* Indonesian (by [hyuwah](https://github.com/hyuwah))
 * Italian (by [greenaddress](https://github.com/greenaddress))
 * Japanese (by [chibatching](https://github.com/chibatching))
 * Korean (by [Alfex4936](https://github.com/Alfex4936))
