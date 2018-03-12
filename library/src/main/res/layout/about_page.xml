@@ -3,12 +3,19 @@
     style="@style/about_About.wrapper">
 
     <LinearLayout style="@style/about_About.wrapper">
+
         <LinearLayout style="@style/about_sub_wrapper">
-            <ImageView android:id="@+id/image" style="@style/about_image"/>
-            <TextView android:id="@+id/description" style="@style/about_description"/>
+
+            <ImageView
+                android:id="@+id/image"
+                style="@style/about_image" />
+
+            <TextView
+                android:id="@+id/description"
+                style="@style/about_description" />
         </LinearLayout>
 
-        <View style="@style/about_separator"/>
+        <View style="@style/about_separator" />
 
         <LinearLayout
             android:id="@+id/about_providers"

@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name" translatable="false" >Android About Page</string>
-    <string name="copy_right" translatable="false" >Copyrights © %1$d</string>
+    <string name="app_name" translatable="false">Android About Page</string>
+    <string name="copy_right" translatable="false">Copyrights © %1$d</string>
 </resources>

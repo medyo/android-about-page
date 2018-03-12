@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<View android:height="@dimen/about_separator_height"
+<View xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/about_separator"
-    xmlns:android="http://schemas.android.com/apk/res/android" />
+    android:height="@dimen/about_separator_height" />

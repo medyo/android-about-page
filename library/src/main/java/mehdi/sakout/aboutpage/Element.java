@@ -36,8 +36,9 @@ public class Element {
 
     /**
      * Get the onClickListener for this Element
-     * @see android.view.View.OnClickListener
+     *
      * @return
+     * @see android.view.View.OnClickListener
      */
     public View.OnClickListener getOnClickListener() {
         return onClickListener;
@@ -47,9 +48,10 @@ public class Element {
      * Set the onClickListener for this Element. It will be invoked when this particular element
      * is clicked on the AboutPage. This method has higher priority than
      * {@link Element#setIntent(android.content.Intent)} when both methods are used
-     * @see android.view.View.OnClickListener
+     *
      * @param onClickListener
      * @return this Element instance for builder pattern support
+     * @see android.view.View.OnClickListener
      */
     public Element setOnClickListener(View.OnClickListener onClickListener) {
         this.onClickListener = onClickListener;
@@ -58,6 +60,7 @@ public class Element {
 
     /**
      * Get the gravity of the content of this Element
+     *
      * @return See {@link android.view.Gravity}
      */
     public Integer getGravity() {
@@ -66,6 +69,7 @@ public class Element {
 
     /**
      * Set the Gravity of the content for this Element
+     *
      * @param gravity See {@link android.view.Gravity}
      * @return this Element instance for builder pattern support
      */
@@ -77,12 +81,14 @@ public class Element {
     /**
      * @return the title for this Element
      */
-    @Nullable public String getTitle() {
+    @Nullable
+    public String getTitle() {
         return title;
     }
 
     /**
      * Set the title for this Element
+     *
      * @param title the string value to set
      * @return this Element instance for builder pattern support
      */
@@ -94,15 +100,19 @@ public class Element {
     /**
      * Get the icon drawable for this Element that appears to the left of the title or to the
      * right of the title in RTL layout mode.
+     *
      * @return the icon drawable resource of this Element
      */
-    @DrawableRes @Nullable public Integer getIconDrawable() {
+    @DrawableRes
+    @Nullable
+    public Integer getIconDrawable() {
         return iconDrawable;
     }
 
     /**
      * Set the icon drawable for this Element that appears to the left of the title or to the
      * right of the title in RTL layout mode.
+     *
      * @param iconDrawable the icon drawable resource to set
      * @return this Element instance for builder pattern support
      */
@@ -114,12 +124,15 @@ public class Element {
     /**
      * @return the color resource identifier for this Elements icon
      */
-    @ColorRes @Nullable public Integer getIconTint() {
+    @ColorRes
+    @Nullable
+    public Integer getIconTint() {
         return colorDay;
     }
 
     /**
      * Set the color resource identifier for this Elements icon
+     *
      * @param color the color resource identifier to use for this Element
      * @return this Element instance for builder pattern support
      */
@@ -130,16 +143,19 @@ public class Element {
 
     /**
      * Get the color resource identifier for this Elements icon when in night mode
-     * @see AppCompatDelegate#setDefaultNightMode(int)
+     *
      * @return
+     * @see AppCompatDelegate#setDefaultNightMode(int)
      */
-    @ColorRes public Integer getIconNightTint() {
+    @ColorRes
+    public Integer getIconNightTint() {
         return colorNight;
     }
 
     /**
      * Set the icon tint to be used for this Elements icon when in night mode. If no color
      * is specified the accent color of the current theme will be used in night mode.
+     *
      * @param colorNight
      * @return
      */
@@ -159,8 +175,9 @@ public class Element {
 
     /**
      * Get the intent to be used for when this Element
-     * @see Element#setIntent(android.content.Intent)
+     *
      * @return
+     * @see Element#setIntent(android.content.Intent)
      */
     public Intent getIntent() {
         return intent;
@@ -172,9 +189,10 @@ public class Element {
      * is clicked. This method has lower priority than
      * {@link mehdi.sakout.aboutpage.Element#setOnClickListener(android.view.View.OnClickListener)}
      * when both are used.
-     * @see android.content.Intent
+     *
      * @param intent the intent to be used
      * @return this Element instance for builder pattern support
+     * @see android.content.Intent
      */
     public Element setIntent(Intent intent) {
         this.intent = intent;

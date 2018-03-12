@@ -1,5 +1,5 @@
 <resources>
-    <string name="about_page_description" translatable="false" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vehicula ligula tortor, in pellentesque dui congue ac. Vestibulum lacinia urna magna, quis cursus ante iaculis nec. Nunc ut ligula sit amet odio ultrices euismod vel vel purus. Sed lacus mauris, aliquam et placerat id</string>
+    <string name="about_page_description" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vehicula ligula tortor, in pellentesque dui congue ac. Vestibulum lacinia urna magna, quis cursus ante iaculis nec. Nunc ut ligula sit amet odio ultrices euismod vel vel purus. Sed lacus mauris, aliquam et placerat id</string>
 
     <string name="about_contact_us">Contact us</string>
     <string name="about_instagram">Follow us on Instagram</string>
