@@ -1,0 +1,10 @@
+<resources>
+    <string name="about_contact_us">Biz bilan bog\'laning</string>
+    <string name="about_instagram">Instagramda bizni kuzatib boring</string>
+    <string name="about_facebook">Facebookda like bosing</string>
+    <string name="about_play_store">Play Storeda bizga baho bering</string>
+    <string name="about_youtube">Youtubeda bizni tomosha qiling</string>
+    <string name="about_twitter">Twitterda bizga obuna bo\'ling</string>
+    <string name="about_github">Githubda bizni kuzatib boring</string>
+    <string name="about_website">Veb-sahifamizga tashrif buyuring</string>
+</resources>
