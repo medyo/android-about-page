@@ -1,0 +1,10 @@
+<resources>
+    <string name="about_contact_us">Neem contact met ons op</string>
+    <string name="about_instagram">Volg ons op Instagram</string>
+    <string name="about_facebook">Like ons op Facebook</string>
+    <string name="about_play_store">Beoordeel ons in de Play Store</string>
+    <string name="about_youtube">Bekijk ons op Youtube</string>
+    <string name="about_twitter">Volg ons op Twitter</string>
+    <string name="about_github">Fork ons op GitHub</string>
+    <string name="about_website">Bezoek onze website</string>
+</resources>
