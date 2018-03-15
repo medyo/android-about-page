@@ -95,8 +95,8 @@ public class AboutPage {
         emailElement.setIconDrawable(R.drawable.about_icon_email);
         emailElement.setIconTint(R.color.about_item_icon_color);
 
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("message/rfc822");
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
         emailElement.setIntent(intent);
 
