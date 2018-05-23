@@ -40,7 +40,7 @@ public class AboutPage {
     private final Context mContext;
     private final LayoutInflater mInflater;
     private final View mView;
-    private String mDescription;
+    private CharSequence mDescription;
     private int mImage = 0;
     private boolean mIsRTL = false;
     private Typeface mCustomFont;
@@ -480,7 +480,7 @@ public class AboutPage {
         return this;
     }
 
-    public AboutPage setDescription(String description) {
+    public AboutPage setDescription(CharSequence description) {
         this.mDescription = description;
         return this;
     }
