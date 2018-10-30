@@ -2,7 +2,6 @@
 Create an awesome About Page for your Android App in 2 minutes
 
 <img src="/resources/cover.png" width="80%" alt="Android About Page Cover"/>
-
 This library allows to generate beautiful About Pages with less effort, it's fully customizable and supports opening specific intent
 
 ```java
