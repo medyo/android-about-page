@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 .addFacebook("the.medy")
                 .addTwitter("medyo80")
                 .addYoutube("UCdPQtdWIsg7_pi4mrRu46vA")
-                .addPlayStore("com.ideashower.readitlater.pro")
+                .addPlayStore("Dita+Cristian+Ionut")
                 .addInstagram("medyo80")
                 .addGitHub("medyo")
                 .addItem(getCopyRightsElement())
