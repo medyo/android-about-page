@@ -103,6 +103,39 @@ public class AboutPage {
         addItem(emailElement);
         return this;
     }
+    
+    /**
+     * Convenience method for {@link AboutPage#addPhone(java.lang.String, java.lang.String)} but with
+     * a predefined title string
+     *
+     * @param phone the phone number to call to
+     * @return this AboutPage instance for builder pattern support
+     */
+    public AboutPage addPhone(String phone) {
+        return addEmail(phone, mContext.getString(R.string.about_phone));
+    }
+
+    /**
+     * Add a predefined Element that opens the users phone calling client with a new phone number to the
+     * phone field passed as parameter
+     *
+     * @param phone the phone number to call to
+     * @param title the title string to display on this item
+     * @return this AboutPage instance for builder pattern support
+     */
+    public AboutPage addPhone(String phone, String title) {
+        Element phoneElement = new Element();
+        phoneElement.setTitle(title);
+        phoneElement.setIconDrawable(R.drawable.about_icon_phone);
+        emailElement.setIconTint(R.color.about_item_icon_color);
+
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(Uri.parse("tel:" + phone.trim()));
+        phoneElement.setIntent(intent);
+
+        addItem(phoneElement);
+        return this;
+    }
 
     /**
      * Convenience method for {@link AboutPage#addFacebook(java.lang.String, java.lang.String)} but with
