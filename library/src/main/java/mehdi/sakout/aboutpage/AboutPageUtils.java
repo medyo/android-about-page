@@ -1,21 +1,28 @@
 package mehdi.sakout.aboutpage;
 
 import android.content.Context;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.util.TypedValue;
+
+import java.util.List;
 
 class AboutPageUtils {
 
     static Boolean isAppInstalled(Context context, String appName) {
         PackageManager pm = context.getPackageManager();
-        boolean installed;
-        try {
-            pm.getPackageInfo(appName, PackageManager.GET_ACTIVITIES);
-            installed = true;
-        } catch (PackageManager.NameNotFoundException e) {
-            installed = false;
+        boolean installed = false;
+
+        List<PackageInfo> packages = pm.getInstalledPackages(0);
+
+        for (PackageInfo packageInfo : packages) {
+            if (packageInfo.packageName.equals(appName)) {
+                installed = true;
+                break;
+            }
         }
+
         return installed;
     }
 
