@@ -120,6 +120,7 @@ The library does supports the following languages :
 * Ukrainian (by [NumezmaT](https://github.com/NumezmaT))
 * Uzbek (by [gladuz](https://github.com/gladuz))
 * Norwegian Nynorsk (by [boxhock](https://github.com/boxhock))
+* Norwegian Bokmål (by [boxhock](https://github.com/boxhock))
 
 Please make a Pull request to add a new language.
 
