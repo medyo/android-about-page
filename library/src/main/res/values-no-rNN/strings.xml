@@ -1,0 +1,10 @@
+<resources>
+    <string name="about_contact_us">Kontakt oss</string>
+    <string name="about_instagram">Følg oss på Instagram</string>
+    <string name="about_facebook">Lik oss på Facebook</string>
+    <string name="about_play_store">Vurder oss på Play Butikk</string>
+    <string name="about_youtube">Sjå oss på Youtube</string>
+    <string name="about_twitter">Følg oss på Twitter</string>
+    <string name="about_github">Fork oss på GitHub</string>
+    <string name="about_website">Besøk vår nettside</string>
+</resources>
