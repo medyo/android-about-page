@@ -10,11 +10,6 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.DrawableRes;
-import android.support.graphics.drawable.VectorDrawableCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.graphics.drawable.DrawableCompat;
-import android.support.v4.widget.TextViewCompat;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -24,6 +19,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.DrawableRes;
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
+import androidx.core.widget.TextViewCompat;
+import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 
 /**
  * The main class of this library with many predefined methods to add Elements for common items in
@@ -403,7 +404,7 @@ public class AboutPage {
      * @see Element
      */
     public AboutPage addItem(Element element) {
-        LinearLayout wrapper = (LinearLayout) mView.findViewById(R.id.about_providers);
+        LinearLayout wrapper = mView.findViewById(R.id.about_providers);
         wrapper.addView(createItem(element));
         wrapper.addView(getSeparator(), new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, mContext.getResources().getDimensionPixelSize(R.dimen.about_separator_height)));
         return this;
@@ -492,8 +493,8 @@ public class AboutPage {
      * @return the inflated {@link View} of this AboutPage
      */
     public View create() {
-        TextView description = (TextView) mView.findViewById(R.id.description);
-        ImageView image = (ImageView) mView.findViewById(R.id.image);
+        TextView description = mView.findViewById(R.id.description);
+        ImageView image = mView.findViewById(R.id.image);
         if (mImage > 0) {
             image.setImageResource(mImage);
         }
@@ -524,7 +525,7 @@ public class AboutPage {
                 public void onClick(View view) {
                     try {
                         mContext.startActivity(element.getIntent());
-                    } catch (Exception e) {
+                    } catch (Exception ignored) {
                     }
                 }
             });
