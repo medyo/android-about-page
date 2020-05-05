@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_facebook">עמוק הפייסבוק שלנו</string>
+    <string name="about_github">הגיטהב שלנו</string>
+    <string name="about_instagram">עקוב אחרינו באינסטגרם</string>
+    <string name="about_play_store">דרג אותנו בפליי סטור</string>
+    <string name="about_twitter">עקוב אחרינו בטוויטר</string>
+    <string name="about_website">עמוד הבית שלנו</string>
+    <string name="about_youtube">ערוץ היוטיוב שלנו</string>
+    <string name="about_contact_us">צור קשר</string>
+</resources>
