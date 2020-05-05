@@ -83,6 +83,23 @@ addItem(versionElement)
 | setGravity(Gravity) | Set a Gravity for the element  |
 | setOnClickListener(View.OnClickListener) | If `intent` isn't suitable for you need, implement your custom behaviour by overriding the click listener|
 
+### 5. How to use the library in a fragment
+```java
+ @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return new AboutPage(getContext())
+                .isRTL(false)
+                .setDescription(getString(R.string.app_description))
+                .addGroup(getString(R.string.contact_group))
+                .addEmail("us@example.com", "Email")
+                .addGroup(getString(R.string.application_information_group))
+                .addItem(new VersionElement())
+                .create();
+    }
+```
+snippet by [nrhoffmann](https://github.com/nrhoffmann)
+
+
 ## Sample Project
 [medyo/android-about-page/app/](https://github.com/medyo/android-about-page/tree/master/app)
 
