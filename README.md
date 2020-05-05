@@ -122,6 +122,7 @@ The library does supports the following languages :
 * Norwegian Nynorsk (by [boxhock](https://github.com/boxhock))
 * Norwegian Bokmål (by [boxhock](https://github.com/boxhock))
 * Azerbaijani (by [Chingiz](https://github.com/Chingiz))
+* Hebrew (by [evyatar100](https://github.com/evyatar100))
 
 Please make a Pull request to add a new language.
 
