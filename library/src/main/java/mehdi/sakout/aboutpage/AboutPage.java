@@ -10,11 +10,11 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.DrawableRes;
-import android.support.graphics.drawable.VectorDrawableCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.graphics.drawable.DrawableCompat;
-import android.support.v4.widget.TextViewCompat;
+import androidx.annotation.DrawableRes;
+import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
+import androidx.core.widget.TextViewCompat;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -29,7 +29,7 @@ import android.widget.TextView;
  * The main class of this library with many predefined methods to add Elements for common items in
  * an About page. This class creates a {@link android.view.View} that can be passed as the root view
  * in {@link Fragment#onCreateView(LayoutInflater, ViewGroup, Bundle)} or passed to the {@link android.app.Activity#setContentView(View)}
- * in an activity's {@link android.app.Activity#onCreate(Bundle)} method
+ * in an activity's {@link android.app.Activity#onCreate(Bundle)} (Bundle)} method
  * <p>
  * To create a custom item in the about page, pass an instance of {@link mehdi.sakout.aboutpage.Element}
  * to the {@link AboutPage#addItem(Element)} method.
