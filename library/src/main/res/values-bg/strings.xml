@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_contact_us">Свържете се с нас</string>
+    <string name="about_instagram">Последвайте ни в Instagram</string>
+    <string name="about_facebook">Харесайте ни във Facebook</string>
+    <string name="about_play_store">Оценете ни в Play Store</string>
+    <string name="about_youtube">Гледайте ни в Youtube</string>
+    <string name="about_twitter">Последвайте ни в Twitter</string>
+    <string name="about_github">Разклонете в GitHub</string>
+    <string name="about_website">Посетете нашият уебсайт</string>
+</resources>
