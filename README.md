@@ -8,6 +8,8 @@ This library allows to generate beautiful About Pages with less effort, it's ful
 ```java
 View aboutPage = new AboutPage(this)
   .isRTL(false)
+  .enableDarkMode(false)
+  .setCustomFont(String) // or Typeface
   .setImage(R.drawable.dummy_image)
   .addItem(versionElement)
   .addItem(adsElement)
@@ -77,13 +79,14 @@ addItem(versionElement)
 | ------------- |:-------------:|
 | setTitle(String) | Set title of the element|
 | setIconTint(Int) | Set color of the element|
+| setSkipTint(Boolean) | Skip tinting the icon (useful when using non vector drawables)|
 | setIconDrawable(Int) | Set icon of the element|
 | setValue(String) | Set Element value like Facebook ID|
 | setIntent(Intent) | Set an intent to be called on `onClickListener` |
 | setGravity(Gravity) | Set a Gravity for the element  |
 | setOnClickListener(View.OnClickListener) | If `intent` isn't suitable for you need, implement your custom behaviour by overriding the click listener|
 
-### 5. How to use the library in a fragment
+### 6. How to use the library in a fragment
 ```java
  @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -99,6 +102,12 @@ addItem(versionElement)
 ```
 snippet by [nrhoffmann](https://github.com/nrhoffmann)
 
+### 6. Optional dark mode
+```java
+View aboutPage = new AboutPage(this)
+  .enableDarkMode(false) // if true, the dark mode is forced otherwise the default light one
+  .create()
+```
 
 ## Sample Project
 [medyo/android-about-page/app/](https://github.com/medyo/android-about-page/tree/master/app)
