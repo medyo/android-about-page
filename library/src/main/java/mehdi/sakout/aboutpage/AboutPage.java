@@ -4,17 +4,11 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import androidx.annotation.DrawableRes;
-import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
-import androidx.core.content.ContextCompat;
-import androidx.core.graphics.drawable.DrawableCompat;
-import androidx.core.widget.TextViewCompat;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -24,6 +18,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.DrawableRes;
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
+import androidx.core.widget.TextViewCompat;
+import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 
 /**
  * The main class of this library with many predefined methods to add Elements for common items in
@@ -44,6 +44,11 @@ public class AboutPage {
     private int mImage = 0;
     private boolean mIsRTL = false;
     private Typeface mCustomFont;
+    private Boolean mEnableDarkMode = false;
+    private int mBackgroundColor;
+    private int mIconColor;
+    private int mTextColor;
+    private int mSeparatorColor;
 
     /**
      * The AboutPage requires a context to perform it's functions. Give it a context associated to an
@@ -56,6 +61,7 @@ public class AboutPage {
         this.mContext = context;
         this.mInflater = LayoutInflater.from(context);
         this.mView = mInflater.inflate(R.layout.about_page, null);
+        this.enableDarkMode(false);
     }
 
     /**
@@ -67,6 +73,47 @@ public class AboutPage {
     public AboutPage setCustomFont(String path) {
         //TODO: check if file exists
         mCustomFont = Typeface.createFromAsset(mContext.getAssets(), path);
+        return this;
+    }
+
+    /**
+     * Provide a typeface to use as custom font
+     *
+     * @param typeface
+     * @return this AboutPage instance for builder pattern support
+     */
+    public AboutPage setCustomFont(Typeface typeface) {
+        mCustomFont = typeface;
+        return this;
+    }
+
+    /**
+     * Provide a way to force dark mode or not
+     *
+     * @param enabled
+     * @return this AboutPage instance for builder pattern support
+     */
+    public AboutPage enableDarkMode(Boolean enabled) {
+        mEnableDarkMode = enabled;
+        if (enabled) {
+            mBackgroundColor = ContextCompat
+                    .getColor(mContext, R.color.about_background_dark_color);
+            mTextColor = ContextCompat
+                    .getColor(mContext, R.color.about_text_dark_color);
+            mSeparatorColor = ContextCompat
+                    .getColor(mContext, R.color.about_separator_dark_color);
+            mIconColor =  AboutPageUtils.getThemeAccentColor(mContext);
+
+        } else {
+            mBackgroundColor = ContextCompat
+                    .getColor(mContext, R.color.about_background_color);
+            mTextColor = ContextCompat
+                    .getColor(mContext, R.color.about_text_color);
+            mSeparatorColor = ContextCompat
+                    .getColor(mContext, R.color.about_separator_color);
+            mIconColor = ContextCompat
+                    .getColor(mContext, R.color.about_item_icon_color);
+        }
         return this;
     }
 
@@ -494,6 +541,9 @@ public class AboutPage {
     public View create() {
         TextView description = (TextView) mView.findViewById(R.id.description);
         ImageView image = (ImageView) mView.findViewById(R.id.image);
+        View subWrapper = mView.findViewById(R.id.sub_wrapper);
+        View descriptionSeparator = mView.findViewById(R.id.description_separator);
+
         if (mImage > 0) {
             image.setImageResource(mImage);
         }
@@ -503,10 +553,14 @@ public class AboutPage {
         }
 
         description.setGravity(Gravity.CENTER);
+        description.setTextColor(mTextColor);
 
         if (mCustomFont != null) {
             description.setTypeface(mCustomFont);
         }
+
+        subWrapper.setBackgroundColor(mBackgroundColor);
+        descriptionSeparator.setBackgroundColor(mSeparatorColor);
 
         return mView;
     }
@@ -568,20 +622,29 @@ public class AboutPage {
 
             Drawable wrappedDrawable = DrawableCompat.wrap(iconView.getDrawable());
             wrappedDrawable = wrappedDrawable.mutate();
-            if (element.getAutoApplyIconTint()) {
-                int currentNightMode = mContext.getResources().getConfiguration().uiMode
-                        & Configuration.UI_MODE_NIGHT_MASK;
-                if (currentNightMode != Configuration.UI_MODE_NIGHT_YES) {
-                    if (element.getIconTint() != null) {
-                        DrawableCompat.setTint(wrappedDrawable, ContextCompat.getColor(mContext, element.getIconTint()));
+
+            if (!element.getSkipTint()) {
+                if (element.getAutoApplyIconTint()) {
+                    if (mEnableDarkMode) {
+                        if (element.getIconNightTint() != null) {
+                            DrawableCompat.setTint(wrappedDrawable, ContextCompat.getColor(mContext, element.getIconNightTint()));
+                        } else {
+                            DrawableCompat.setTint(wrappedDrawable, mIconColor);
+                        }
                     } else {
-                        DrawableCompat.setTint(wrappedDrawable, ContextCompat.getColor(mContext, R.color.about_item_icon_color));
+                        if (element.getIconTint() != null) {
+                            DrawableCompat.setTint(wrappedDrawable, ContextCompat.getColor(mContext, element.getIconTint()));
+                        } else {
+                            DrawableCompat.setTint(wrappedDrawable, mIconColor);
+                        }
                     }
-                } else if (element.getIconNightTint() != null) {
-                    DrawableCompat.setTint(wrappedDrawable, ContextCompat.getColor(mContext, element.getIconNightTint()));
-                } else {
-                    DrawableCompat.setTint(wrappedDrawable, AboutPageUtils.getThemeAccentColor(mContext));
+
+                } else if (element.getIconTint() != null) {
+                    DrawableCompat.setTint(wrappedDrawable, ContextCompat.getColor(mContext, element.getIconTint()));
+                } else if (mEnableDarkMode) {
+                    DrawableCompat.setTint(wrappedDrawable, mIconColor);
                 }
+
             }
 
         } else {
@@ -589,8 +652,8 @@ public class AboutPage {
             textView.setPadding(iconPadding, iconPadding, iconPadding, iconPadding);
         }
 
-
         textView.setText(element.getTitle());
+        textView.setTextColor(mTextColor);
 
 
         if (mIsRTL) {
@@ -620,6 +683,8 @@ public class AboutPage {
     }
 
     private View getSeparator() {
-        return mInflater.inflate(R.layout.about_page_separator, null);
+        View separator = mInflater.inflate(R.layout.about_page_separator, null);
+        separator.setBackgroundColor(mSeparatorColor);
+        return separator;
     }
 }
