@@ -123,7 +123,7 @@ The library does supports the following languages :
 * English (by [medyo](https://github.com/medyo))
 * French (by [medyo](https://github.com/medyo))
 * Georgian (by [tatocaster](https://github.com/tatocaster))
-* German (by [vanniktech](https://github.com/vanniktech))
+* German (by [vanniktech](https://github.com/vanniktech) && [nikothegreek](https://github.com/nikothegreek))
 * Greek (by [jvoyatz](https://github.com/jvoyatz))
 * Hungarian (by [jbarat](https://github.com/jbarat))
 * Indian (by [kartikarora](https://github.com/kartikarora))
