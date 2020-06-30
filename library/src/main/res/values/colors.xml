@@ -5,6 +5,20 @@
     <color name="about_background_color">#FFFFFF</color>
     <color name="about_separator_color">#e1e1e1</color>
 
+    <!-- Text -->
+    <color name="about_description_text_color">#595959</color>
+    <color name="about_item_text_color">#7c7c7c</color>
+    <color name="about_text_color">#595959</color>
+
+    <!-- Dark Mode -->
+    <color name="about_background_dark_color">#303030</color>
+    <color name="about_separator_dark_color">#494949</color>
+
+    <!-- Dark Mode Texts -->
+    <color name="about_description_dark_text_color">#C1C1C1</color>
+    <color name="about_item_dark_text_color">#FFFFFF</color>
+    <color name="about_text_dark_color">#C1C1C1</color>
+
     <!-- Social -->
     <color name="about_facebook_color">#3b5998</color>
     <color name="about_twitter_color">#55acee</color>
@@ -14,8 +28,5 @@
     <color name="about_github_color">#333333</color>
 
 
-    <!-- Text -->
-    <color name="about_description_text_color">#595959</color>
-    <color name="about_item_text_color">#7c7c7c</color>
-    <color name="about_text_color">#595959</color>
+
 </resources>

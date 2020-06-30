@@ -21,7 +21,8 @@ public class Element {
     private String value;
     private Intent intent;
     private Integer gravity;
-    private Boolean autoIconColor = true;
+    private Boolean autoIconColor = false;
+    private Boolean skipTint = false;
 
     private View.OnClickListener onClickListener;
 
@@ -215,5 +216,17 @@ public class Element {
     public Element setAutoApplyIconTint(Boolean autoIconColor) {
         this.autoIconColor = autoIconColor;
         return this;
+    }
+
+    /**
+     * Skip Applying a custom tint usefull when the provided drawable isn't a vectorDrawable
+     * @param skipTint
+     */
+    public void setSkipTint(Boolean skipTint) {
+        this.skipTint = skipTint;
+    }
+
+    public Boolean getSkipTint() {
+        return skipTint;
     }
 }
