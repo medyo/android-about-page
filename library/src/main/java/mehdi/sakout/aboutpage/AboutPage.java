@@ -276,7 +276,7 @@ public class AboutPage {
         playStoreElement.setIconTint(R.color.about_play_store_color);
         playStoreElement.setValue(id);
 
-        Uri uri = Uri.parse("market://details?id=" + id);
+        Uri uri = Uri.parse("https://play.google.com/store/apps/details?id=" + id);
         Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
         playStoreElement.setIntent(goToMarket);
 
