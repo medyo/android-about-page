@@ -77,6 +77,17 @@ public class AboutPage {
     }
 
     /**
+     * Provide a typeface to use as custom font
+     *
+     * @param typeface
+     * @return this AboutPage instance for builder pattern support
+     */
+    public AboutPage setCustomFont(Typeface typeface) {
+        mCustomFont = typeface;
+        return this;
+    }
+
+    /**
      * Provide a way to force dark mode or not
      *
      * @param enabled
