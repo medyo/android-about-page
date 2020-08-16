@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
     <LinearLayout
+        android:id="@+id/sub_wrapper"
+        style="@style/about_About.wrapper"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:id="@+id/sub_wrapper"
-        style="@style/about_About.wrapper">
+        android:orientation="vertical">
 
         <LinearLayout style="@style/about_sub_wrapper">
 
@@ -21,7 +22,9 @@
                 style="@style/about_description" />
         </LinearLayout>
 
-        <View android:id="@+id/description_separator" style="@style/about_separator" />
+        <View
+            android:id="@+id/description_separator"
+            style="@style/about_separator" />
 
         <LinearLayout
             android:id="@+id/about_providers"
