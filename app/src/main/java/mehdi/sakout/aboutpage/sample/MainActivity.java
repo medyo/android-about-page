@@ -20,13 +20,19 @@ public class MainActivity extends AppCompatActivity {
 
         View aboutPage = new AboutPage(this)
                 .isRTL(false)
-                .enableDarkMode(true)
+                .enableDarkMode(false)
                 .setImage(R.drawable.dummy_image)
                 .addItem(new Element().setTitle("Version 6.2"))
                 .addItem(adsElement)
                 .addGroup("Connect with us")
                 .addEmail("elmehdi.sakout@gmail.com")
                 .addWebsite("https://mehdisakout.com/")
+                .addFacebook("the.medy")
+                .addTwitter("medyo80")
+                .addYoutube("UCdPQtdWIsg7_pi4mrRu46vA")
+                .addPlayStore("com.ideashower.readitlater.pro")
+                .addInstagram("medyo80")
+                .addGitHub("medyo")
                 .addItem(getCopyRightsElement())
                 .create();
 
