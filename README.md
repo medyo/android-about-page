@@ -29,7 +29,7 @@ View aboutPage = new AboutPage(this)
 Available on Jcenter, Maven and JitPack
 
 ```groovy
-implementation 'com.github.medyo:android-about-page:1.3'
+implementation 'com.github.medyo:android-about-page:1.3.1'
 ```
 
 
