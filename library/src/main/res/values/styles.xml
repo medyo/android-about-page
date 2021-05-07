@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="about_About" />
+    <style name="about_About" parent="about_AboutBase_Light" />
 
-    <style name="about_About.wrapper">
-        <item name="android:background">@color/about_background_color</item>
+    <style name="about_AboutBase_Light">
+        <item name="aboutBackground">@color/about_background_color</item>
+        <item name="aboutDescriptionTextAppearance">@style/about_descriptionTextAppearance</item>
+        <item name="aboutSeparatorColor">@color/about_separator_color</item>
+        <item name="aboutElementTextAppearance">@style/about_elementTextAppearance</item>
+        <item name="aboutElementIconTint">@color/about_item_icon_color</item>
+        <item name="aboutGroupTextAppearance">@style/about_groupTextAppearance</item>
+    </style>
+
+    <style name="about_AboutBase_Dark">
+        <item name="aboutBackground">@color/about_background_dark_color</item>
+        <item name="aboutDescriptionTextAppearance">@style/about_descriptionTextAppearance.Dark</item>
+        <item name="aboutSeparatorColor">@color/about_separator_dark_color</item>
+        <item name="aboutElementTextAppearance">@style/about_elementTextAppearance.Dark</item>
+        <item name="aboutElementIconTint">@color/about_item_icon_dark_color</item>
+        <item name="aboutGroupTextAppearance">@style/about_groupTextAppearance.Dark</item>
+    </style>
+
+    <style name="about_About.wrapper" parent="">
+        <item name="android:background">?attr/aboutBackground</item>
     </style>
 
     <style name="about_sub_wrapper">
@@ -23,20 +41,28 @@
         <item name="android:layout_marginTop">20dp</item>
     </style>
 
-    <style name="about_description" parent="@android:style/TextAppearance">
+    <style name="about_description" parent="">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:text">@string/about_page_description</item>
-        <item name="android:lineSpacingExtra">8dp</item>
         <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAppearance">?attr/aboutDescriptionTextAppearance</item>
+    </style>
+
+    <style name="about_descriptionTextAppearance" parent="@android:style/TextAppearance">
+        <item name="android:lineSpacingExtra">8dp</item>
         <item name="android:textColor">@color/about_description_text_color</item>
         <item name="android:textSize">@dimen/about_description_text_size</item>
+    </style>
+
+    <style name="about_descriptionTextAppearance.Dark">
+        <item name="android:textColor">@color/about_description_dark_text_color</item>
     </style>
 
     <style name="about_separator">
         <item name="android:layout_height">@dimen/about_separator_height</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:background">@color/about_separator_color</item>
+        <item name="android:background">?attr/aboutSeparatorColor</item>
         <item name="android:padding">0dp</item>
         <item name="android:layout_marginTop">0dp</item>
         <item name="android:layout_marginBottom">0dp</item>
@@ -47,8 +73,16 @@
         <item name="android:textSize">@dimen/about_item_text_size</item>
     </style>
 
+    <style name="about_elementTextAppearance.Dark">
+        <item name="android:textColor">@color/about_text_dark_color</item>
+    </style>
+
     <style name="about_groupTextAppearance" parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/about_item_text_color</item>
         <item name="android:textSize">@dimen/about_group_item_text_size</item>
+    </style>
+
+    <style name="about_groupTextAppearance.Dark" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/about_item_dark_text_color</item>
     </style>
 </resources>

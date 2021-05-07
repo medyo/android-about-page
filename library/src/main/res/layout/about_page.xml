@@ -19,6 +19,7 @@
 
             <TextView
                 android:id="@+id/description"
+                android:text="@string/about_page_description"
                 style="@style/about_description" />
         </LinearLayout>
 

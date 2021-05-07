@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="aboutStyle" format="reference" />
+    <attr name="aboutBackground" format="reference|color" />
+    <attr name="aboutDescriptionTextAppearance" format="reference" />
+    <attr name="aboutSeparatorColor" format="color" />
+    <attr name="aboutElementTextAppearance" format="reference" />
+    <attr name="aboutElementIconTint" format="color" />
+    <attr name="aboutGroupTextAppearance" format="reference" />
+</resources>

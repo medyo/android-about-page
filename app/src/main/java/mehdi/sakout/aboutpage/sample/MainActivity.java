@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
 
         View aboutPage = new AboutPage(this)
                 .isRTL(false)
-                .enableDarkMode(false)
                 .setImage(R.drawable.dummy_image)
                 .addItem(new Element().setTitle("Version 6.2"))
                 .addItem(adsElement)

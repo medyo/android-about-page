@@ -11,6 +11,7 @@
     <color name="about_text_color">#595959</color>
 
     <!-- Dark Mode -->
+    <color name="about_item_icon_dark_color">?colorAccent</color>
     <color name="about_background_dark_color">#303030</color>
     <color name="about_separator_dark_color">#494949</color>
 

@@ -1,6 +1,7 @@
 package mehdi.sakout.aboutpage;
 
 import android.app.Fragment;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -10,7 +11,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.TypedValue;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.DrawableRes;
+import androidx.annotation.StyleRes;
+import androidx.appcompat.view.ContextThemeWrapper;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.widget.TextViewCompat;
@@ -37,6 +40,8 @@ import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
  * @see Element
  */
 public class AboutPage {
+    private static final String LOG_TAG = AboutPage.class.getSimpleName();
+
     private final Context mContext;
     private final LayoutInflater mInflater;
     private final View mView;
@@ -44,11 +49,6 @@ public class AboutPage {
     private int mImage = 0;
     private boolean mIsRTL = false;
     private Typeface mCustomFont;
-    private Boolean mEnableDarkMode = false;
-    private int mBackgroundColor;
-    private int mIconColor;
-    private int mTextColor;
-    private int mSeparatorColor;
 
     /**
      * The AboutPage requires a context to perform it's functions. Give it a context associated to an
@@ -58,10 +58,17 @@ public class AboutPage {
      * @param context
      */
     public AboutPage(Context context) {
-        this.mContext = context;
-        this.mInflater = LayoutInflater.from(context);
+        this(context, AboutPageUtils.resolveResIdAttr(context, R.attr.aboutStyle, R.style.about_About));
+    }
+
+    public AboutPage(Context context, boolean forceEnableDarkMode) {
+        this(context, forceEnableDarkMode ? R.style.about_AboutBase_Dark : R.style.about_AboutBase_Light);
+    }
+
+    public AboutPage(Context context, @StyleRes int style) {
+        this.mContext = new ContextThemeWrapper(context, style);
+        this.mInflater = LayoutInflater.from(this.mContext);
         this.mView = mInflater.inflate(R.layout.about_page, null);
-        this.enableDarkMode(false);
     }
 
     /**
@@ -88,36 +95,6 @@ public class AboutPage {
     }
 
     /**
-     * Provide a way to force dark mode or not
-     *
-     * @param enabled
-     * @return this AboutPage instance for builder pattern support
-     */
-    public AboutPage enableDarkMode(Boolean enabled) {
-        mEnableDarkMode = enabled;
-        if (enabled) {
-            mBackgroundColor = ContextCompat
-                    .getColor(mContext, R.color.about_background_dark_color);
-            mTextColor = ContextCompat
-                    .getColor(mContext, R.color.about_text_dark_color);
-            mSeparatorColor = ContextCompat
-                    .getColor(mContext, R.color.about_separator_dark_color);
-            mIconColor =  AboutPageUtils.getThemeAccentColor(mContext);
-
-        } else {
-            mBackgroundColor = ContextCompat
-                    .getColor(mContext, R.color.about_background_color);
-            mTextColor = ContextCompat
-                    .getColor(mContext, R.color.about_text_color);
-            mSeparatorColor = ContextCompat
-                    .getColor(mContext, R.color.about_separator_color);
-            mIconColor = ContextCompat
-                    .getColor(mContext, R.color.about_item_icon_color);
-        }
-        return this;
-    }
-
-    /**
      * Convenience method for {@link AboutPage#addEmail(java.lang.String, java.lang.String)} but with
      * a predefined title string
      *
@@ -140,7 +117,6 @@ public class AboutPage {
         Element emailElement = new Element();
         emailElement.setTitle(title);
         emailElement.setIconDrawable(R.drawable.about_icon_email);
-        emailElement.setIconTint(R.color.about_item_icon_color);
 
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:"));
@@ -430,7 +406,6 @@ public class AboutPage {
         Element websiteElement = new Element();
         websiteElement.setTitle(title);
         websiteElement.setIconDrawable(R.drawable.about_icon_link);
-        websiteElement.setIconTint(R.color.about_item_icon_color);
         websiteElement.setValue(url);
 
         Uri uri = Uri.parse(url);
@@ -450,7 +425,7 @@ public class AboutPage {
      * @see Element
      */
     public AboutPage addItem(Element element) {
-        LinearLayout wrapper = (LinearLayout) mView.findViewById(R.id.about_providers);
+        LinearLayout wrapper = mView.findViewById(R.id.about_providers);
         wrapper.addView(createItem(element));
         wrapper.addView(getSeparator(), new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, mContext.getResources().getDimensionPixelSize(R.dimen.about_separator_height)));
         return this;
@@ -492,7 +467,7 @@ public class AboutPage {
 
         TextView textView = new TextView(mContext);
         textView.setText(name);
-        TextViewCompat.setTextAppearance(textView, R.style.about_groupTextAppearance);
+        TextViewCompat.setTextAppearance(textView, AboutPageUtils.resolveResIdAttr(mContext, R.attr.aboutGroupTextAppearance, R.style.about_groupTextAppearance));
         LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
         if (mCustomFont != null) {
@@ -539,10 +514,8 @@ public class AboutPage {
      * @return the inflated {@link View} of this AboutPage
      */
     public View create() {
-        TextView description = (TextView) mView.findViewById(R.id.description);
-        ImageView image = (ImageView) mView.findViewById(R.id.image);
-        View subWrapper = mView.findViewById(R.id.sub_wrapper);
-        View descriptionSeparator = mView.findViewById(R.id.description_separator);
+        TextView description = mView.findViewById(R.id.description);
+        ImageView image = mView.findViewById(R.id.image);
 
         if (mImage > 0) {
             image.setImageResource(mImage);
@@ -552,15 +525,9 @@ public class AboutPage {
             description.setText(mDescription);
         }
 
-        description.setGravity(Gravity.CENTER);
-        description.setTextColor(mTextColor);
-
         if (mCustomFont != null) {
             description.setTypeface(mCustomFont);
         }
-
-        subWrapper.setBackgroundColor(mBackgroundColor);
-        descriptionSeparator.setBackgroundColor(mSeparatorColor);
 
         return mView;
     }
@@ -578,16 +545,15 @@ public class AboutPage {
                 public void onClick(View view) {
                     try {
                         mContext.startActivity(element.getIntent());
-                    } catch (Exception e) {
+                    } catch (ActivityNotFoundException e) {
+                        Log.e(LOG_TAG, "failed to launch intent for '" + element.getTitle() + "' element", e);
                     }
                 }
             });
 
         }
 
-        TypedValue outValue = new TypedValue();
-        mContext.getTheme().resolveAttribute(R.attr.selectableItemBackground, outValue, true);
-        wrapper.setBackgroundResource(outValue.resourceId);
+        wrapper.setBackgroundResource(AboutPageUtils.resolveResIdAttr(mContext, R.attr.selectableItemBackground, android.R.color.transparent));
 
         int padding = mContext.getResources().getDimensionPixelSize(R.dimen.about_text_padding);
         wrapper.setPadding(padding, padding, padding, padding);
@@ -596,7 +562,7 @@ public class AboutPage {
 
 
         TextView textView = new TextView(mContext);
-        TextViewCompat.setTextAppearance(textView, R.style.about_elementTextAppearance);
+        TextViewCompat.setTextAppearance(textView, AboutPageUtils.resolveResIdAttr(mContext, R.attr.aboutElementTextAppearance, R.style.about_elementTextAppearance));
         LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         textView.setLayoutParams(textParams);
         if (mCustomFont != null) {
@@ -623,26 +589,28 @@ public class AboutPage {
             Drawable wrappedDrawable = DrawableCompat.wrap(iconView.getDrawable());
             wrappedDrawable = wrappedDrawable.mutate();
 
+            final boolean isNightModeEnabled = AboutPageUtils.isNightModeEnabled(mContext);
+            final int iconColor = AboutPageUtils.resolveColorAttr(mContext, R.attr.aboutElementIconTint);
             if (!element.getSkipTint()) {
                 if (element.getAutoApplyIconTint()) {
-                    if (mEnableDarkMode) {
+                    if (isNightModeEnabled) {
                         if (element.getIconNightTint() != null) {
                             DrawableCompat.setTint(wrappedDrawable, ContextCompat.getColor(mContext, element.getIconNightTint()));
                         } else {
-                            DrawableCompat.setTint(wrappedDrawable, mIconColor);
+                            DrawableCompat.setTint(wrappedDrawable, iconColor);
                         }
                     } else {
                         if (element.getIconTint() != null) {
                             DrawableCompat.setTint(wrappedDrawable, ContextCompat.getColor(mContext, element.getIconTint()));
                         } else {
-                            DrawableCompat.setTint(wrappedDrawable, mIconColor);
+                            DrawableCompat.setTint(wrappedDrawable, iconColor);
                         }
                     }
 
                 } else if (element.getIconTint() != null) {
                     DrawableCompat.setTint(wrappedDrawable, ContextCompat.getColor(mContext, element.getIconTint()));
-                } else if (mEnableDarkMode) {
-                    DrawableCompat.setTint(wrappedDrawable, mIconColor);
+                } else if (isNightModeEnabled) {
+                    DrawableCompat.setTint(wrappedDrawable, iconColor);
                 }
 
             }
@@ -653,7 +621,6 @@ public class AboutPage {
         }
 
         textView.setText(element.getTitle());
-        textView.setTextColor(mTextColor);
 
 
         if (mIsRTL) {
@@ -683,8 +650,6 @@ public class AboutPage {
     }
 
     private View getSeparator() {
-        View separator = mInflater.inflate(R.layout.about_page_separator, null);
-        separator.setBackgroundColor(mSeparatorColor);
-        return separator;
+        return mInflater.inflate(R.layout.about_page_separator, null);
     }
 }
