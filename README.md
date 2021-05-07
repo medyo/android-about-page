@@ -8,7 +8,6 @@ This library allows to generate beautiful About Pages with less effort, it's ful
 ```java
 View aboutPage = new AboutPage(this)
   .isRTL(false)
-  .enableDarkMode(false)
   .setCustomFont(String) // or Typeface
   .setImage(R.drawable.dummy_image)
   .addItem(versionElement)
@@ -102,11 +101,50 @@ addItem(versionElement)
 ```
 snippet by [nrhoffmann](https://github.com/nrhoffmann)
 
-### 6. Optional dark mode
+### 7. Styling
+
+The library supports day-night modes. The dependents may use the following
+styling attributes to create a dedicated style for `AboutPage`. If the
+dependents choose not to specify an explicit style, the library falls back to
+sensible defaults.
+
+```xml
+<style name="Widget.AboutPage" parent="about_About">
+  <item name="aboutBackground">@color/background_color</item>
+  <item name="aboutDescriptionTextAppearance">@style/descriptionTextAppearance</item>
+  <item name="aboutSeparatorColor">@color/separator_color</item>
+  <item name="aboutElementTextAppearance">@style/elementTextAppearance</item>
+  <item name="aboutElementIconTint">@color/item_icon_color</item>
+  <item name="aboutGroupTextAppearance">@style/groupTextAppearance</item>
+</style>
+```
+
+To apply the style globally, assign its reference to `aboutStyle` attribute in
+your app theme.
+
+```xml
+<style name="Theme.App" parent="Theme.AppCompat">
+  <item name="aboutStyle">@style/Widget.AboutPage</item>
+</style>
+```
+
+Or explicitly pass the style resource to the `AboutPage` constructor.
+
 ```java
-View aboutPage = new AboutPage(this)
-  .enableDarkMode(false) // if true, the dark mode is forced otherwise the default light one
-  .create()
+AboutPage aboutPage = new AboutPage(context, R.style.Widget_AboutPage);
+```
+
+### 8. Force Night/Day mode
+
+We recommend that the dependents use
+[`AppCompatDelegate.setDefaultNightMode()`](https://developer.android.com/reference/androidx/appcompat/app/AppCompatDelegate#setDefaultNightMode(int))
+to force enable/disable the night mode across their apps. If the dependents are
+unable to use the recommended approach, they can use the `AboutPage(Context,
+boolean)` constructor to specify the desired mode.
+
+```java
+AboutPage aboutPage = AboutPage(context, true); // force enable dark mode.
+AboutPage aboutPage = AboutPage(context, false); // force enable bright mode.
 ```
 
 ## Sample Project
