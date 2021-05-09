@@ -15,7 +15,7 @@
 
     <style name="descriptionTextAppearance" parent="about_descriptionTextAppearance">
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">?colorPrimaryDark</item>
+        <item name="android:textColor">@color/colorDescriptionText</item>
     </style>
 
 </resources>
