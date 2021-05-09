@@ -6,6 +6,16 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="aboutStyle">@style/Widget.App.AboutPage</item>
+    </style>
+
+    <style name="Widget.App.AboutPage" parent="about_About">
+        <item name="aboutDescriptionTextAppearance">@style/descriptionTextAppearance</item>
+    </style>
+
+    <style name="descriptionTextAppearance" parent="about_descriptionTextAppearance">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?colorPrimaryDark</item>
     </style>
 
 </resources>
