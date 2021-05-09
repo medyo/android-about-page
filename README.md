@@ -108,18 +108,28 @@ styling attributes to create a dedicated style for `AboutPage`. If the
 dependents choose not to specify an explicit style, the library falls back to
 sensible defaults.
 
+First, declare an `AboutPage` style in your `styles.xml`.
+
 ```xml
-<style name="Widget.AboutPage" parent="about_About">
-  <item name="aboutBackground">@color/background_color</item>
-  <item name="aboutDescriptionTextAppearance">@style/descriptionTextAppearance</item>
-  <item name="aboutSeparatorColor">@color/separator_color</item>
-  <item name="aboutElementTextAppearance">@style/elementTextAppearance</item>
-  <item name="aboutElementIconTint">@color/item_icon_color</item>
-  <item name="aboutGroupTextAppearance">@style/groupTextAppearance</item>
+<!-- Define a global style for AboutPage in your 'styles.xml' -->
+<style name="Widget.App.AboutPage" parent="about_About">
+  <item name="aboutBackground">#ffffff</item>
+  <item name="aboutElementIconTint">#333333</item>
+  <item name="aboutSeparatorColor">#999999</item>
+  <item name="aboutDescriptionTextAppearance">@style/TextAppearance.App.AboutPage.Description</item>
+
+  <!-- similarly, you can also apply the following text appearances -->
+  <item name="aboutElementTextAppearance">@style/about_elementTextAppearance.Dark</item>
+  <item name="aboutGroupTextAppearance">@style/about_groupTextAppearance</item>
 </style>
+
+<style name="TextAppearance.App.AboutPage.Description" parent="about_descriptionTextAppearance.Dark">
+  <item name="android:textStyle">bold|italic</item>
+</style>
+
 ```
 
-To apply the style globally, assign its reference to `aboutStyle` attribute in
+To apply this style globally, assign its reference to `aboutStyle` attribute in
 your app theme.
 
 ```xml
@@ -128,7 +138,8 @@ your app theme.
 </style>
 ```
 
-Or explicitly pass the style resource to the `AboutPage` constructor.
+Or explicitly pass the style resource to the `AboutPage` constructor to apply it
+on selective `AboutPage` instances.
 
 ```java
 AboutPage aboutPage = new AboutPage(context, R.style.Widget_AboutPage);
@@ -140,7 +151,9 @@ We recommend that the dependents use
 [`AppCompatDelegate.setDefaultNightMode()`](https://developer.android.com/reference/androidx/appcompat/app/AppCompatDelegate#setDefaultNightMode(int))
 to force enable/disable the night mode across their apps. If the dependents are
 unable to use the recommended approach, they can use the `AboutPage(Context,
-boolean)` constructor to specify the desired mode.
+boolean)` constructor to specify the desired mode. The dependents must note that
+by using this constructor, the `AboutPage` will use its default styles, ignoring
+any explicitly specified style.
 
 ```java
 AboutPage aboutPage = AboutPage(context, true); // force enable dark mode.
