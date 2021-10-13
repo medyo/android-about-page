@@ -32,7 +32,7 @@ import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
  * The main class of this library with many predefined methods to add Elements for common items in
  * an About page. This class creates a {@link android.view.View} that can be passed as the root view
  * in {@link Fragment#onCreateView(LayoutInflater, ViewGroup, Bundle)} or passed to the {@link android.app.Activity#setContentView(View)}
- * in an activity's {@link android.app.Activity#onCreate(Bundle)} (Bundle)} method
+ * in an activity's  (Bundle)} method
  * <p>
  * To create a custom item in the about page, pass an instance of {@link mehdi.sakout.aboutpage.Element}
  * to the {@link AboutPage#addItem(Element)} method.
@@ -127,6 +127,42 @@ public class AboutPage {
         return this;
     }
 
+    /**
+     * Convenience method for {@link AboutPage#addLinkedIn(java.lang.String, java.lang.String)} but with
+     * a predefined title string
+     *
+     * @param id the facebook id to display
+     * @return this AboutPage instance for builder pattern support
+     */
+    public AboutPage addLinkedIn(String id) {
+        return addLinkedIn(id,"Connect with LinkedIn");
+    }
+
+    /**
+     * Add a predefined Element that the opens LinkedIn app with a deep link to the specified user id
+     * If the LinkedIn application is not installed this will open a web page instead.
+     *
+     * @param id    the id of the LinkedIn user to display in the Facebook app
+     * @param title the title to display on this item
+     * @return this AboutPage instance for builder pattern support
+     */
+    public AboutPage addLinkedIn(String id,String title) {
+
+        String profile_url = "https://www.linkedin.com/in/"+id;
+
+        Element linkedinElement = new Element();
+        linkedinElement.setTitle(title);
+        linkedinElement.setIconDrawable(R.drawable.about_icon_linkedin);
+        linkedinElement.setIconTint(R.color.about_facebook_color);
+        linkedinElement.setValue(profile_url);
+
+        Uri uri = Uri.parse(profile_url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+
+        linkedinElement.setIntent(intent);
+        addItem(linkedinElement);
+        return this;
+    }
     /**
      * Convenience method for {@link AboutPage#addFacebook(java.lang.String, java.lang.String)} but with
      * a predefined title string
