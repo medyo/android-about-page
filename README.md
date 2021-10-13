@@ -21,7 +21,7 @@ View aboutPage = new AboutPage(this)
   .addPlayStore("com.ideashower.readitlater.pro")
   .addGitHub("medyo")
   .addInstagram("medyo80")
-  .addLinkedIn("saiharig)
+  .addLinkedIn("saiharig")
   .create();
 ```
 
