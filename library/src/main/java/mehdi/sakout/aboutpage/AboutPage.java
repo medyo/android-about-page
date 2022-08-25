@@ -382,6 +382,43 @@ public class AboutPage {
     }
 
     /**
+     * Convenience method for {@link AboutPage#addLinkedIn(java.lang.String, java.lang.String)} but with
+     * a predefined title string
+     *
+     * @param id the facebook id to display
+     * @return this AboutPage instance for builder pattern support
+     */
+    public AboutPage addLinkedIn(String id) {
+        return addLinkedIn(id,"Connect with LinkedIn");
+    }
+
+    /**
+     * Add a predefined Element that the opens LinkedIn app with a deep link to the specified user id
+     * If the LinkedIn application is not installed this will open a web page instead.
+     *
+     * @param id    the id of the LinkedIn user to display in the Facebook app
+     * @param title the title to display on this item
+     * @return this AboutPage instance for builder pattern support
+     */
+    public AboutPage addLinkedIn(String id,String title) {
+
+        String profile_url = "https://www.linkedin.com/in/"+id;
+
+        Element linkedinElement = new Element();
+        linkedinElement.setTitle(title);
+        linkedinElement.setIconDrawable(R.drawable.about_icon_linkedin);
+        linkedinElement.setIconTint(R.color.about_facebook_color);
+        linkedinElement.setValue(profile_url);
+
+        Uri uri = Uri.parse(profile_url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+
+        linkedinElement.setIntent(intent);
+        addItem(linkedinElement);
+        return this;
+    }
+
+    /**
      * Convenience method for {@link AboutPage#addWebsite(String, String)} but with
      * a predefined title string
      *

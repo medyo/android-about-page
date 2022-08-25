@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 .addPlayStore("com.ideashower.readitlater.pro")
                 .addInstagram("medyo80")
                 .addGitHub("medyo")
+                .addLinkedIn("hadesfranklyn")
                 .addItem(getCopyRightsElement())
                 .create();
 
