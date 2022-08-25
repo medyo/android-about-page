@@ -21,7 +21,8 @@ View aboutPage = new AboutPage(this)
   .addPlayStore("com.ideashower.readitlater.pro")
   .addGitHub("medyo")
   .addInstagram("medyo80")
-  .addLinkedIn("hadesfranklyn")
+  .addLinkedIn("medyo")
+  .addWhatsApp("5582924562426")
   .create();
 ```
 
@@ -54,6 +55,7 @@ The library has already some predefined social networks like :
 * Youtube
 * PlayStore
 * LinkedIn
+* WhatsApp
 
 ```java
 addFacebook(String PageID)
@@ -63,6 +65,7 @@ addPlayStore(String PackageName)
 addInstagram(String AccountID)
 addGitHub(String AccountID)
 addLinkedIn(String AccountID)
+addWhatsApp(String AccountID)
 ```
 
 ### 4. Add Custom Element
