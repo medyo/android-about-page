@@ -382,6 +382,80 @@ public class AboutPage {
     }
 
     /**
+     * Convenience method for {@link AboutPage#addLinkedIn(java.lang.String, java.lang.String)} but with
+     * a predefined title string
+     *
+     * @param id the facebook id to display
+     * @return this AboutPage instance for builder pattern support
+     */
+    public AboutPage addLinkedIn(String id) {
+        return addLinkedIn(id,"Connect with LinkedIn");
+    }
+
+    /**
+     * Add a predefined Element that the opens LinkedIn app with a deep link to the specified user id
+     * If the LinkedIn application is not installed this will open a web page instead.
+     *
+     * @param id    the id of the LinkedIn user to display in the Facebook app
+     * @param title the title to display on this item
+     * @return this AboutPage instance for builder pattern support
+     */
+    public AboutPage addLinkedIn(String id,String title) {
+
+        String profile_url = "https://www.linkedin.com/in/"+id;
+
+        Element linkedinElement = new Element();
+        linkedinElement.setTitle(title);
+        linkedinElement.setIconDrawable(R.drawable.about_icon_linkedin);
+        linkedinElement.setIconTint(R.color.about_facebook_color);
+        linkedinElement.setValue(profile_url);
+
+        Uri uri = Uri.parse(profile_url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+
+        linkedinElement.setIntent(intent);
+        addItem(linkedinElement);
+        return this;
+    }
+
+    /**
+     * Convenience method for {@link AboutPage#addWhatsApp(java.lang.String, java.lang.String)} but with
+     * a predefined title string
+     *
+     * @param id the facebook id to display
+     * @return this AboutPage instance for builder pattern support
+     */
+    public AboutPage addWhatsApp(String id) {
+        return addWhatsApp(id,"Connect with WhatsApp");
+    }
+
+    /**
+     * Add a predefined element that opens the whatsapp app with a direct link to the specified user id
+     * If the WhatsApp app is not installed, this opens a webpage.
+     *
+     * @param id    WhatsApp phone number to display in WhatsApp app
+     * @param title the title to display on this item
+     * @return this AboutPage instance for builder pattern support
+     */
+    public AboutPage addWhatsApp(String id,String title) {
+
+        String profile_url = "https://api.whatsapp.com/send?phone="+id;
+
+        Element whatsAppElement = new Element();
+        whatsAppElement.setTitle(title);
+        whatsAppElement.setIconDrawable(R.drawable.about_icon_whatsapp);
+        whatsAppElement.setIconTint(R.color.about_whatsapp_color);
+        whatsAppElement.setValue(profile_url);
+
+        Uri uri = Uri.parse(profile_url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+
+        whatsAppElement.setIntent(intent);
+        addItem(whatsAppElement);
+        return this;
+    }
+
+    /**
      * Convenience method for {@link AboutPage#addWebsite(String, String)} but with
      * a predefined title string
      *
