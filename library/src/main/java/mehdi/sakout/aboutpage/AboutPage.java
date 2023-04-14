@@ -553,7 +553,7 @@ public class AboutPage {
 
         }
 
-        wrapper.setBackgroundResource(AboutPageUtils.resolveResIdAttr(mContext, R.attr.selectableItemBackground, android.R.color.transparent));
+        wrapper.setBackgroundResource(AboutPageUtils.resolveResIdAttr(mContext, android.R.attr.selectableItemBackground, android.R.color.transparent));
 
         int padding = mContext.getResources().getDimensionPixelSize(R.dimen.about_text_padding);
         wrapper.setPadding(padding, padding, padding, padding);
